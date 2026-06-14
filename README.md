@@ -12,5 +12,47 @@ The problem is creating them as one of the biggest issues is that professional o
 ## Tool #1 Ontology to English
 Our firt tool uses SBVR(you don't care what SBVR is yet, so I won't bore you) and the OWL API to create english-like translations of an ontology. It has been worked on over the years and Dassault Systems uses it in Cameo Concept Modeler(CCM) and other tools, but they never scratched the muggle brain cell itch. This tool creates a nice readable web page with colors and hyperlinks, with even more translations of the big words of ontology that sneak in. For many people, this simple translation will go quite far. If we find better, we will let you know.
 
+## Build & Run (Tool #1: Ontology to English)
+Requires a **Java 17+ JDK**. Everything else is fetched by the Gradle wrapper.
+
+```bash
+./gradlew build                                        # compile + run the tests
+./gradlew run --args="src/test/resources/pizza.owl"    # writes pizza-sbvr.html next to the input
+```
+
+Or build one portable file you can run anywhere — the OWL API is bundled inside it:
+
+```bash
+./gradlew cliJar
+java -jar build/libs/ontology-to-english-0.1.0-cli.jar my-ontology.owl --open
+```
+
+Options:
+
+```
+<input.owl|.ttl|.rdf> [output.html]
+  --color full|mono|plain      colored, color-blind-friendly mono, or plain text
+  --no-model --no-owl --no-rdf --no-verbalization   leave out sections
+  --no-rollover                drop the hover-the-word-to-see-its-meaning panel
+  --title "My Ontology"
+  --open                       open the result in your browser when done
+```
+
+Feed it any OWL file (RDF/XML, Turtle, OWL/XML, …). In **Cameo Concept Modeler** use *File ▸ Export Model to
+OWL* first, then run the tool on the exported file — the same works for Protégé, TopBraid, or any editor that
+exports OWL. There's also a Groovy version of the exact same thing in [`scripts/sbvr.groovy`](scripts/sbvr.groovy)
+for tools that already have Groovy + the OWL API on the classpath.
+
+### Use it from your own code
+It's a small library too, with a single runtime dependency (the OWL API):
+
+```java
+OWLOntology ont = OWLManager.createOWLOntologyManager()
+        .loadOntologyFromOntologyDocument(new File("pizza.owl"));
+String html = new SbvrVerbalizer().verbalizeOntology(ont, "Pizza");   // full report
+// or just the entities you care about:
+String some = new SbvrVerbalizer().verbalizeEntities(ont, entities, "Selection");
+```
+
 ## Help the Ontology Muggles
 Do you want to help? Please do by writng issues on the project for new features and corrections. The aim is to integrate where we see gaps in specific tools and technologies too, like in Systems Engineering, Enterprise Architecture, AI, etc. 
