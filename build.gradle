@@ -10,6 +10,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'maven-publish'
 }
 
 group   = 'com.ontologyvision'
@@ -33,6 +34,7 @@ dependencies {
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+    withSourcesJar()
 }
 
 application {
@@ -55,4 +57,22 @@ tasks.register('cliJar', Jar) {
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE          // owlapi-distribution is itself an uber-jar
     exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'module-info.class'
+}
+
+// Publish the library so other projects (e.g. the VOM MagicDraw plugin) can depend on it as
+// `com.ontologyvision:ontology-to-english:<version>` instead of vendoring a copy.
+//   ./gradlew publishToMavenLocal       -> ~/.m2/repository  (works offline, no credentials)
+// To publish to a real registry (GitHub Packages, Maven Central, an internal Nexus) add a
+// `repositories { maven { url = ...; credentials {...} } }` inside publishing — the publication is the same.
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java                 // the slim library jar + sources jar; OWL API is a POM dependency
+            pom {
+                name = 'Ontology to English (SBVR)'
+                description = 'Reads an OWL ontology and writes a readable SBVR Structured-English HTML translation.'
+                licenses { license { name = 'MIT License'; url = 'https://opensource.org/licenses/MIT' } }
+            }
+        }
+    }
 }
