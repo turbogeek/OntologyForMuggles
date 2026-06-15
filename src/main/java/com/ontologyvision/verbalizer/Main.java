@@ -45,7 +45,8 @@ public final class Main
                   + "            [--manchester | --ose | --rosetta]   (default: SBVR Structured English;\n"
                   + "                                                 --rosetta = SBVR | OSE | Manchester side-by-side)\n"
                   + "            [--no-verbalization] [--no-model] [--no-owl] [--no-rdf]\n"
-                  + "            [--color full|mono|plain] [--no-rollover] [--title T] [--open]" );
+                  + "            [--color full|mono|plain] [--no-rollover] [--title T] [--open]\n"
+                  + "            [--validate]   (run a reasoner: consistency + unsatisfiable classes)" );
             System.exit( args.length < 1 ? 2 : 0 );
             return;
         }
@@ -54,6 +55,7 @@ public final class Main
         File out = null;
         String title = in.getName();
         boolean open = false;
+        boolean validate = false;
         final VerbalizerOptions.Builder b = VerbalizerOptions.builder();
 
         for ( int i = 1; i < args.length; i++ )
@@ -70,6 +72,7 @@ public final class Main
                 case "--ose":              b.formats( VerbalizerOptions.Format.OSE ); break;
                 case "--rosetta":          b.formats( VerbalizerOptions.Format.SBVR, VerbalizerOptions.Format.OSE, VerbalizerOptions.Format.MANCHESTER ); break;
                 case "--open":             open = true;                     break;
+                case "--validate":         validate = true;                 break;
                 case "--color":            b.colorLevel( VerbalizerOptions.ColorLevel.valueOf( args[++i].toUpperCase() ) ); break;
                 case "--title":            title = args[++i];               break;
                 default:
@@ -114,6 +117,51 @@ public final class Main
             {
                 System.err.println( "(could not open a browser: " + t.getMessage() + ")" );
             }
+        }
+
+        if ( validate ) runValidation( ont );
+    }
+
+    /**
+     * Optional reasoner-based validation (the "REASON &amp; VALIDATE" pillar). The reasoner (ELK) is loaded
+     * reflectively so the slim library keeps no hard reasoner dependency — the CLI jar bundles ELK, so this
+     * works out of the box from {@code ontology-to-english-<ver>-cli.jar} but degrades gracefully elsewhere.
+     */
+    private static void runValidation ( final OWLOntology ont )
+    {
+        try
+        {
+            final org.semanticweb.owlapi.reasoner.OWLReasonerFactory rf =
+                    (org.semanticweb.owlapi.reasoner.OWLReasonerFactory)
+                            Class.forName( "org.semanticweb.elk.owlapi.ElkReasonerFactory" )
+                                    .getDeclaredConstructor().newInstance();
+            final Validator.Result r = new Validator().validate( ont, rf );
+            if ( !r.consistent )
+            {
+                System.out.println( "VALIDATION: INCONSISTENT — a reasoner found a contradiction in the ontology." );
+            }
+            else if ( r.unsatisfiable.isEmpty() )
+            {
+                System.out.println( "VALIDATION: consistent; no unsatisfiable classes." );
+            }
+            else
+            {
+                System.out.println( "VALIDATION: consistent, but " + r.unsatisfiable.size()
+                        + " unsatisfiable class(es) — each can never have an instance:" );
+                for ( final org.semanticweb.owlapi.model.OWLClass c : r.unsatisfiable )
+                {
+                    System.out.println( "  - " + c.getIRI() );
+                }
+            }
+        }
+        catch ( final ClassNotFoundException e )
+        {
+            System.err.println( "--validate needs a reasoner on the classpath. The CLI jar bundles ELK; "
+                    + "if you run the slim library jar, add io.github.liveontologies:elk-owlapi." );
+        }
+        catch ( final Throwable t )
+        {
+            System.err.println( "(validation failed: " + t.getMessage() + ")" );
         }
     }
 }

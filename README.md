@@ -32,7 +32,9 @@ Options:
 ```
 <input.owl|.ttl|.rdf> [output.html]
   --manchester                 OWL Manchester syntax instead of SBVR English
-  --rosetta                    side-by-side: SBVR English | Manchester syntax (a learning view)
+  --ose                        OWL Simplified English instead of SBVR English
+  --rosetta                    side-by-side: SBVR | OSE | Manchester (a learning / "Rosetta" view)
+  --validate                   run a reasoner (ELK): report consistency + unsatisfiable classes
   --color full|mono|plain      colored, color-blind-friendly mono, or plain text
   --no-model --no-owl --no-rdf --no-verbalization   leave out sections
   --no-rollover                drop the hover-the-word-to-see-its-meaning panel

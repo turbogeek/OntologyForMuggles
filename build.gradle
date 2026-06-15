@@ -22,13 +22,21 @@ repositories {
 
 ext {
     owlapiVersion = '5.5.1'
+    elkVersion    = '0.6.0'      // ELK reasoner (Apache-2.0) — OPTIONAL: bundled in the CLI jar + used by tests,
+                                 // but NOT a dependency of the published library (keeps the core OWL-API-only).
 }
 
+// Optional reasoner closure (ELK), bundled into the CLI jar only — never in the published POM.
+configurations { reasoner }
+
 dependencies {
-    // The ONLY runtime dependency: the OWL API (plus its transitive closure — RDF4J parsers, Jackson, Guava…).
+    // The ONLY runtime dependency of the library: the OWL API (RDF4J parsers, Jackson, Guava… transitively).
     implementation "net.sourceforge.owlapi:owlapi-distribution:${owlapiVersion}"
 
-    testImplementation 'junit:junit:4.13.2'
+    reasoner            "io.github.liveontologies:elk-owlapi:${elkVersion}"   // for the CLI's --validate
+    reasoner            'org.slf4j:slf4j-nop:2.0.13'                          // silence ELK's "no SLF4J provider" noise
+    testImplementation  'junit:junit:4.13.2'
+    testImplementation  "io.github.liveontologies:elk-owlapi:${elkVersion}"   // validation tests
 }
 
 java {
@@ -53,8 +61,9 @@ tasks.register('cliJar', Jar) {
     archiveClassifier = 'cli'
     manifest { attributes 'Main-Class': 'com.ontologyvision.verbalizer.Main' }
     from sourceSets.main.output
-    dependsOn configurations.runtimeClasspath
+    dependsOn configurations.runtimeClasspath, configurations.reasoner
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    from { configurations.reasoner.collect { it.isDirectory() ? it : zipTree(it) } }   // ELK, for --validate
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE          // owlapi-distribution is itself an uber-jar
     exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'module-info.class'
 }
