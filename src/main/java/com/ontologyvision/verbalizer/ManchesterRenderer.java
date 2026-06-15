@@ -46,15 +46,38 @@ final class ManchesterRenderer implements AxiomRenderer
      *  reused. */
     private synchronized String render (final OWLObject o) { return r.render( o ); }
 
-    /** A Manchester frame line: {@code <keyword> <rendered-expression>}, HTML-escaped + monospaced. */
+    /** A Manchester frame line: {@code <keyword> <rendered-expression>}, monospaced, keywords hover-glossed. */
     private String line (final String keyword, final OWLObject expr, final RenderContext ctx)
     {
-        return "<code class=\"manchester\">" + ctx.esc( keyword + " " + render( expr ) ) + "</code>";
+        return "<code class=\"manchester\">" + glossTokens( keyword + " " + render( expr ), ctx ) + "</code>";
     }
 
     private String plain (final String text, final RenderContext ctx)
     {
-        return "<code class=\"manchester\">" + ctx.esc( text ) + "</code>";
+        return "<code class=\"manchester\">" + glossTokens( text, ctx ) + "</code>";
+    }
+
+    /** Manchester keywords that carry an OWL/RDF construct gloss (so they hover-explain in the Rosetta view). */
+    private static final java.util.Set<String> KEYWORDS = java.util.Set.of(
+            "some", "only", "min", "max", "exactly", "value", "and", "or", "not", "self",
+            "subclassof", "equivalentto", "disjointwith", "subpropertyof", "inverseof", "domain", "range" );
+
+    /** Wraps Manchester keywords in glossable {@code kw} tokens (orange + hover meaning) and escapes the rest,
+     *  so hovering "some" in the Manchester column lights the same {@code owl:someValuesFrom} gloss as
+     *  "at least one" in the SBVR column — the Rosetta teaching connection. */
+    private String glossTokens (final String text, final RenderContext ctx)
+    {
+        final StringBuilder out = new StringBuilder();
+        final java.util.regex.Matcher m = java.util.regex.Pattern.compile( "[A-Za-z][A-Za-z0-9]*" ).matcher( text );
+        int last = 0;
+        while ( m.find() )
+        {
+            out.append( ctx.esc( text.substring( last, m.start() ) ) );
+            final String tok = m.group();
+            out.append( KEYWORDS.contains( tok.toLowerCase() ) ? ctx.kw( tok ) : ctx.esc( tok ) );
+            last = m.end();
+        }
+        return out.append( ctx.esc( text.substring( last ) ) ).toString();
     }
 
     @Override

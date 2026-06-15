@@ -86,7 +86,7 @@ public class OntologyVerbalizerTest
         final String html = new OntologyVerbalizer().verbalizeOntology( ont, "Pizza",
                 VerbalizerOptions.builder().formats( VerbalizerOptions.Format.MANCHESTER ).build() );
         assertTrue( "Manchester title", html.contains( "&mdash; Manchester Syntax" ) );
-        assertTrue( "Manchester frame keyword", html.contains( "SubClassOf:" ) );
+        assertTrue( "Manchester frame keyword (hover-glossed)", html.contains( ">SubClassOf</a>" ) );
         assertTrue( "monospace Manchester spans", html.contains( "class=\"manchester\"" ) );
         // short names come from the IRI fragment, NOT the Portuguese rdfs:label
         assertTrue( "IRI short names (not labels)", html.contains( "MozzarellaTopping" ) );
@@ -103,6 +103,9 @@ public class OntologyVerbalizerTest
         assertTrue( "SBVR column header", html.contains( "<th>SBVR Structured English</th>" ) );
         assertTrue( "Manchester column header", html.contains( "<th>Manchester Syntax</th>" ) );
         assertTrue( "SBVR existential reading present", html.contains( "at least one" ) );
-        assertTrue( "Manchester reading present", html.contains( "SubClassOf:" ) );
+        assertTrue( "Manchester reading present", html.contains( ">SubClassOf</a>" ) );
+        // cross-column teaching: a Manchester "some" glosses to the same construct as SBVR "at least one"
+        assertTrue( "Manchester keyword hover-glossed", html.contains( "gloss:owl%3AsomeValuesFrom" )
+                    || html.contains( ">some</a>" ) );
     }
 }

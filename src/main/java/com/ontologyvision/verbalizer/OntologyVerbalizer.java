@@ -415,6 +415,19 @@ public final class OntologyVerbalizer
         KEYWORD_TO_CONSTRUCT.put( "not", "owl:complementOf" );
         KEYWORD_TO_CONSTRUCT.put( "one of", "owl:oneOf" );
         KEYWORD_TO_CONSTRUCT.put( "itself", "owl:hasSelf" );
+        // Manchester-syntax keywords, so the Rosetta Manchester column hover-glosses to the same constructs
+        // (e.g. Manchester "some" and SBVR "at least one" both light owl:someValuesFrom).
+        KEYWORD_TO_CONSTRUCT.put( "subclassof", "rdfs:subClassOf" );
+        KEYWORD_TO_CONSTRUCT.put( "equivalentto", "owl:equivalentClass" );
+        KEYWORD_TO_CONSTRUCT.put( "disjointwith", "owl:disjointWith" );
+        KEYWORD_TO_CONSTRUCT.put( "subpropertyof", "rdfs:subPropertyOf" );
+        KEYWORD_TO_CONSTRUCT.put( "inverseof", "owl:inverseOf" );
+        KEYWORD_TO_CONSTRUCT.put( "domain", "rdfs:domain" );
+        KEYWORD_TO_CONSTRUCT.put( "range", "rdfs:range" );
+        KEYWORD_TO_CONSTRUCT.put( "min", "owl:minCardinality" );
+        KEYWORD_TO_CONSTRUCT.put( "max", "owl:maxCardinality" );
+        KEYWORD_TO_CONSTRUCT.put( "value", "owl:hasValue" );
+        KEYWORD_TO_CONSTRUCT.put( "self", "owl:hasSelf" );
     }
 
     private String naturalList (final List<String> items)
