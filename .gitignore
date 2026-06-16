@@ -1,0 +1,21 @@
+# Gradle
+/.gradle/
+build/
+**/build/
+
+# IDE
+/.idea/
+*.iml
+/.vscode/
+/.settings/
+.classpath
+.project
+
+# OS
+.DS_Store
+
+# generated reports
+*-sbvr.html
+
+# third-party example ontologies fetched on demand (./gradlew fetchIofExample)
+/examples/iof/
