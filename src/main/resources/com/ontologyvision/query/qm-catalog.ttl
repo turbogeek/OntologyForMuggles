@@ -149,3 +149,37 @@ SELECT ?class WHERE { ?class a owl:Class . FILTER(isIRI(?class))
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?property WHERE { ?property a owl:ObjectProperty . FILTER(isIRI(?property))
   ?property rdfs:domain ?d . ?property rdfs:range ?r } ORDER BY ?property""" .
+
+# =================================================================== REASONER  (run against the INFERRED graph)
+# These ask the OWL reasoner, not just the asserted triples: the VOM query window runs REASONER queries through
+# the inferred-materialisation path, so they see ENTAILED subclasses, types, and equivalences — e.g. pizzas the
+# reasoner classifies as VegetarianPizza even though that subclass edge was never written down. Run the same
+# query asserted-only and inferred to SEE what reasoning adds.
+
+<inferred-subclasses-of> a qm:TemplateQuery ;
+    qm:name "Inferred subclasses of a class" ; qm:category "REASONER" ; qm:parameter "classIRI" ;
+    qm:description "Every class the reasoner concludes is a subclass of the chosen class — including ones never asserted. Fill in ${classIRI}." ;
+    qm:queryText """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?subclass WHERE { ?subclass rdfs:subClassOf <${classIRI}> . FILTER(isIRI(?subclass) && ?subclass != <${classIRI}>) } ORDER BY ?subclass""" .
+
+<inferred-superclasses-of> a qm:TemplateQuery ;
+    qm:name "Inferred superclasses of a class" ; qm:category "REASONER" ; qm:parameter "classIRI" ;
+    qm:description "Every class the reasoner concludes the chosen class falls under (all its ancestors). Fill in ${classIRI}." ;
+    qm:queryText """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?superclass WHERE { <${classIRI}> rdfs:subClassOf ?superclass . FILTER(isIRI(?superclass) && ?superclass != <${classIRI}>) } ORDER BY ?superclass""" .
+
+<inferred-types-of> a qm:TemplateQuery ;
+    qm:name "Inferred types of an individual" ; qm:category "REASONER" ; qm:parameter "individualIRI" ;
+    qm:description "Every class the reasoner concludes an individual belongs to — including types inherited up the hierarchy. Fill in ${individualIRI}." ;
+    qm:queryText """SELECT ?type WHERE { <${individualIRI}> a ?type . FILTER(isIRI(?type)) } ORDER BY ?type""" .
+
+<inferred-instances-of> a qm:TemplateQuery ;
+    qm:name "Inferred members of a class" ; qm:category "REASONER" ; qm:parameter "classIRI" ;
+    qm:description "Every individual the reasoner concludes is a member of the chosen class, including via subclasses. Fill in ${classIRI}." ;
+    qm:queryText """SELECT ?individual WHERE { ?individual a <${classIRI}> . FILTER(isIRI(?individual)) } ORDER BY ?individual""" .
+
+<inferred-equivalent-classes> a qm:Query ;
+    qm:name "Equivalent classes (reasoner-derived)" ; qm:category "REASONER" ;
+    qm:description "Pairs of classes the reasoner proves are equivalent (necessarily share the same members), even when each was defined separately." ;
+    qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?classA ?classB WHERE { ?classA owl:equivalentClass ?classB . FILTER(isIRI(?classA) && isIRI(?classB) && STR(?classA) < STR(?classB)) } ORDER BY ?classA""" .
