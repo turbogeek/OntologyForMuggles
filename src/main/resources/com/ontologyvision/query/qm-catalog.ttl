@@ -183,3 +183,56 @@ SELECT ?superclass WHERE { <${classIRI}> rdfs:subClassOf ?superclass . FILTER(is
     qm:description "Pairs of classes the reasoner proves are equivalent (necessarily share the same members), even when each was defined separately." ;
     qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
 SELECT ?classA ?classB WHERE { ?classA owl:equivalentClass ?classB . FILTER(isIRI(?classA) && isIRI(?classB) && STR(?classA) < STR(?classB)) } ORDER BY ?classA""" .
+
+# =================================================================== DATA & DATATYPES
+# These query the actual DATA in an ontology — the typed literal VALUES on individuals (e.g. an age of 42) and any
+# custom datatypes (e.g. an integer restricted to >= 18). They are meaningful over a VOM-exported model because VOM
+# now round-trips OWLDataPropertyAssertion (typed data values) and OWLDatatypeDefinition (custom datatypes + facets)
+# faithfully — before that fix these queries would have returned nothing.
+
+<data-values> a qm:Query ;
+    qm:name "Data values on individuals" ; qm:category "DATA" ;
+    qm:description "Every individual together with each of its data-property values (its attributes)." ;
+    qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?individual ?property ?value WHERE {
+  ?property a owl:DatatypeProperty .
+  ?individual ?property ?value . FILTER(isIRI(?individual))
+} ORDER BY ?individual ?property""" .
+
+<data-values-of-class> a qm:TemplateQuery ;
+    qm:name "Data values for individuals of a class" ; qm:category "DATA" ; qm:parameter "classIRI" ;
+    qm:description "Each individual of a chosen class with its data-property values. Fill in ${classIRI}." ;
+    qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?individual ?property ?value WHERE {
+  ?individual a <${classIRI}> ; ?property ?value .
+  ?property a owl:DatatypeProperty .
+} ORDER BY ?individual ?property""" .
+
+<individuals-by-data-value> a qm:TemplateQuery ;
+    qm:name "Individuals by data value (at or above a threshold)" ; qm:category "DATA" ;
+    qm:parameter "propertyIRI" ; qm:parameter "minValue" ;
+    qm:description "Individuals whose value for a chosen numeric data property is >= a threshold — a FILTER over typed literal values. Fill in ${propertyIRI} and ${minValue} (e.g. 18)." ;
+    qm:queryText """SELECT ?individual ?value WHERE {
+  ?individual <${propertyIRI}> ?value . FILTER(?value >= ${minValue})
+} ORDER BY DESC(?value) ?individual""" .
+
+<custom-datatypes> a qm:Query ;
+    qm:name "Custom datatypes (defined)" ; qm:category "DATA" ;
+    qm:description "User-defined datatypes (owl:DatatypeDefinition) and the base XSD datatype each refines — e.g. an 'adultAge' built on xsd:integer." ;
+    qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?datatype ?baseDatatype WHERE {
+  ?datatype a rdfs:Datatype ; owl:equivalentClass ?restriction . FILTER(isIRI(?datatype))
+  OPTIONAL { ?restriction owl:onDatatype ?baseDatatype }
+} ORDER BY ?datatype""" .
+
+<bad-individuals-missing-data> a qm:PatternQuery ;
+    qm:name "Individuals missing an expected data value" ; qm:category "BAD_PATTERN" ;
+    qm:polarity "BAD" ; qm:severity "info" ; qm:expectedResult "empty == healthy" ;
+    qm:parameter "classIRI" ; qm:parameter "propertyIRI" ;
+    qm:description "Individuals of a chosen class with no value for a data property they are expected to carry — a data-completeness gap. Fill in ${classIRI} and ${propertyIRI}." ;
+    qm:remediation "Add the missing data value to each listed individual (or relax the expectation)." ;
+    qm:queryText """SELECT ?individual WHERE {
+  ?individual a <${classIRI}> .
+  FILTER NOT EXISTS { ?individual <${propertyIRI}> ?v }
+} ORDER BY ?individual""" .
