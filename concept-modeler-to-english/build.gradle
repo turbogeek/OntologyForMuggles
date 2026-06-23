@@ -1,0 +1,78 @@
+// ConceptModelerToEnglish — a MagicDraw/Cameo plugin that adds a "Verbalize to English" action to
+// Concept Modeler packages. It exports the selected concept-model package to OWL via the Cameo Concept
+// Modeler API (CM2OWL.exportFromModel), then renders readable SBVR Structured-English HTML with the
+// OntologyForMuggles verbalizer (com.ontologyvision:ontology-to-english).
+//
+// Build (compile-check):   gradlew.bat compileJava  -PmsosaHome="E:\Magic SW\MSoS26xHF1"
+// Assemble installable:    gradlew.bat assemblePlugin -PmsosaHome="E:\Magic SW\MSoS26xHF1"
+//   -> build/plugin/com.ontologyvision.cm2english/  (copy this folder into <MagicDraw>/plugins/, then restart)
+
+plugins { id 'java' }
+
+group   = 'com.ontologyvision'
+version = project.findProperty('pluginVersion') ?: '0.1.0'
+
+ext {
+    // MagicDraw / Cameo install that provides the Open API + the Concept Modeler plugin (compileOnly at build,
+    // provided by the tool at runtime).
+    msosaHome = project.findProperty('msosaHome') ?: 'E:\\Magic SW\\MSoS26xHF1'
+    msosaLib  = file("${msosaHome}/lib")
+    ccmApiJar = file("${msosaHome}/plugins/com.nomagic.conceptmodeler/conceptmodeler_api.jar")
+    // The self-contained verbalizer CLI jar (owlapi 5.5.1 bundled), built from the sibling OntologyForMuggles
+    // project with `gradlew jar cliJar`. Bundled into the plugin's lib/ and loaded at runtime in an isolated
+    // classloader (NOT a <library> in plugin.xml), so its owlapi never meets MagicDraw's/CCM's owlapi.
+    verbalizerLibsDir = project.findProperty('verbalizerLibsDir') ?: '../build/libs'   // OFM root is this nested build's parent
+    pluginId = 'com.ontologyvision.cm2english'
+}
+
+sourceSets { main { java { srcDirs = ['src/main/java'] } } }
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release  = 17     // MagicDraw 2026 runs JDK 21; target 17 bytecode for broad compatibility
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    // MagicDraw Open API + all tool libs (com.nomagic.* incl. the UML2 metamodel): provided at runtime.
+    compileOnly fileTree(dir: msosaLib, include: '*.jar')
+    // Cameo Concept Modeler public API: CM2OWL / ConceptModelOWLTransformFactory.
+    compileOnly files(ccmApiJar)
+    // @Nullable/@NotNull, if used.
+    compileOnly 'org.jetbrains:annotations:24.1.0'
+}
+
+// Find the newest verbalizer CLI jar (…-cli.jar) in verbalizerLibsDir, or null if not built yet.
+ext.findVerbalizerCliJar = {
+    def dir = file(verbalizerLibsDir)
+    if (!dir.isDirectory()) return null
+    def cli = dir.listFiles().findAll { it.name ==~ /ontology-to-english-.*-cli\.jar/ }.sort { it.name }
+    return cli ? cli[-1] : null
+}
+
+// Assemble an installable plugin folder: build/plugin/<id>/{plugin.xml, <id>.jar, lib/<verbalizer-cli>.jar}
+tasks.register('assemblePlugin', Copy) {
+    group = 'distribution'
+    description = 'Stage an installable MagicDraw plugin folder under build/plugin/<id>/.'
+    dependsOn 'jar'
+
+    def stageDir = layout.buildDirectory.dir("plugin/${pluginId}")
+    into stageDir
+
+    from(tasks.named('jar').flatMap { it.archiveFile }) { rename { "${pluginId}.jar" } }
+    from('descriptor/plugin.xml') {
+        filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: [pluginVersion: version.toString(), pluginId: pluginId])
+    }
+    def vjar = findVerbalizerCliJar()
+    if (vjar != null) into('lib') { from vjar }
+
+    doLast {
+        if (findVerbalizerCliJar() == null) {
+            logger.warn("WARNING: no verbalizer CLI jar in ${verbalizerLibsDir} — build OntologyForMuggles first " +
+                        "(gradlew jar cliJar). The plugin will install but cannot verbalize until lib/ has it.")
+        }
+        logger.lifecycle("Plugin staged at: ${stageDir.get().asFile}")
+        logger.lifecycle("Install: copy that folder into \"${msosaHome}\\plugins\\\" and restart MagicDraw.")
+    }
+}

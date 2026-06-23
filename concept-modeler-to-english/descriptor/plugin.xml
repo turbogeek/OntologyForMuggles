@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Concept Modeler to English — adds a "Verbalize to English…" action to the Containment-tree
+     right-click menu for Concept Modeler packages. Requires the Cameo Concept Modeler plugin to be
+     installed (it provides com.nomagic.conceptmodeler.transform.CM2OWL). The Concept Modeler's classes
+     are visible to this plugin at runtime via the Open API, so no <required-plugin> entry is needed to
+     resolve them; CCM is present by definition whenever there is a concept model to verbalize. -->
+<plugin id="@pluginId@"
+        name="Concept Modeler to English"
+        version="@pluginVersion@"
+        provider-name="OntologyVision"
+        class="com.ontologyvision.cm2english.ConceptToEnglishPlugin">
+    <requires>
+        <api version="1.0"/>
+    </requires>
+    <runtime>
+        <!-- Only this plugin's own jar is a MagicDraw <library>. The bundled verbalizer
+             (lib/ontology-to-english-*-cli.jar) is intentionally NOT listed here: it is loaded at
+             runtime in an isolated classloader so its owlapi 5.5.1 never collides with MagicDraw's or
+             the Concept Modeler's owlapi 5.1.19. -->
+        <library name="@pluginId@.jar"/>
+    </runtime>
+</plugin>
