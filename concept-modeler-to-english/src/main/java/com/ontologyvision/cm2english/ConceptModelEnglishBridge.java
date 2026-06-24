@@ -129,6 +129,52 @@ public final class ConceptModelEnglishBridge {
         }
     }
 
+    /** Serialize the OWL bytes to {@code "turtle"}/{@code "manchester"} text via OntologySerializer (isolated CL). */
+    static String serializeOwl(byte[] owlBytes, String fmt) throws Exception {
+        return inIsolatedClassLoader(owlBytes, (vcl, ontology, ontFace) -> {
+            Class<?> serCls = Class.forName("com.ontologyvision.verbalizer.OntologySerializer", true, vcl);
+            String method = "manchester".equalsIgnoreCase(fmt) ? "toManchester" : "toTurtle";
+            return (String) serCls.getMethod(method, ontFace).invoke(null, ontology);
+        });
+    }
+
+    /** Serialize just the axioms referencing {@code iri} to {@code "turtle"}/{@code "manchester"} text. */
+    static String serializeOwlEntity(byte[] owlBytes, String iri, String fmt) throws Exception {
+        return inIsolatedClassLoader(owlBytes, (vcl, ontology, ontFace) -> {
+            Class<?> serCls = Class.forName("com.ontologyvision.verbalizer.OntologySerializer", true, vcl);
+            String method = "manchester".equalsIgnoreCase(fmt) ? "entityToManchester" : "entityToTurtle";
+            return (String) serCls.getMethod(method, ontFace, String.class).invoke(null, ontology, iri);
+        });
+    }
+
+    /** Run {@code fn} with an OWLOntology loaded from {@code owlBytes} in the isolated verbalizer classloader. */
+    private static String inIsolatedClassLoader(byte[] owlBytes, IsolatedFn fn) throws Exception {
+        File jar = findVerbalizerJar();
+        URL[] urls = { jar.toURI().toURL() };
+        ClassLoader prev = Thread.currentThread().getContextClassLoader();
+        try (URLClassLoader vcl = new URLClassLoader(urls, null)) {
+            Thread.currentThread().setContextClassLoader(vcl);
+            Class<?> owlManagerCls = Class.forName("org.semanticweb.owlapi.apibinding.OWLManager", true, vcl);
+            Object manager = owlManagerCls.getMethod("createOWLOntologyManager").invoke(null);
+            applySilentImportHandling(manager, vcl);
+            Method loadFromStream = findSingleParam(manager.getClass(),
+                    "loadOntologyFromOntologyDocument", "java.io.InputStream");
+            if (loadFromStream == null) {
+                throw new NoSuchMethodException("OWLOntologyManager.loadOntologyFromOntologyDocument(InputStream)");
+            }
+            Object ontology = loadFromStream.invoke(manager, new ByteArrayInputStream(owlBytes));
+            Class<?> ontFace = Class.forName("org.semanticweb.owlapi.model.OWLOntology", true, vcl);
+            return fn.apply(vcl, ontology, ontFace);
+        } finally {
+            Thread.currentThread().setContextClassLoader(prev);
+        }
+    }
+
+    @FunctionalInterface
+    private interface IsolatedFn {
+        String apply(ClassLoader vcl, Object ontology, Class<?> ontologyFace) throws Exception;
+    }
+
     /** Best-effort: tolerate unresolved owl:imports (e.g. BFO) so a fragment still verbalizes. */
     private static void applySilentImportHandling(Object manager, ClassLoader vcl) {
         try {

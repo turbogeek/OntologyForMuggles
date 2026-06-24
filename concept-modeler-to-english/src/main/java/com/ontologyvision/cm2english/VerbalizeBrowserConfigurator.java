@@ -26,6 +26,8 @@ public class VerbalizeBrowserConfigurator implements BrowserContextAMConfigurato
         MDActionsCategory category = new MDActionsCategory("CM2ENGLISH_CATEGORY", "Concept Modeling");
         category.setNested(true);
         category.addAction(new Action_VerbalizeConceptModel(pkg));
+        category.addAction(new Action_ExportConceptModel(pkg, ConceptModelExporter.Format.HTML));
+        category.addAction(new Action_ExportConceptModel(pkg, ConceptModelExporter.Format.MARKDOWN));
         manager.addCategory(category);
     }
 
