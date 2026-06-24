@@ -115,6 +115,9 @@ public final class ConceptModelEnglishBridge {
                 Class<?> optsCls = Class.forName("com.ontologyvision.verbalizer.VerbalizerOptions", true, vcl);
                 Object builder = optsCls.getMethod("builder").invoke(null);
                 builder = builder.getClass().getMethod("entityLinks", boolean.class).invoke(builder, Boolean.TRUE);
+                // No in-HTML rollover panel/script: it relies on position:fixed + JS, which JEditorPane lacks; the
+                // window provides a native pinned gloss bar instead (terms still carry the gloss as a title tooltip).
+                builder = builder.getClass().getMethod("rollover", boolean.class).invoke(builder, Boolean.FALSE);
                 Object opts = builder.getClass().getMethod("build").invoke(builder);
                 Method vm3 = verbalizerCls.getMethod("verbalizeOntology", ontologyFace, String.class, optsCls);
                 return (String) vm3.invoke(verbalizer, ontology, title, opts);

@@ -9,14 +9,19 @@ import com.nomagic.magicdraw.ui.WindowsManager;
 import com.nomagic.magicdraw.ui.browser.WindowComponentContent;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Package;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JEditorPane;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.html.HTML;
 import javax.swing.text.html.HTMLEditorKit;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.util.Map;
@@ -24,15 +29,17 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * A dockable MagicDraw tool window that displays the SBVR-English report for a concept model in a Swing
- * {@link JEditorPane}. Docking is project-scoped (one panel per open project), mirroring VOM's Reasoner
- * window pattern.
+ * {@link JEditorPane}, with a status bar pinned to the bottom of the window (always visible) that shows the
+ * meaning of the hovered term. Docking is project-scoped (one panel per open project).
  *
- * <p>Phase B: the report's {@code href="iri:<IRI>"} term links are caught by a {@code HyperlinkListener} and
- * routed to {@link ConceptNavigator}, which selects the corresponding element in the Containment tree.
+ * <p>The report's own in-HTML gloss panel relies on {@code position:fixed} + JavaScript, neither of which a
+ * {@code JEditorPane} supports, so the bridge verbalizes with {@code rollover(false)} (no in-HTML panel) and
+ * this panel provides a native pinned gloss bar driven by hyperlink {@code ENTERED}/{@code EXITED} events.
  */
 public final class VerbalizeReportWindow {
 
     public static final String WINDOW_ID = "CM2ENGLISH_REPORT_WINDOW";
+    private static final String HINT = "Hover a term for its meaning · click a term to select it in the tree and open its diagram";
 
     /** Per-project window state: the panel to populate + the manager that can activate it. */
     private static final Map<Project, Holder> STATE = new ConcurrentHashMap<>();
@@ -108,9 +115,10 @@ public final class VerbalizeReportWindow {
         }
     }
 
-    /** The report view: an HTML JEditorPane whose {@code iri:} links navigate to the element in the tree. */
+    /** The report view: an HTML JEditorPane + a pinned bottom gloss bar; {@code iri:} links navigate. */
     static final class ReportPanel extends JPanel {
         final JEditorPane editor = new JEditorPane();
+        private final JLabel glossBar = new JLabel(HINT);
         private Project project;
         private Package pkg;
 
@@ -122,17 +130,31 @@ public final class VerbalizeReportWindow {
             editor.setText("<html><body style='font-family:sans-serif;color:#888;padding:12px'>"
                     + "Right-click a concept-model package and choose "
                     + "<b>Concept Modeling &#9656; Verbalize to English</b> to populate this window.</body></html>");
-            // Click a term -> select its model element in the Containment tree. getDescription() is the raw href
-            // (getURL() is null for the custom "iri:" scheme, which JEditorPane cannot parse as a URL).
+
+            glossBar.setBorder(BorderFactory.createCompoundBorder(
+                    BorderFactory.createMatteBorder(1, 0, 0, 0, Color.LIGHT_GRAY),
+                    BorderFactory.createEmptyBorder(4, 8, 4, 8)));
+            glossBar.setForeground(Color.DARK_GRAY);
+
             editor.addHyperlinkListener(e -> {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                HyperlinkEvent.EventType t = e.getEventType();
+                if (t == HyperlinkEvent.EventType.ACTIVATED) {
+                    // Click a term -> select in the tree + open its diagram. getDescription() is the raw href
+                    // (getURL() is null for the custom "iri:" scheme).
                     String href = e.getDescription();
                     if (href != null && href.startsWith("iri:")) {
                         ConceptNavigator.selectInTree(project, pkg, href);
                     }
+                } else if (t == HyperlinkEvent.EventType.ENTERED) {
+                    String gloss = linkTitle(e);
+                    glossBar.setText((gloss == null || gloss.isEmpty()) ? HINT : gloss);
+                } else if (t == HyperlinkEvent.EventType.EXITED) {
+                    glossBar.setText(HINT);
                 }
             });
+
             add(new JScrollPane(editor), BorderLayout.CENTER);
+            add(glossBar, BorderLayout.SOUTH);   // pinned to the window bottom — always visible, never scrolls away
         }
 
         void setContext(Project project, Package pkg) {
@@ -144,7 +166,26 @@ public final class VerbalizeReportWindow {
             SwingUtilities.invokeLater(() -> {
                 editor.setText(html);
                 editor.setCaretPosition(0);
+                glossBar.setText(HINT);
             });
+        }
+
+        /** The hovered anchor's {@code title} attribute (the gloss) — JEditorPane keeps it on the {@code <a>} element. */
+        private static String linkTitle(HyperlinkEvent e) {
+            try {
+                javax.swing.text.Element src = e.getSourceElement();
+                if (src == null) {
+                    return null;
+                }
+                Object a = src.getAttributes().getAttribute(HTML.Tag.A);
+                if (a instanceof AttributeSet) {
+                    Object title = ((AttributeSet) a).getAttribute(HTML.Attribute.TITLE);
+                    return (title == null) ? null : title.toString();
+                }
+            } catch (Throwable ignored) {
+                // best-effort
+            }
+            return null;
         }
     }
 
