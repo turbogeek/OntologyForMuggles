@@ -31,6 +31,10 @@ public final class VerbalizerOptions
     /** Formats to render. One = a single-format report; more than one = the side-by-side Rosetta view.
      *  The first is the primary (drives section headings + entity kinds). Default: {@code [SBVR]}. */
     public final java.util.List<Format> formats;
+    /** Host-embedding mode: emit each named entity (term/verb/name) as {@code <a href="iri:<IRI>">} so a host
+     *  (e.g. a MagicDraw {@code JEditorPane}) can map a clicked term to a model element; the gloss rides along as
+     *  a {@code title} tooltip. Default {@code false} (keeps the gloss-rollover anchors for the browser). */
+    public final boolean entityLinks;
 
     /** Everything on, full color, rollover on. */
     public static final VerbalizerOptions DEFAULT = builder().build();
@@ -44,6 +48,7 @@ public final class VerbalizerOptions
         this.rollover             = b.rollover;
         this.colorLevel           = b.colorLevel;
         this.formats              = java.util.List.copyOf( b.formats );
+        this.entityLinks          = b.entityLinks;
     }
 
     public static Builder builder () { return new Builder(); }
@@ -58,6 +63,7 @@ public final class VerbalizerOptions
         private boolean rollover             = true;
         private ColorLevel colorLevel        = ColorLevel.FULL;
         private java.util.List<Format> formats = java.util.List.of( Format.SBVR );
+        private boolean entityLinks          = false;
 
         public Builder includeVerbalization ( final boolean v ) { this.includeVerbalization = v; return this; }
         public Builder includeModelGlossary ( final boolean v ) { this.includeModelGlossary = v; return this; }
@@ -71,6 +77,8 @@ public final class VerbalizerOptions
             this.formats = ( f == null || f.length == 0 ) ? java.util.List.of( Format.SBVR ) : java.util.List.of( f );
             return this;
         }
+        /** Emit {@code href="iri:<IRI>"} anchors on named entities for host click-to-navigate (default off). */
+        public Builder entityLinks ( final boolean v ) { this.entityLinks = v; return this; }
 
         public VerbalizerOptions build () { return new VerbalizerOptions( this ); }
     }

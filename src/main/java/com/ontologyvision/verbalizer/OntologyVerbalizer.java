@@ -295,6 +295,20 @@ public final class OntologyVerbalizer
 
     private String role (final String cls, final String glossPlain, final String displayHtml)
     {
+        return role( cls, glossPlain, displayHtml, null );
+    }
+
+    /** As {@link #role(String,String,String)}, but in host-embedding mode ({@code opts.entityLinks}) a non-null
+     *  {@code iri} is emitted as {@code href="iri:<IRI>"} for click-to-navigate, with the gloss kept as a
+     *  {@code title} tooltip. Otherwise falls back to the gloss-rollover anchor / plain span. */
+    private String role (final String cls, final String glossPlain, final String displayHtml, final String iri)
+    {
+        if ( opts.entityLinks && iri != null && !iri.isEmpty() )
+        {
+            final String title = ( glossPlain == null || glossPlain.isEmpty() )
+                    ? "" : " title=\"" + escAttr( glossPlain ) + "\"";
+            return "<a class=\"" + cls + "\" href=\"iri:" + urlEnc( iri ) + "\"" + title + ">" + displayHtml + "</a>";
+        }
         if ( opts.rollover && glossPlain != null && !glossPlain.isEmpty() )
             // An <a href="gloss:..."> so the meaning is readable BOTH by the browser's mouseover JS and by the
             // Swing JEditorPane's HyperlinkListener (which fires only for anchors, never plain spans). The
@@ -312,11 +326,11 @@ public final class OntologyVerbalizer
         catch ( final Exception e ) { return s.replace( " ", "%20" ).replace( "\"", "%22" ); }
     }
 
-    private String term (final OWLEntity e)  { return role( "term", glossPlain( e ), esc( label( e ) ) ); }
+    private String term (final OWLEntity e)  { return role( "term", glossPlain( e ), esc( label( e ) ), e.getIRI().toString() ); }
     private String term (final String s)     { return "<span class=\"term\">" + esc( s ) + "</span>"; }
-    private String verb (final OWLEntity e)  { return role( "verb", glossPlain( e ), esc( label( e ) ) ); }
+    private String verb (final OWLEntity e)  { return role( "verb", glossPlain( e ), esc( label( e ) ), e.getIRI().toString() ); }
     private String verbRaw (final String s)  { return "<span class=\"verb\">" + esc( s ) + "</span>"; }
-    private String name (final OWLEntity e)  { return role( "name", glossPlain( e ), esc( label( e ) ) ); }
+    private String name (final OWLEntity e)  { return role( "name", glossPlain( e ), esc( label( e ) ), e.getIRI().toString() ); }
     private String kw (final String s)       { return role( "kw", keywordGloss( s ), esc( s ) ); }
     private String lit (final OWLLiteral l)  { return "<span class=\"lit\">" + esc( '“' + l.getLiteral() + '”' ) + "</span>"; }
 

@@ -119,4 +119,26 @@ public class OntologyVerbalizerTest
         assertTrue( "Manchester keyword hover-glossed", html.contains( "gloss:owl%3AsomeValuesFrom" )
                     || html.contains( ">some</a>" ) );
     }
+
+    /**
+     * Host-embedding mode: {@code entityLinks(true)} emits {@code href="iri:<IRI>"} anchors on named entities
+     * (so a MagicDraw JEditorPane can map a clicked term to a model element), keeping the gloss as a title
+     * tooltip. The default stays on the gloss anchors (no iri hrefs), so existing output is unchanged.
+     */
+    @Test
+    public void entityLinksEmitIriHrefs () throws Exception
+    {
+        final OWLOntology ont = load( "/pizza.owl" );
+
+        final String def = new OntologyVerbalizer().verbalizeOntology( ont, "Pizza" );
+        assertTrue( "default keeps gloss anchors", def.contains( "href=\"gloss:" ) );
+        assertTrue( "default emits no iri anchors", !def.contains( "href=\"iri:" ) );
+
+        final String linked = new OntologyVerbalizer().verbalizeOntology( ont, "Pizza",
+                VerbalizerOptions.builder().entityLinks( true ).build() );
+        assertTrue( "entityLinks emits iri anchors", linked.contains( "href=\"iri:" ) );
+        assertTrue( "iri anchor is URL-encoded", linked.contains( "href=\"iri:http%3A%2F%2F" ) );
+        assertTrue( "gloss preserved as a title tooltip", linked.contains( "title=\"" ) );
+        assertTrue( "still SBVR role-tagged", linked.contains( "class=\"term\"" ) );
+    }
 }
