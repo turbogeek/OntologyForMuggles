@@ -34,11 +34,14 @@ public final class ConceptNavigator {
                 return;
             }
             Element el = findByFragment(scope, fragment);
-            if (el instanceof BaseElement) {
-                project.getBrowser().getContainmentTree().openNode((BaseElement) el);
-            } else {
+            if (el == null) {
                 ConceptModelEnglishBridge.info("No model element matches \"" + fragment + "\".");
+                return;
             }
+            if (el instanceof BaseElement) {
+                project.getBrowser().getContainmentTree().openNode((BaseElement) el);   // select in the Containment tree
+            }
+            DiagramNavigator.navigateTo(project, el);                                     // open + center + select on its diagram
         } catch (Throwable t) {
             ConceptModelEnglishBridge.reportError("Navigate-to-element failed", t);
         }
