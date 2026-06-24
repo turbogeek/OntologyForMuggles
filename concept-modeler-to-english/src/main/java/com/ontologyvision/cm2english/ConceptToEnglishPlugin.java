@@ -19,12 +19,14 @@ public class ConceptToEnglishPlugin extends Plugin {
     public static volatile File PLUGIN_DIR;
 
     private final VerbalizeBrowserConfigurator browserConfigurator = new VerbalizeBrowserConfigurator();
+    private final Ontology4MugglesMenuConfigurator mainMenuConfigurator = new Ontology4MugglesMenuConfigurator();
 
     @Override
     public void init() {
         PLUGIN_DIR = getDescriptor().getPluginDirectory();
-        ActionsConfiguratorsManager.getInstance()
-                .addContainmentBrowserContextConfigurator(browserConfigurator);
+        ActionsConfiguratorsManager acm = ActionsConfiguratorsManager.getInstance();
+        acm.addContainmentBrowserContextConfigurator(browserConfigurator);
+        acm.addMainMenuConfigurator(mainMenuConfigurator);   // Tools ▸ Ontology4Muggles
         VerbalizeReportWindow.register();
         OwlViewWindow.register();
         log("Concept Modeler to English initialized (dir=" + PLUGIN_DIR + ").");
@@ -33,8 +35,9 @@ public class ConceptToEnglishPlugin extends Plugin {
     @Override
     public boolean close() {
         try {
-            ActionsConfiguratorsManager.getInstance()
-                    .removeContainmentBrowserContextConfigurator(browserConfigurator);
+            ActionsConfiguratorsManager acm = ActionsConfiguratorsManager.getInstance();
+            acm.removeContainmentBrowserContextConfigurator(browserConfigurator);
+            acm.removeMainMenuConfigurator(mainMenuConfigurator);
         } catch (Throwable ignored) {
             // best-effort on shutdown
         }

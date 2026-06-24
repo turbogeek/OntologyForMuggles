@@ -12,8 +12,11 @@ import java.util.List;
  * scrolls/highlights the OWL pane and highlights the matching diagram shape (shapes carry {@code data-frag} once
  * the SVG enricher lands in v2; until then the diagrams are viewable and the OWL cross-link works).
  *
- * <p>The {@code .svg} files are also written to a {@code diagrams/} folder (by {@link DiagramSvgExporter}) so the
- * caller has them separately, while the HTML stays a single self-contained, offline-clickable file.
+ * <p>The diagrams are referenced as sibling {@code diagrams/*.svg} files (written by {@link DiagramSvgExporter})
+ * rather than inlined. Inlining several MagicDraw SVGs into one document collides their global {@code <style>}
+ * class names and {@code clipPath}/gradient {@code id}s (HTML has no per-{@code <svg>} scope), which renders the
+ * later diagrams' styles over the earlier ones — the "partially broken images" symptom. Referencing each SVG as
+ * its own document restores isolation. (Per-shape click-to-navigate returns in v2 with the SVG enricher.)
  */
 public final class BundleHtmlComposer {
 
@@ -24,7 +27,7 @@ public final class BundleHtmlComposer {
           + ".cm2-owl{background:#f7f7f7;border:1px solid #ddd;padding:8px;overflow:auto;max-height:50vh;"
           + "font-family:monospace;font-size:12px;white-space:pre-wrap;}"
           + ".cm2-diagram{border:1px solid #ddd;padding:8px;overflow:auto;margin:8px 0;}"
-          + ".cm2-diagram svg{max-width:100%;height:auto;}"
+          + ".cm2-diagram-img{max-width:100%;height:auto;display:block;}"
           + ".cm2-hl{outline:3px solid orange;outline-offset:2px;}"
           + "</style>";
 
@@ -49,8 +52,12 @@ public final class BundleHtmlComposer {
         if (diagrams != null && !diagrams.isEmpty()) {
             extra.append("<hr/><h2>Diagrams</h2>");
             for (DiagramSvgExporter.DiagramSvg d : diagrams) {
+                // Reference the sibling SVG as its own document — isolated styles/ids, so multiple diagrams render
+                // correctly (see the class note). The file lives in the diagrams/ folder next to this HTML.
+                String rel = "diagrams/" + (d.file != null ? d.file.getName() : esc(d.name) + ".svg");
                 extra.append("<h3>").append(esc(d.name)).append("</h3><div class=\"cm2-diagram\">")
-                     .append(stripProlog(d.svg)).append("</div>");
+                     .append("<img class=\"cm2-diagram-img\" alt=\"").append(escAttr(d.name))
+                     .append("\" src=\"").append(escAttr(rel)).append("\"/></div>");
             }
         }
         extra.append(SCRIPT);
@@ -81,19 +88,13 @@ public final class BundleHtmlComposer {
         return (i < 0) ? html + insert : html.substring(0, i) + insert + html.substring(i);
     }
 
-    /** Strip the XML prolog / DOCTYPE so the SVG inlines cleanly into HTML5. */
-    private static String stripProlog(String svg) {
-        if (svg == null) {
-            return "";
-        }
-        String s = svg.replaceAll("(?is)^\\s*<\\?xml.*?\\?>", "");
-        s = s.replaceAll("(?is)<!DOCTYPE[^>]*>", "");
-        int lt = s.indexOf("<svg");
-        return (lt > 0) ? s.substring(lt) : s.trim();
-    }
-
     private static String esc(String s) {
         return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+    }
+
+    /** Escape for a double-quoted HTML attribute value (adds quote escaping on top of {@link #esc}). */
+    private static String escAttr(String s) {
+        return esc(s == null ? "" : s).replace("\"", "&quot;");
     }
 
     private static String sanitize(String s) {

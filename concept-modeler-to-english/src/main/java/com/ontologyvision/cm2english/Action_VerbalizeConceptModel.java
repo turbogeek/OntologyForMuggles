@@ -15,21 +15,38 @@ import java.awt.event.ActionEvent;
  */
 public class Action_VerbalizeConceptModel extends MDAction {
 
-    private final Package pkg;
+    /** Captured package (right-click), or {@code null} for the Tools-menu variant that uses the live selection. */
+    private final Package fixedPkg;
 
+    /** Containment-tree right-click: act on the captured package. */
     public Action_VerbalizeConceptModel(Package pkg) {
-        super("VERBALIZE_CM_TO_ENGLISH", "Verbalize to English…", (KeyStroke) null, null);
-        this.pkg = pkg;
+        this(pkg, "VERBALIZE_CM_TO_ENGLISH");
+    }
+
+    /** Tools ▸ Ontology4Muggles: act on whatever package is currently selected. */
+    public Action_VerbalizeConceptModel() {
+        this(null, "VERBALIZE_CM_TO_ENGLISH_MENU");
+    }
+
+    private Action_VerbalizeConceptModel(Package pkg, String id) {
+        super(id, "Verbalize to English…", (KeyStroke) null, null);
+        this.fixedPkg = pkg;
     }
 
     @Override
     public void updateState() {
-        setEnabled(pkg != null);
+        setEnabled(fixedPkg != null
+                || ConceptModelSelection.current(Application.getInstance().getProject()) != null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         final Project project = Application.getInstance().getProject();
+        final Package pkg = (fixedPkg != null) ? fixedPkg : ConceptModelSelection.current(project);
+        if (pkg == null) {
+            ConceptModelEnglishBridge.info("Select a concept-model package first, then choose Verbalize to English.");
+            return;
+        }
         final String name = ConceptModelEnglishBridge.safeName(pkg);
         VerbalizeReportWindow.showBusy(project, "Verbalizing \"" + name + "\" …");
         // OWL export + verbalize are heavy and the OWL API is not thread-safe — run off the EDT,

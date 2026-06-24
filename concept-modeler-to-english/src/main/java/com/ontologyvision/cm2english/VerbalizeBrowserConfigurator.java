@@ -23,7 +23,8 @@ public class VerbalizeBrowserConfigurator implements BrowserContextAMConfigurato
         if (pkg == null) {
             return; // not a package selection — offer nothing
         }
-        MDActionsCategory category = new MDActionsCategory("CM2ENGLISH_CATEGORY", "Concept Modeling");
+        // Branded "Ontology4Muggles" — distinct from the bundled Cameo Concept Modeler menu it was confused with.
+        MDActionsCategory category = new MDActionsCategory("CM2ENGLISH_CATEGORY", "Ontology4Muggles");
         category.setNested(true);
         category.addAction(new Action_VerbalizeConceptModel(pkg));
         category.addAction(new Action_ExportConceptModel(pkg, ConceptModelExporter.Format.HTML));

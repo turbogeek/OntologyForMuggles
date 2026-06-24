@@ -148,7 +148,7 @@ public final class OwlViewWindow {
                 protected void done() {
                     try {
                         String[] r = get();
-                        manchester.setText(r[0]);
+                        manchester.setText(SwingReportHtml.forSwing(r[0]));   // Swing-tuned restyle
                         manchester.setCaretPosition(0);
                         turtle.setText(r[1]);
                         turtle.setCaretPosition(0);

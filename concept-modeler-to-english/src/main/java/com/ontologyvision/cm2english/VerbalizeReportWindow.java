@@ -54,6 +54,14 @@ public final class VerbalizeReportWindow {
         ProjectWindowsManager.ConfiguratorRegistry.addConfigurator(new Configurator());
     }
 
+    /** Bring the report window to front (used by the Tools ▸ Ontology4Muggles ▸ Show English View action). */
+    public static void activate(Project project) {
+        Holder h = STATE.get(project);
+        if (h != null) {
+            h.manager.activateWindow(project, WINDOW_ID);
+        }
+    }
+
     /** Activate the report window for {@code project} and show a transient status line while work runs. */
     public static void showBusy(Project project, String message) {
         Holder h = STATE.get(project);
@@ -167,8 +175,10 @@ public final class VerbalizeReportWindow {
         }
 
         void setHtml(String html, String title) {
+            // Restyle the verbalizer's browser-grade HTML for the JEditorPane (bold headings, no dead toolbar).
+            final String shown = SwingReportHtml.forSwing(html);
             SwingUtilities.invokeLater(() -> {
-                editor.setText(html);
+                editor.setText(shown);
                 editor.setCaretPosition(0);
                 glossBar.setText(HINT);
             });

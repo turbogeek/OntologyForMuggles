@@ -18,25 +18,42 @@ import java.io.File;
  */
 public class Action_ExportConceptModel extends MDAction {
 
-    private final Package pkg;
+    /** Captured package (right-click), or {@code null} for the Tools-menu variant that uses the live selection. */
+    private final Package fixedPkg;
     private final ConceptModelExporter.Format fmt;
 
+    /** Containment-tree right-click: act on the captured package. */
     public Action_ExportConceptModel(Package pkg, ConceptModelExporter.Format fmt) {
-        super("EXPORT_CM_" + fmt,
+        this(pkg, fmt, "EXPORT_CM_" + fmt);
+    }
+
+    /** Tools ▸ Ontology4Muggles: act on whatever package is currently selected. */
+    public Action_ExportConceptModel(ConceptModelExporter.Format fmt) {
+        this(null, fmt, "EXPORT_CM_" + fmt + "_MENU");
+    }
+
+    private Action_ExportConceptModel(Package pkg, ConceptModelExporter.Format fmt, String id) {
+        super(id,
                 fmt == ConceptModelExporter.Format.HTML ? "Save to HTML…" : "Save to Markdown…",
                 (KeyStroke) null, null);
-        this.pkg = pkg;
+        this.fixedPkg = pkg;
         this.fmt = fmt;
     }
 
     @Override
     public void updateState() {
-        setEnabled(pkg != null);
+        setEnabled(fixedPkg != null
+                || ConceptModelSelection.current(Application.getInstance().getProject()) != null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         final Project project = Application.getInstance().getProject();
+        final Package pkg = (fixedPkg != null) ? fixedPkg : ConceptModelSelection.current(project);
+        if (pkg == null) {
+            ConceptModelEnglishBridge.info("Select a concept-model package first, then choose Save to HTML/Markdown.");
+            return;
+        }
         final String label = (fmt == ConceptModelExporter.Format.HTML) ? "HTML" : "Markdown";
 
         JFileChooser fc = new JFileChooser();
