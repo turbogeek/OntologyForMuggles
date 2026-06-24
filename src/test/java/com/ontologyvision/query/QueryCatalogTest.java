@@ -50,9 +50,13 @@ public class QueryCatalogTest
     {
         final QueryDef subOf = find( "subclasses-of" );
         assertTrue( "subclasses-of is a template", subOf.isTemplate() );
-        assertTrue( "declares classIRI", subOf.parameters.contains( "classIRI" ) );
-        final String expanded = subOf.expand( Map.of( "classIRI", "http://example.org/Pizza" ) );
-        assertTrue( "placeholder filled", expanded.contains( "http://example.org/Pizza" ) );
+        assertTrue( "declares class param", subOf.parameters.contains( "class" ) );
+        // The class can be given by name, label, OR full IRI — filling "Pizza" expands to a query that matches
+        // all three (exact STR equality for an IRI, a #/local-name suffix, and an rdfs:label match).
+        final String expanded = subOf.expand( Map.of( "class", "Pizza" ) );
+        assertTrue( "exact IRI / STR match", expanded.contains( "= \"Pizza\"" ) );
+        assertTrue( "local-name match", expanded.contains( "STRENDS(STR(?c), \"#Pizza\")" ) );
+        assertTrue( "label match", expanded.contains( "rdfs:label" ) );
         assertFalse( "no leftover ${...} placeholder", expanded.contains( "${" ) );
     }
 
