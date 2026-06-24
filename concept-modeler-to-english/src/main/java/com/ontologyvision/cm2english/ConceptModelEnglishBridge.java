@@ -44,7 +44,8 @@ public final class ConceptModelEnglishBridge {
                     + "\". Choose a concept-model package that carries an ontology URI "
                     + "(not the root model or a plain UML package).");
         }
-        return verbalize(owl, "Concept Model — English: " + safeName(pkg));
+        // entityLinks=true: emit href="iri:<IRI>" anchors so the docked window can map clicks to model elements.
+        return verbalize(owl, "Concept Model — English: " + safeName(pkg), true);
     }
 
     /** Export the package to OWL, verbalize to SBVR English HTML, write it to a temp file, and return it. */
@@ -79,11 +80,17 @@ public final class ConceptModelEnglishBridge {
         return baos.toByteArray();
     }
 
+    /** Back-compat delegate: verbalize with default options (gloss anchors, no iri links). */
+    static String verbalize(byte[] owlBytes, String title) throws Exception {
+        return verbalize(owlBytes, title, false);
+    }
+
     /**
      * Verbalize OWL bytes to a self-contained HTML report using the bundled verbalizer jar, loaded in an
-     * isolated classloader. Mirrors the validated probe exactly.
+     * isolated classloader. When {@code entityLinks} is true, named entities are emitted as {@code href="iri:…"}
+     * anchors (for click-to-navigate in the docked window); otherwise the default gloss anchors are used.
      */
-    static String verbalize(byte[] owlBytes, String title) throws Exception {
+    static String verbalize(byte[] owlBytes, String title, boolean entityLinks) throws Exception {
         File jar = findVerbalizerJar();
         URL[] urls = { jar.toURI().toURL() };
         ClassLoader previousContext = Thread.currentThread().getContextClassLoader();
@@ -103,6 +110,15 @@ public final class ConceptModelEnglishBridge {
             Class<?> verbalizerCls = Class.forName("com.ontologyvision.verbalizer.OntologyVerbalizer", true, vcl);
             Object verbalizer = verbalizerCls.getDeclaredConstructor().newInstance();
             Class<?> ontologyFace = Class.forName("org.semanticweb.owlapi.model.OWLOntology", true, vcl);
+            if (entityLinks) {
+                // VerbalizerOptions.builder().entityLinks(true).build() — reflectively, in the isolated CL.
+                Class<?> optsCls = Class.forName("com.ontologyvision.verbalizer.VerbalizerOptions", true, vcl);
+                Object builder = optsCls.getMethod("builder").invoke(null);
+                builder = builder.getClass().getMethod("entityLinks", boolean.class).invoke(builder, Boolean.TRUE);
+                Object opts = builder.getClass().getMethod("build").invoke(builder);
+                Method vm3 = verbalizerCls.getMethod("verbalizeOntology", ontologyFace, String.class, optsCls);
+                return (String) vm3.invoke(verbalizer, ontology, title, opts);
+            }
             Method verbalizeOntology = verbalizerCls.getMethod("verbalizeOntology", ontologyFace, String.class);
             return (String) verbalizeOntology.invoke(verbalizer, ontology, title);
         } finally {

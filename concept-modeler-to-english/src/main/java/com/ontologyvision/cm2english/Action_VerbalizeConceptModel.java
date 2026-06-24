@@ -43,7 +43,7 @@ public class Action_VerbalizeConceptModel extends MDAction {
             @Override
             protected void done() {
                 try {
-                    VerbalizeReportWindow.show(project, get(), name);
+                    VerbalizeReportWindow.show(project, pkg, get(), name);
                 } catch (Throwable t) {
                     ConceptModelEnglishBridge.reportError("Verbalize to English failed", t);
                 }

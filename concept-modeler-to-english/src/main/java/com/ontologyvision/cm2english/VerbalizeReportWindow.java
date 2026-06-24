@@ -7,12 +7,14 @@ import com.nomagic.magicdraw.ui.ProjectWindowsManager;
 import com.nomagic.magicdraw.ui.WindowComponentInfo;
 import com.nomagic.magicdraw.ui.WindowsManager;
 import com.nomagic.magicdraw.ui.browser.WindowComponentContent;
+import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Package;
 
 import javax.swing.ImageIcon;
 import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
+import javax.swing.event.HyperlinkEvent;
 import javax.swing.text.html.HTMLEditorKit;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -25,8 +27,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * {@link JEditorPane}. Docking is project-scoped (one panel per open project), mirroring VOM's Reasoner
  * window pattern.
  *
- * <p>Phase A: render the report. Phase B/C add the click-to-navigate {@code HyperlinkListener} and the
- * right-click "show only this element" {@code MouseListener} onto {@link ReportPanel#editor}.
+ * <p>Phase B: the report's {@code href="iri:<IRI>"} term links are caught by a {@code HyperlinkListener} and
+ * routed to {@link ConceptNavigator}, which selects the corresponding element in the Containment tree.
  */
 public final class VerbalizeReportWindow {
 
@@ -53,13 +55,14 @@ public final class VerbalizeReportWindow {
         h.manager.activateWindow(project, WINDOW_ID);
     }
 
-    /** Set the report HTML into the project's window and bring it to the front. */
-    public static void show(Project project, String html, String title) {
+    /** Set the report HTML into the project's window, wire it to {@code pkg} for click-navigation, and show it. */
+    public static void show(Project project, Package pkg, String html, String title) {
         Holder h = STATE.get(project);
         if (h == null) {
             ConceptModelEnglishBridge.info("Report window is not initialized for this project.");
             return;
         }
+        h.panel.setContext(project, pkg);
         h.panel.setHtml(html, title);
         h.manager.activateWindow(project, WINDOW_ID);
     }
@@ -105,9 +108,11 @@ public final class VerbalizeReportWindow {
         }
     }
 
-    /** The report view: an HTML JEditorPane in a scroll pane. */
+    /** The report view: an HTML JEditorPane whose {@code iri:} links navigate to the element in the tree. */
     static final class ReportPanel extends JPanel {
         final JEditorPane editor = new JEditorPane();
+        private Project project;
+        private Package pkg;
 
         ReportPanel() {
             super(new BorderLayout());
@@ -117,7 +122,22 @@ public final class VerbalizeReportWindow {
             editor.setText("<html><body style='font-family:sans-serif;color:#888;padding:12px'>"
                     + "Right-click a concept-model package and choose "
                     + "<b>Concept Modeling &#9656; Verbalize to English</b> to populate this window.</body></html>");
+            // Click a term -> select its model element in the Containment tree. getDescription() is the raw href
+            // (getURL() is null for the custom "iri:" scheme, which JEditorPane cannot parse as a URL).
+            editor.addHyperlinkListener(e -> {
+                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    String href = e.getDescription();
+                    if (href != null && href.startsWith("iri:")) {
+                        ConceptNavigator.selectInTree(project, pkg, href);
+                    }
+                }
+            });
             add(new JScrollPane(editor), BorderLayout.CENTER);
+        }
+
+        void setContext(Project project, Package pkg) {
+            this.project = project;
+            this.pkg = pkg;
         }
 
         void setHtml(String html, String title) {
