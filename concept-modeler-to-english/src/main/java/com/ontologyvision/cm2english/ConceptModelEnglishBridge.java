@@ -36,6 +36,17 @@ public final class ConceptModelEnglishBridge {
 
     private ConceptModelEnglishBridge() { }
 
+    /** Export the package to OWL and verbalize to a self-contained SBVR-English HTML string (no file written). */
+    public static String verbalizePackageToHtml(Package pkg) throws Exception {
+        byte[] owl = exportOwl(pkg);
+        if (owl == null || owl.length == 0) {
+            throw new IllegalStateException("The Concept Modeler produced no OWL for package \"" + safeName(pkg)
+                    + "\". Choose a concept-model package that carries an ontology URI "
+                    + "(not the root model or a plain UML package).");
+        }
+        return verbalize(owl, "Concept Model — English: " + safeName(pkg));
+    }
+
     /** Export the package to OWL, verbalize to SBVR English HTML, write it to a temp file, and return it. */
     public static File verbalizePackageToHtmlFile(Package pkg) throws Exception {
         String name = safeName(pkg);
@@ -47,11 +58,16 @@ public final class ConceptModelEnglishBridge {
         }
         String html = verbalize(owl, "Concept Model — English: " + name);
 
-        File tmp = new File(System.getProperty("java.io.tmpdir"));
-        File htmlOut = new File(tmp, "cm2english-" + sanitize(name) + ".html");
+        // Write to a stable, discoverable folder (not the volatile temp dir) so reports persist and can be
+        // inspected after the fact: %USERPROFILE%\cm2english\ (falls back to java.io.tmpdir if unavailable).
+        File outDir = new File(System.getProperty("user.home", System.getProperty("java.io.tmpdir")), "cm2english");
+        if (!outDir.isDirectory() && !outDir.mkdirs()) {
+            outDir = new File(System.getProperty("java.io.tmpdir"));
+        }
+        File htmlOut = new File(outDir, "cm2english-" + sanitize(name) + ".html");
         Files.write(htmlOut.toPath(), html.getBytes(StandardCharsets.UTF_8));
         // Also drop the raw OWL beside it, for inspection / reuse.
-        Files.write(new File(tmp, "cm2english-" + sanitize(name) + ".owl").toPath(), owl);
+        Files.write(new File(outDir, "cm2english-" + sanitize(name) + ".owl").toPath(), owl);
         return htmlOut;
     }
 

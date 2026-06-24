@@ -25,6 +25,7 @@ public class ConceptToEnglishPlugin extends Plugin {
         PLUGIN_DIR = getDescriptor().getPluginDirectory();
         ActionsConfiguratorsManager.getInstance()
                 .addContainmentBrowserContextConfigurator(browserConfigurator);
+        VerbalizeReportWindow.register();
         log("Concept Modeler to English initialized (dir=" + PLUGIN_DIR + ").");
     }
 
