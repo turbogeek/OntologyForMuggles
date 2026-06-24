@@ -37,7 +37,13 @@ public class Action_VerbalizeConceptModel extends MDAction {
         new SwingWorker<String, Void>() {
             @Override
             protected String doInBackground() throws Exception {
-                return ConceptModelEnglishBridge.verbalizePackageToHtml(pkg);
+                byte[] owl = ConceptModelEnglishBridge.exportOwl(pkg);
+                if (owl == null || owl.length == 0) {
+                    throw new IllegalStateException("The Concept Modeler produced no OWL for \"" + name
+                            + "\". Choose a concept-model package that carries an ontology URI.");
+                }
+                InspectorState.set(project, pkg, owl);   // shared with the OWL-view window + selection highlighting
+                return ConceptModelEnglishBridge.verbalize(owl, "Concept Model — English: " + name, true);
             }
 
             @Override

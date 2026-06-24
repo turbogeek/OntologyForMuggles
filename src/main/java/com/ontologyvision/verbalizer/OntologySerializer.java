@@ -81,4 +81,45 @@ public final class OntologySerializer {
             }
         }
     }
+
+    /** Manchester for the axioms referencing the entity whose IRI short-name/fragment is {@code frag}. */
+    public static String entityToManchesterByFragment(OWLOntology ont, String frag) {
+        return fragSlice(ont, frag, true);
+    }
+
+    /** Turtle for the axioms referencing the entity whose IRI short-name/fragment is {@code frag}. */
+    public static String entityToTurtleByFragment(OWLOntology ont, String frag) {
+        return fragSlice(ont, frag, false);
+    }
+
+    /**
+     * Like {@link #entitySlice} but keyed on the IRI's <i>fragment</i> (short name) rather than the full IRI, so
+     * a host that only knows a selected element's name (e.g. via the selection bus) can render its OWL without
+     * reconstructing the base IRI.
+     */
+    private static String fragSlice(OWLOntology ont, String frag, boolean manchester) {
+        OWLOntologyManager m = OWLManager.createOWLOntologyManager();
+        OWLOntology slice = null;
+        try {
+            Set<OWLAxiom> axioms = new LinkedHashSet<>();
+            for (OWLEntity e : ont.getSignature(Imports.INCLUDED)) {
+                String sf = e.getIRI().getShortForm();
+                String fr = e.getIRI().getFragment();
+                if (frag.equals(sf) || frag.equals(fr)) {
+                    axioms.addAll(ont.getReferencingAxioms(e, Imports.INCLUDED));
+                }
+            }
+            if (axioms.isEmpty()) {
+                return "# no axioms for \"" + frag + "\"";
+            }
+            slice = m.createOntology(axioms);
+            return serialize(slice, manchester ? new ManchesterSyntaxDocumentFormat() : new TurtleDocumentFormat());
+        } catch (Throwable t) {
+            return "# fragment serialization failed: " + t;
+        } finally {
+            if (slice != null) {
+                try { m.removeOntology(slice); } catch (Throwable ignored) { }
+            }
+        }
+    }
 }

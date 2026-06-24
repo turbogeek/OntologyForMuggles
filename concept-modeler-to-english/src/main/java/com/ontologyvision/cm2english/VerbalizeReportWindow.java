@@ -7,6 +7,8 @@ import com.nomagic.magicdraw.ui.ProjectWindowsManager;
 import com.nomagic.magicdraw.ui.WindowComponentInfo;
 import com.nomagic.magicdraw.ui.WindowsManager;
 import com.nomagic.magicdraw.ui.browser.WindowComponentContent;
+import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Element;
+import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.NamedElement;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Package;
 
 import javax.swing.BorderFactory;
@@ -24,6 +26,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -84,7 +87,8 @@ public final class VerbalizeReportWindow {
         @Override
         public void configure(Project project, ProjectWindowsManager manager) {
             ReportPanel panel = new ReportPanel();
-            STATE.put(project, new Holder(panel, manager));
+            AutoCloseable sub = SelectionBus.subscribe(project, panel::onSelection);
+            STATE.put(project, new Holder(panel, manager, sub));
             WindowComponentInfo info = new WindowComponentInfo(
                     WINDOW_ID,
                     "Concept Model — English",
@@ -170,6 +174,42 @@ public final class VerbalizeReportWindow {
             });
         }
 
+        /** Bus callback — when an element is selected elsewhere, scroll this report to its first mention. */
+        void onSelection(List<Element> sel) {
+            if (sel == null || sel.isEmpty() || !isShowing()) {
+                return;
+            }
+            String name = nameOf(sel.get(0));
+            if (name != null && !name.isEmpty()) {
+                SwingUtilities.invokeLater(() -> scrollToText(name));
+            }
+        }
+
+        private void scrollToText(String text) {
+            try {
+                javax.swing.text.Document doc = editor.getDocument();
+                String s = doc.getText(0, doc.getLength());
+                int idx = s.indexOf(text);
+                if (idx >= 0) {
+                    java.awt.geom.Rectangle2D r = editor.modelToView2D(idx);
+                    if (r != null) {
+                        editor.scrollRectToVisible(new java.awt.Rectangle(
+                                (int) r.getX(), (int) r.getY(), (int) r.getWidth() + 1, (int) r.getHeight() + 40));
+                    }
+                }
+            } catch (Throwable ignored) {
+                // best-effort scroll
+            }
+        }
+
+        private static String nameOf(Element el) {
+            try {
+                return (el instanceof NamedElement) ? ((NamedElement) el).getName() : null;
+            } catch (Throwable t) {
+                return null;
+            }
+        }
+
         /** The hovered anchor's {@code title} attribute (the gloss) — JEditorPane keeps it on the {@code <a>} element. */
         private static String linkTitle(HyperlinkEvent e) {
             try {
@@ -192,10 +232,12 @@ public final class VerbalizeReportWindow {
     private static final class Holder {
         final ReportPanel panel;
         final ProjectWindowsManager manager;
+        final AutoCloseable sub;
 
-        Holder(ReportPanel panel, ProjectWindowsManager manager) {
+        Holder(ReportPanel panel, ProjectWindowsManager manager, AutoCloseable sub) {
             this.panel = panel;
             this.manager = manager;
+            this.sub = sub;
         }
     }
 

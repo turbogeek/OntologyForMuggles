@@ -56,4 +56,18 @@ public class OntologySerializerTest {
         final String whole = OntologySerializer.toManchester(ont);
         assertTrue("a one-entity slice is smaller than the whole ontology", slice.length() < whole.length());
     }
+
+    @Test
+    public void perEntitySliceByFragment() throws Exception {
+        final OWLOntology ont = load("/pizza.owl");
+        final OWLClass cls = ont.getClassesInSignature().stream()
+                .filter(c -> c.getIRI().toString().contains("pizza"))
+                .findFirst()
+                .orElse(ont.getClassesInSignature().iterator().next());
+        final String frag = cls.getIRI().getShortForm();
+
+        final String man = OntologySerializer.entityToManchesterByFragment(ont, frag);
+        assertTrue("fragment slice mentions the entity", man.contains(frag));
+        assertTrue("fragment slice is a subset", man.length() < OntologySerializer.toManchester(ont).length());
+    }
 }

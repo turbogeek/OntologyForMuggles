@@ -147,6 +147,25 @@ public final class ConceptModelEnglishBridge {
         });
     }
 
+    /** Clickable Manchester HTML (entityLinks) for the whole ontology ({@code frag == null}) or one entity. */
+    static String owlManchesterHtml(byte[] owlBytes, String frag) throws Exception {
+        return inIsolatedClassLoader(owlBytes, (vcl, ontology, ontFace) -> {
+            Class<?> ov = Class.forName("com.ontologyvision.verbalizer.OwlViews", true, vcl);
+            return (String) ov.getMethod("manchesterHtml", ontFace, String.class).invoke(null, ontology, frag);
+        });
+    }
+
+    /** Turtle text for the whole ontology ({@code frag == null}) or one entity by fragment. */
+    static String owlTurtle(byte[] owlBytes, String frag) throws Exception {
+        return inIsolatedClassLoader(owlBytes, (vcl, ontology, ontFace) -> {
+            Class<?> os = Class.forName("com.ontologyvision.verbalizer.OntologySerializer", true, vcl);
+            if (frag == null || frag.isEmpty()) {
+                return (String) os.getMethod("toTurtle", ontFace).invoke(null, ontology);
+            }
+            return (String) os.getMethod("entityToTurtleByFragment", ontFace, String.class).invoke(null, ontology, frag);
+        });
+    }
+
     /** Run {@code fn} with an OWLOntology loaded from {@code owlBytes} in the isolated verbalizer classloader. */
     private static String inIsolatedClassLoader(byte[] owlBytes, IsolatedFn fn) throws Exception {
         File jar = findVerbalizerJar();

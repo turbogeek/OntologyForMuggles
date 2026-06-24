@@ -26,6 +26,7 @@ public class ConceptToEnglishPlugin extends Plugin {
         ActionsConfiguratorsManager.getInstance()
                 .addContainmentBrowserContextConfigurator(browserConfigurator);
         VerbalizeReportWindow.register();
+        OwlViewWindow.register();
         log("Concept Modeler to English initialized (dir=" + PLUGIN_DIR + ").");
     }
 
