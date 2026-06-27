@@ -2,8 +2,10 @@ package com.ontologyvision.cm2english;
 
 import com.nomagic.conceptmodeler.profiles.ConceptModelingProfile;
 import com.nomagic.magicdraw.core.Project;
+import com.nomagic.uml2.ext.jmi.helpers.StereotypesHelper;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Element;
 import com.nomagic.uml2.ext.magicdraw.classes.mdkernel.Package;
+import com.nomagic.uml2.ext.magicdraw.mdprofiles.Stereotype;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -15,23 +17,30 @@ import java.util.List;
  *
  * <p>CCM marks an ontology-bearing package with one of three Concept-Modeling-profile stereotypes —
  * «Concept Model», «Model», or «Information Model» — each carrying an {@code iri} tag. {@code CM2OWL} only
- * exports OWL for such a package; a container without the stereotype exports nothing (the
- * "produced no OWL" guard). This locator detects those packages structurally (via
- * {@code ConceptModelStereotype.is(element)}), which is cheap and avoids a trial CCM export per package.
+ * exports OWL for such a package; a container without the stereotype exports nothing (the "produced no OWL"
+ * guard). This locator detects those packages structurally (via {@code ConceptModelStereotype.is(element)}),
+ * which is cheap and avoids a trial CCM export per package.
  *
- * <p>All CCM calls are guarded: if the Concept Modeling profile is absent (a non-CCM project) the methods
- * degrade to "found nothing", and the caller falls back to trying the user's chosen package directly.
+ * <p><b>Authored model vs. shipped library.</b> A real CCM project carries many ontology packages: the user's
+ * own model <i>plus</i> the imported standard vocabularies (RDF, RDFS, OWL, XSD, Dublin Core, gUFO, the CCM
+ * Support Library, …). A live-model probe showed the authored model is «Concept Model» with no library markers,
+ * whereas the libraries carry «auxiliaryResource» and/or a «File Export Path» under {@code <install.root>}. So
+ * auto-resolution prefers non-library «Concept Model» packages — which typically collapses to the single model
+ * the user is working on — and only falls back to other ontologies if there is no authored concept model.
  *
- * <p><b>On the deprecation:</b> {@code ConceptModelingProfile} is marked deprecated in CCM 2026x but is still
- * the typed, profile-scoped accessor present in the runtime CCM jar this plugin links against. It is preferred
- * here over the non-deprecated {@code StereotypesHelper.hasStereotype(p, "Model")} because that matches a
- * stereotype by name across <i>all</i> profiles and would false-positive on UML's own «Model». If a future CCM
- * removes this class, migrate to {@code StereotypesHelper} scoped explicitly to the "Concept Modeling" profile.
+ * <p><b>On the deprecation:</b> {@code ConceptModelingProfile} is marked deprecated in CCM 2026x but is the
+ * typed, profile-scoped accessor present in the runtime CCM jar this plugin links against. It is preferred over
+ * the non-deprecated {@code StereotypesHelper.hasStereotype(p, "Model")} because that matches a stereotype by
+ * name across <i>all</i> profiles and would false-positive on UML's own «Model». (The library markers below are
+ * read by name because «auxiliaryResource» / «File Export Path» are distinctive and not CCM-ontology stereotypes.)
  */
 @SuppressWarnings("deprecation")
 final class ConceptModelLocator {
 
     private ConceptModelLocator() { }
+
+    /** Which CCM ontology stereotype a package carries (drives "authored model first" ranking). */
+    private enum Kind { CONCEPT_MODEL, INFORMATION_MODEL, MODEL, NONE }
 
     /** The outcome of resolving which package to act on. */
     static final class Target {
@@ -47,48 +56,69 @@ final class ConceptModelLocator {
     }
 
     /**
-     * Resolve the package to act on, given the user's {@code chosen} package (from a right-click or the live
-     * selection; may be {@code null}).
+     * Resolve the package to act on, given the user's {@code chosen} package (right-click or live selection; may
+     * be {@code null}).
      * <ul>
-     *   <li>chosen is itself an ontology package → use it (fast path; works even if other detection fails).</li>
-     *   <li>otherwise look for ontology packages in the whole project: exactly one → use it; several → ask;
-     *       none → fall back to {@code chosen} (let the worker try it and surface the friendly guard).</li>
+     *   <li>chosen is itself an ontology → honor it exactly (library or not — an explicit pick is respected).</li>
+     *   <li>otherwise auto-locate: prefer authored, non-library «Concept Model» packages — one → use it,
+     *       several → chooser; if there are none, widen to any non-library ontology; still none → fall back to
+     *       {@code chosen} so the worker surfaces the friendly guard.</li>
      * </ul>
      */
     static Target resolve(Project project, Package chosen, String verb) {
         if (chosen != null && isOntologyPackage(chosen)) {
-            return new Target(chosen, false);
+            return new Target(chosen, false);     // explicit pick — honor it
         }
-        List<Package> candidates = findOntologyPackages(project);
-        if (candidates.size() == 1) {
-            return new Target(candidates.get(0), false);
+        List<Package> all = findOntologyPackages(project);
+        List<Package> authored = new ArrayList<>();
+        List<Package> anyNonLibrary = new ArrayList<>();
+        for (Package p : all) {
+            if (isLibrary(p)) {
+                continue;
+            }
+            anyNonLibrary.add(p);
+            if (kindOf(p) == Kind.CONCEPT_MODEL) {
+                authored.add(p);
+            }
         }
-        if (candidates.size() > 1) {
-            Package picked = choose(candidates, verb);
+        List<Package> pick = !authored.isEmpty() ? authored : anyNonLibrary;
+        if (pick.size() == 1) {
+            return new Target(pick.get(0), false);
+        }
+        if (pick.size() > 1) {
+            Package picked = choose(pick, verb);
             return new Target(picked, picked == null);   // null pick == user cancelled
         }
-        return new Target(chosen, false);   // none detected — try whatever was chosen (may be null)
+        return new Target(chosen, false);   // nothing sensible found — try whatever was chosen (may be null)
     }
 
     /** True if {@code p} is stereotyped «Concept Model» / «Model» / «Information Model». */
     static boolean isOntologyPackage(Package p) {
+        return kindOf(p) != Kind.NONE;
+    }
+
+    private static Kind kindOf(Package p) {
         if (p == null) {
-            return false;
+            return Kind.NONE;
         }
         try {
             ConceptModelingProfile prof = ConceptModelingProfile.getInstance(p);
-            return prof != null && isOntologyPackage(prof, p);
+            if (prof == null) {
+                return Kind.NONE;
+            }
+            if (prof.conceptModel().is(p)) {
+                return Kind.CONCEPT_MODEL;
+            }
+            if (prof.informationModel().is(p)) {
+                return Kind.INFORMATION_MODEL;
+            }
+            if (prof.model().is(p)) {
+                return Kind.MODEL;
+            }
         } catch (Throwable t) {
-            return false;
+            return Kind.NONE;
         }
-    }
-
-    private static boolean isOntologyPackage(ConceptModelingProfile prof, Package p) {
-        try {
-            return prof.conceptModel().is(p) || prof.model().is(p) || prof.informationModel().is(p);
-        } catch (Throwable t) {
-            return false;
-        }
+        return Kind.NONE;
     }
 
     /** The ontology IRI declared on {@code p} (whichever ontology stereotype applies), or {@code null}. */
@@ -104,14 +134,56 @@ final class ConceptModelLocator {
             if (prof.conceptModel().is(p)) {
                 return blankToNull(prof.conceptModel().getIri(p));
             }
-            if (prof.model().is(p)) {
-                return blankToNull(prof.model().getIri(p));
-            }
             if (prof.informationModel().is(p)) {
                 return blankToNull(prof.informationModel().getIri(p));
             }
+            if (prof.model().is(p)) {
+                return blankToNull(prof.model().getIri(p));
+            }
         } catch (Throwable ignored) {
             // profile absent / API shape mismatch — treated as "no IRI"
+        }
+        return null;
+    }
+
+    /**
+     * True if {@code p} is a shipped/auxiliary ontology rather than the user's authored model — recognised by
+     * «auxiliaryResource» or a «File Export Path» that targets the tool install ({@code <install.root>}).
+     * Read by stereotype name via {@link StereotypesHelper} (these markers are distinctive, non-CCM-ontology).
+     */
+    private static boolean isLibrary(Package p) {
+        if (hasStereotypeNamed(p, "auxiliaryResource")) {
+            return true;
+        }
+        String fep = fileExportPath(p);
+        return fep != null && fep.contains("<install.root>");
+    }
+
+    private static boolean hasStereotypeNamed(Package p, String name) {
+        try {
+            for (Stereotype st : StereotypesHelper.getStereotypes(p)) {
+                if (name.equals(st.getName())) {
+                    return true;
+                }
+            }
+        } catch (Throwable ignored) {
+            // best-effort
+        }
+        return false;
+    }
+
+    private static String fileExportPath(Package p) {
+        try {
+            for (Stereotype st : StereotypesHelper.getStereotypes(p)) {
+                if ("File Export Path".equals(st.getName())) {
+                    List<?> vals = StereotypesHelper.getStereotypePropertyValue(p, st, "fileExportPath");
+                    if (vals != null && !vals.isEmpty() && vals.get(0) != null) {
+                        return String.valueOf(vals.get(0));
+                    }
+                }
+            }
+        } catch (Throwable ignored) {
+            // best-effort
         }
         return null;
     }
@@ -123,31 +195,26 @@ final class ConceptModelLocator {
             return out;
         }
         Element root;
-        ConceptModelingProfile prof;
         try {
             root = project.getPrimaryModel();
-            if (root == null) {
-                return out;
-            }
-            prof = ConceptModelingProfile.getInstance(root);
         } catch (Throwable t) {
             return out;
         }
-        if (prof == null) {
+        if (root == null) {
             return out;
         }
-        collect(prof, root, out);
+        collect(root, out);
         return out;
     }
 
-    private static void collect(ConceptModelingProfile prof, Element el, List<Package> out) {
+    private static void collect(Element el, List<Package> out) {
         for (Element c : el.getOwnedElement()) {
             if (c instanceof Package) {
                 Package p = (Package) c;
-                if (isOntologyPackage(prof, p)) {
+                if (isOntologyPackage(p)) {
                     out.add(p);
                 }
-                collect(prof, p, out);   // sub-packages may hold nested ontologies
+                collect(p, out);   // sub-packages may hold nested ontologies
             }
         }
     }
