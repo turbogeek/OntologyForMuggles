@@ -49,12 +49,20 @@ public class Action_ExportConceptModel extends MDAction {
     @Override
     public void actionPerformed(ActionEvent e) {
         final Project project = Application.getInstance().getProject();
-        final Package pkg = (fixedPkg != null) ? fixedPkg : ConceptModelSelection.current(project);
-        if (pkg == null) {
-            ConceptModelEnglishBridge.info("Select a concept-model package first, then choose Save to HTML/Markdown.");
+        final String label = (fmt == ConceptModelExporter.Format.HTML) ? "HTML" : "Markdown";
+        final Package chosen = (fixedPkg != null) ? fixedPkg : ConceptModelSelection.current(project);
+        // Auto-locate the real concept model if the user pointed at a container (e.g. "Imported Ontologies").
+        final ConceptModelLocator.Target target =
+                ConceptModelLocator.resolve(project, chosen, "export to " + label);
+        if (target.cancelled) {
             return;
         }
-        final String label = (fmt == ConceptModelExporter.Format.HTML) ? "HTML" : "Markdown";
+        final Package pkg = target.pkg;
+        if (pkg == null) {
+            ConceptModelEnglishBridge.info("No concept model found. Select (or open) a «Concept Model» "
+                    + "package — one that carries an ontology IRI — then choose Save to " + label + ".");
+            return;
+        }
 
         JFileChooser fc = new JFileChooser();
         fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
