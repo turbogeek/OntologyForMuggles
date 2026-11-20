@@ -62,15 +62,28 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?class ?label WHERE { ?class a owl:Class . FILTER(isIRI(?class)) OPTIONAL { ?class rdfs:label ?label } } ORDER BY ?class""" .
 
 <subclasses-of> a qm:TemplateQuery ;
-    qm:name "Subclasses of a class" ; qm:category "DISCOVERY" ; qm:parameter "classIRI" ;
-    qm:description "All (transitive) subclasses of a chosen class. Fill in ${classIRI}." ;
-    qm:queryText """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?subclass WHERE { ?subclass rdfs:subClassOf+ <${classIRI}> . FILTER(isIRI(?subclass)) } ORDER BY ?subclass""" .
+    qm:name "Subclasses of a class" ; qm:category "DISCOVERY" ; qm:parameter "class" ;
+    qm:description "All (transitive) subclasses of a class — give the class by its name, label, or full IRI." ;
+    qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?subclass WHERE {
+  ?c a owl:Class .
+  FILTER( STR(?c) = "${class}" || STRENDS(STR(?c), "#${class}") || STRENDS(STR(?c), "/${class}")
+          || EXISTS { ?c rdfs:label ?lbl . FILTER(STR(?lbl) = "${class}") } )
+  ?subclass rdfs:subClassOf+ ?c . FILTER(isIRI(?subclass))
+} ORDER BY ?subclass""" .
 
 <individuals-of> a qm:TemplateQuery ;
-    qm:name "Individuals of a class" ; qm:category "DISCOVERY" ; qm:parameter "classIRI" ;
-    qm:description "All individuals of a chosen class. Fill in ${classIRI}." ;
-    qm:queryText """SELECT ?individual WHERE { ?individual a <${classIRI}> } ORDER BY ?individual""" .
+    qm:name "Individuals of a class" ; qm:category "DISCOVERY" ; qm:parameter "class" ;
+    qm:description "All individuals of a class — give the class by its name, label, or full IRI." ;
+    qm:queryText """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?individual WHERE {
+  ?c a owl:Class .
+  FILTER( STR(?c) = "${class}" || STRENDS(STR(?c), "#${class}") || STRENDS(STR(?c), "/${class}")
+          || EXISTS { ?c rdfs:label ?lbl . FILTER(STR(?lbl) = "${class}") } )
+  ?individual a ?c
+} ORDER BY ?individual""" .
 
 <properties-and-domain-range> a qm:Query ;
     qm:name "Properties with domain & range" ; qm:category "DISCOVERY" ;
