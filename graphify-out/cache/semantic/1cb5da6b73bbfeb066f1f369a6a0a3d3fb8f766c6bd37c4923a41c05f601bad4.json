@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [], "hyperedges": [{"id": "reasoning_layer", "label": "Reasoning and Validation Layer", "nodes": ["validator", "elk_reasoner", "hermit_reasoner"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "ROADMAP.md"}]}

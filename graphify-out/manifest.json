@@ -1,0 +1,232 @@
+{
+  "build.gradle": {
+    "mtime": 1782239455.0975933,
+    "ast_hash": "8c8a68d2086b890ebd8030792dd0c1ad",
+    "semantic_hash": "8c8a68d2086b890ebd8030792dd0c1ad"
+  },
+  "concept-modeler-to-english/build.gradle": {
+    "mtime": 1782248259.0349715,
+    "ast_hash": "d651fa3f133b16381eed4436b5040c77",
+    "semantic_hash": "d651fa3f133b16381eed4436b5040c77"
+  },
+  "concept-modeler-to-english/gradlew": {
+    "mtime": 1781800535.578626,
+    "ast_hash": "72486d728b09c965a67cd854f3601d14",
+    "semantic_hash": "72486d728b09c965a67cd854f3601d14"
+  },
+  "concept-modeler-to-english/selftest/Cm2EnglishSelfTest.java": {
+    "mtime": 1782336197.0818927,
+    "ast_hash": "7776795e481e5968dbc2d87efd91a6a7",
+    "semantic_hash": "7776795e481e5968dbc2d87efd91a6a7"
+  },
+  "concept-modeler-to-english/settings.gradle": {
+    "mtime": 1782247619.6698093,
+    "ast_hash": "f3f9f2cf7f3db1f79bcca50768262e37",
+    "semantic_hash": "f3f9f2cf7f3db1f79bcca50768262e37"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/Action_ExportConceptModel.java": {
+    "mtime": 1782601753.4426403,
+    "ast_hash": "1d34d066e91db54449a26ab66660e1d9",
+    "semantic_hash": "1d34d066e91db54449a26ab66660e1d9"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/Action_ShowWindow.java": {
+    "mtime": 1782335918.391756,
+    "ast_hash": "65fcf5e233977a7deb86febb2e8dbc09",
+    "semantic_hash": "65fcf5e233977a7deb86febb2e8dbc09"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/Action_VerbalizeConceptModel.java": {
+    "mtime": 1782601741.7452636,
+    "ast_hash": "181852b50ace5df46f5555bbab56605b",
+    "semantic_hash": "181852b50ace5df46f5555bbab56605b"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/BundleHtmlComposer.java": {
+    "mtime": 1782336063.2417107,
+    "ast_hash": "d2b82f29165ce9685cd1c25a76734fd4",
+    "semantic_hash": "d2b82f29165ce9685cd1c25a76734fd4"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/ConceptModelEnglishBridge.java": {
+    "mtime": 1782328142.7514224,
+    "ast_hash": "bcd01b22fdabed3c713850fc00575666",
+    "semantic_hash": "bcd01b22fdabed3c713850fc00575666"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/ConceptModelExporter.java": {
+    "mtime": 1782325538.9250596,
+    "ast_hash": "613963c80ca420120dd98addf54c15b5",
+    "semantic_hash": "613963c80ca420120dd98addf54c15b5"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/ConceptModelLocator.java": {
+    "mtime": 1782602277.123041,
+    "ast_hash": "141b8f59cdc851c122234bd83874343c",
+    "semantic_hash": "141b8f59cdc851c122234bd83874343c"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/ConceptModelSelection.java": {
+    "mtime": 1782335886.9086366,
+    "ast_hash": "7c00b9611e66f117ea6ec63ce22985ff",
+    "semantic_hash": "7c00b9611e66f117ea6ec63ce22985ff"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/ConceptNavigator.java": {
+    "mtime": 1782319541.6732998,
+    "ast_hash": "1d5ed6e54a72be5a94fff1d5aa893658",
+    "semantic_hash": "1d5ed6e54a72be5a94fff1d5aa893658"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/ConceptToEnglishPlugin.java": {
+    "mtime": 1782335964.7638624,
+    "ast_hash": "d070d84e1e1065f87cd0b31844710a15",
+    "semantic_hash": "d070d84e1e1065f87cd0b31844710a15"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/DiagramNavigator.java": {
+    "mtime": 1782319527.8788943,
+    "ast_hash": "135edac17b3956994b7a84f79e4ea5a8",
+    "semantic_hash": "135edac17b3956994b7a84f79e4ea5a8"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/DiagramSvgExporter.java": {
+    "mtime": 1782325343.2444768,
+    "ast_hash": "18431ff3289500b86956e5fe47a169bf",
+    "semantic_hash": "18431ff3289500b86956e5fe47a169bf"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/InspectorState.java": {
+    "mtime": 1782328126.1371558,
+    "ast_hash": "ff6b4076404f3e24e86646a784c31a7a",
+    "semantic_hash": "ff6b4076404f3e24e86646a784c31a7a"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/MarkdownComposer.java": {
+    "mtime": 1782325461.675069,
+    "ast_hash": "7c23514a60b0c7e22bbd96c75fcc5ebd",
+    "semantic_hash": "7c23514a60b0c7e22bbd96c75fcc5ebd"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/Ontology4MugglesMenuConfigurator.java": {
+    "mtime": 1782335945.5500374,
+    "ast_hash": "0d3e84f262c79ef085dd117645c9c15d",
+    "semantic_hash": "0d3e84f262c79ef085dd117645c9c15d"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/OwlViewWindow.java": {
+    "mtime": 1782336020.1445196,
+    "ast_hash": "0bfaf71cd0985c21ce3dcdf785c7b351",
+    "semantic_hash": "0bfaf71cd0985c21ce3dcdf785c7b351"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/SelectionBus.java": {
+    "mtime": 1782327862.7684922,
+    "ast_hash": "a8013576108c83c86731fe2200fd05d0",
+    "semantic_hash": "a8013576108c83c86731fe2200fd05d0"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/SwingReportHtml.java": {
+    "mtime": 1782335907.2924628,
+    "ast_hash": "e8fa8712d330e9918bfebb5665a6e3ab",
+    "semantic_hash": "e8fa8712d330e9918bfebb5665a6e3ab"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/VerbalizeBrowserConfigurator.java": {
+    "mtime": 1782335953.8003023,
+    "ast_hash": "f1ea6aa253ffd82378bcb84e00690db5",
+    "semantic_hash": "f1ea6aa253ffd82378bcb84e00690db5"
+  },
+  "concept-modeler-to-english/src/main/java/com/ontologyvision/cm2english/VerbalizeReportWindow.java": {
+    "mtime": 1782336014.6966193,
+    "ast_hash": "09f8bdc6f63ae49f8b72dd6d3de5873d",
+    "semantic_hash": "09f8bdc6f63ae49f8b72dd6d3de5873d"
+  },
+  "gradlew": {
+    "mtime": 1781800535.578626,
+    "ast_hash": "72486d728b09c965a67cd854f3601d14",
+    "semantic_hash": "72486d728b09c965a67cd854f3601d14"
+  },
+  "scripts/sbvr.groovy": {
+    "mtime": 1781800535.5812733,
+    "ast_hash": "e314c4b850d29ac4b6f10228373cb139",
+    "semantic_hash": "e314c4b850d29ac4b6f10228373cb139"
+  },
+  "settings.gradle": {
+    "mtime": 1781800535.5812733,
+    "ast_hash": "7586be7ce6f053c98ec321ef9419a2dd",
+    "semantic_hash": "7586be7ce6f053c98ec321ef9419a2dd"
+  },
+  "src/main/java/com/ontologyvision/query/QueryCatalog.java": {
+    "mtime": 1782239455.0995772,
+    "ast_hash": "6620899d597328e08436c6cf78653e90",
+    "semantic_hash": "6620899d597328e08436c6cf78653e90"
+  },
+  "src/main/java/com/ontologyvision/query/QueryDef.java": {
+    "mtime": 1782239455.1005807,
+    "ast_hash": "146ffcda1e3b3fd1df3f47ec24b5a895",
+    "semantic_hash": "146ffcda1e3b3fd1df3f47ec24b5a895"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/AxiomRenderer.java": {
+    "mtime": 1781800535.5832853,
+    "ast_hash": "9d95851f18b64d4c8bb5bc2a949ce27b",
+    "semantic_hash": "9d95851f18b64d4c8bb5bc2a949ce27b"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/GlossaryData.java": {
+    "mtime": 1781800535.5832853,
+    "ast_hash": "aa62f1b6ff5cac8fdaeeac2c1bc10982",
+    "semantic_hash": "aa62f1b6ff5cac8fdaeeac2c1bc10982"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/Main.java": {
+    "mtime": 1781800535.5842888,
+    "ast_hash": "b73b75b20f1a4bbe32a98ac0242e59c1",
+    "semantic_hash": "b73b75b20f1a4bbe32a98ac0242e59c1"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/ManchesterRenderer.java": {
+    "mtime": 1781800535.5852885,
+    "ast_hash": "d0e2cd827df8a14159509ed1c16e4168",
+    "semantic_hash": "d0e2cd827df8a14159509ed1c16e4168"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/OntologySerializer.java": {
+    "mtime": 1782327895.8250582,
+    "ast_hash": "effe1d24a5363a741c05043c5051be17",
+    "semantic_hash": "effe1d24a5363a741c05043c5051be17"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/OntologyVerbalizer.java": {
+    "mtime": 1782275030.6983895,
+    "ast_hash": "f44c4fe99eca4d5980e4691e5b5e3065",
+    "semantic_hash": "f44c4fe99eca4d5980e4691e5b5e3065"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/OseRenderer.java": {
+    "mtime": 1781800535.587285,
+    "ast_hash": "2234d81031b4694ffa40eb61c7e62645",
+    "semantic_hash": "2234d81031b4694ffa40eb61c7e62645"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/OwlViews.java": {
+    "mtime": 1782328054.4247427,
+    "ast_hash": "747f66f7aee9f98c99225e7a7c11c8c2",
+    "semantic_hash": "747f66f7aee9f98c99225e7a7c11c8c2"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/RenderContext.java": {
+    "mtime": 1781800535.5887988,
+    "ast_hash": "45db1e85c7e81be613db3418dcafa395",
+    "semantic_hash": "45db1e85c7e81be613db3418dcafa395"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/SbvrRenderer.java": {
+    "mtime": 1781800535.5887988,
+    "ast_hash": "e415907f61e4000deb060b1b9485d6b3",
+    "semantic_hash": "e415907f61e4000deb060b1b9485d6b3"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/Validator.java": {
+    "mtime": 1781800535.5898142,
+    "ast_hash": "64a07a009b115912ab4d16e5d83ac505",
+    "semantic_hash": "64a07a009b115912ab4d16e5d83ac505"
+  },
+  "src/main/java/com/ontologyvision/verbalizer/VerbalizerOptions.java": {
+    "mtime": 1782275050.6108105,
+    "ast_hash": "b8799aeed225f11e565adc6968d62d89",
+    "semantic_hash": "b8799aeed225f11e565adc6968d62d89"
+  },
+  "src/test/java/com/ontologyvision/query/QueryCatalogTest.java": {
+    "mtime": 1782239455.1065767,
+    "ast_hash": "d5cef25c9f8865eaec3728423edaefe5",
+    "semantic_hash": "d5cef25c9f8865eaec3728423edaefe5"
+  },
+  "src/test/java/com/ontologyvision/verbalizer/OntologySerializerTest.java": {
+    "mtime": 1782327912.2962706,
+    "ast_hash": "0c637e40d36375f298c661d4043182bd",
+    "semantic_hash": "0c637e40d36375f298c661d4043182bd"
+  },
+  "src/test/java/com/ontologyvision/verbalizer/OntologyVerbalizerTest.java": {
+    "mtime": 1782275179.9143417,
+    "ast_hash": "c99518627c29cb6a563fd566f494a27c",
+    "semantic_hash": "c99518627c29cb6a563fd566f494a27c"
+  },
+  "src/test/java/com/ontologyvision/verbalizer/ValidatorTest.java": {
+    "mtime": 1781800535.5970016,
+    "ast_hash": "d6b2762de8ee3042af15816b3faf1f3c",
+    "semantic_hash": "d6b2762de8ee3042af15816b3faf1f3c"
+  }
+}

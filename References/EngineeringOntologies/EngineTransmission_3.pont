@@ -1,0 +1,256 @@
+; Wed Jun 04 13:06:06 GMT-08:00 2008
+; 
+;+ (version "3.4")
+;+ (build "Build 500")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot flange
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+;+		(subslot-of hasConnector)
+		(create-accessor read-write))
+	(single-slot in
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+;+		(subslot-of hasConnector)
+		(create-accessor read-write))
+	(single-slot tau
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot out
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+;+		(subslot-of hasConnector)
+		(create-accessor read-write))
+	(single-slot engine
+		(type INSTANCE)
+;+		(allowed-classes Engine)
+;+		(cardinality 1 1)
+;+		(subslot-of hasPart)
+		(create-accessor read-write))
+	(single-slot p2
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 1 1)
+;+		(subslot-of hasConnector)
+		(create-accessor read-write))
+	(single-slot weight
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot value
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot phi
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot slotName
+;+		(type ANY)
+		(create-accessor read-write))
+	(single-slot transmission
+		(type INSTANCE)
+;+		(allowed-classes Transmission)
+;+		(cardinality 1 1)
+;+		(subslot-of hasPart)
+		(create-accessor read-write))
+	(single-slot p1
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 1 1)
+;+		(subslot-of hasConnector)
+		(create-accessor read-write)))
+
+(defclass WeightRequirement
+	(is-a InitialRequirement)
+	(role concrete)
+	(single-slot fulfilled_by
+		(type INSTANCE)
+;+		(allowed-classes Powertrain)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasConstraint
+		(type INSTANCE)
+;+		(allowed-classes Constraint)
+;+		(value [EngineTransmission_3_Instance_0])
+		(create-accessor read-write)))
+
+(defclass Transmission
+	(is-a System)
+	(role concrete)
+	(single-slot flange
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot weight
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot out
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Engine
+	(is-a System)
+	(role concrete)
+	(single-slot flange
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot weight
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot in
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Powertrain
+	(is-a System)
+	(role concrete)
+	(multislot hasConnection
+		(type INSTANCE)
+;+		(allowed-classes EngineTransmission_Class_6 EngineTransmission_Class_1 EngineTransmission_Class_0)
+		(create-accessor read-write))
+	(single-slot weight
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot p1
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes Engine Transmission Flange)
+		(create-accessor read-write))
+	(single-slot engine
+		(type INSTANCE)
+;+		(allowed-classes Engine)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot p2
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot transmission
+		(type INSTANCE)
+;+		(allowed-classes Transmission)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass EngineTransmission_Class_6
+	(is-a Connection)
+	(role concrete)
+	(single-slot component_2
+		(type INSTANCE)
+;+		(allowed-classes Transmission)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_2
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_1
+		(type INSTANCE)
+;+		(allowed-classes Engine)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_1
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot defined_at_component
+		(type INSTANCE)
+;+		(allowed-classes Powertrain)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass EngineTransmission_Class_0
+	(is-a Connection)
+	(role concrete)
+	(single-slot component_2
+		(type INSTANCE)
+;+		(allowed-classes Engine)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_2
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_1
+		(type INSTANCE)
+;+		(allowed-classes Powertrain)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_1
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot defined_at_component
+		(type INSTANCE)
+;+		(allowed-classes Powertrain)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass EngineTransmission_Class_1
+	(is-a Connection)
+	(role concrete)
+	(single-slot component_2
+		(type INSTANCE)
+;+		(allowed-classes Powertrain)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_2
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_1
+		(type INSTANCE)
+;+		(allowed-classes Transmission)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_1
+		(type INSTANCE)
+;+		(allowed-classes Flange)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot defined_at_component
+		(type INSTANCE)
+;+		(allowed-classes Powertrain)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Flange
+	(is-a Connector)
+	(role concrete)
+	(single-slot phi
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tau
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))

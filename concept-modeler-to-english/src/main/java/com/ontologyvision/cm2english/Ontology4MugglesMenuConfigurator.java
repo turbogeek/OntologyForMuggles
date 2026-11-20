@@ -26,7 +26,6 @@ public final class Ontology4MugglesMenuConfigurator implements AMConfigurator {
     public void configure(ActionsManager manager) {
         ActionsCategory tools = manager.getCategory(ActionsID.TOOLS);
         if (tools == null) {
-            ConceptModelEnglishBridge.info("Ontology4Muggles: Tools menu not found; menu not installed.");
             return;
         }
         if (findSubmenu(tools) != null) {

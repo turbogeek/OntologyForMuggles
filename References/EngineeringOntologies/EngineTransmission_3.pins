@@ -1,0 +1,258 @@
+; Wed Jun 04 13:06:06 GMT-08:00 2008
+; 
+;+ (version "3.4")
+;+ (build "Build 500")
+
+([engine] of  ComponentSlotType
+)
+
+([EngineTransmission_3_Instance_0] of  Constraint
+
+	(constraint_statement "w < 200")
+	(variables [EngineTransmission_3_Instance_10000])
+	(%3ADOCUMENTATION "The weight of the Powertrain should be less than 200kg"))
+
+([EngineTransmission_3_Instance_10000] of  Variable
+
+	(concept [EngineTransmission_3_Instance_10001])
+	(name "w"))
+
+([EngineTransmission_3_Instance_10001] of  Role
+
+	(classRef [EngineTransmission_3_Instance_20000])
+	(pathRef [EngineTransmission_3_Instance_3]))
+
+([EngineTransmission_3_Instance_20000] of  ClassRef
+
+	(class Powertrain))
+
+([EngineTransmission_3_Instance_20001] of  Transmission
+
+	(flange [EngineTransmission_3_Instance_20002])
+	(isPartOf [EngineTransmission_3_Instance_20004])
+	(name "Transmission_1_1")
+	(out [EngineTransmission_3_Instance_20003]))
+
+([EngineTransmission_3_Instance_20002] of  Flange
+
+	(name "Flange_6_1"))
+
+([EngineTransmission_3_Instance_20003] of  Flange
+
+	(name "Flange_5_1"))
+
+([EngineTransmission_3_Instance_20004] of  Powertrain
+
+	(engine [EngineTransmission_3_Instance_20007])
+	(hasConnection
+		[EngineTransmission_3_Instance_20010]
+		[EngineTransmission_3_Instance_20011]
+		[EngineTransmission_3_Instance_20012])
+	(hasPart
+		[EngineTransmission_3_Instance_20007]
+		[EngineTransmission_3_Instance_20001])
+	(name "Powertrain_1_1")
+	(p1 [EngineTransmission_3_Instance_20006])
+	(p2 [EngineTransmission_3_Instance_20005])
+	(transmission [EngineTransmission_3_Instance_20001]))
+
+([EngineTransmission_3_Instance_20005] of  Flange
+
+	(name "Flange_2_1"))
+
+([EngineTransmission_3_Instance_20006] of  Flange
+
+	(name "Flange_1_1")
+	(phi 10.0)
+	(tau 20.0))
+
+([EngineTransmission_3_Instance_20007] of  Engine
+
+	(flange [EngineTransmission_3_Instance_20008])
+	(in [EngineTransmission_3_Instance_20009])
+	(isPartOf [EngineTransmission_3_Instance_20004])
+	(name "Engine_1_1"))
+
+([EngineTransmission_3_Instance_20008] of  Flange
+
+	(name "Flange_3_1"))
+
+([EngineTransmission_3_Instance_20009] of  Flange
+
+	(name "Flange_4_1"))
+
+([EngineTransmission_3_Instance_20010] of  EngineTransmission_Class_6
+
+	(component_1 [EngineTransmission_3_Instance_20007])
+	(component_2 [EngineTransmission_3_Instance_20001])
+	(connector_1 [EngineTransmission_3_Instance_20008])
+	(connector_2 [EngineTransmission_3_Instance_20002])
+	(defined_at_component [EngineTransmission_3_Instance_20004])
+	(direction bidirectional))
+
+([EngineTransmission_3_Instance_20011] of  EngineTransmission_Class_1
+
+	(component_1 [EngineTransmission_3_Instance_20001])
+	(component_2 [EngineTransmission_3_Instance_20004])
+	(connector_1 [EngineTransmission_3_Instance_20003])
+	(connector_2 [EngineTransmission_3_Instance_20005])
+	(defined_at_component [EngineTransmission_3_Instance_20004])
+	(direction bidirectional))
+
+([EngineTransmission_3_Instance_20012] of  EngineTransmission_Class_0
+
+	(component_1 [EngineTransmission_3_Instance_20004])
+	(component_2 [EngineTransmission_3_Instance_20007])
+	(connector_1 [EngineTransmission_3_Instance_20006])
+	(connector_2 [EngineTransmission_3_Instance_20009])
+	(defined_at_component [EngineTransmission_3_Instance_20004])
+	(direction bidirectional))
+
+([EngineTransmission_3_Instance_3] of  PathRef
+
+	(slot [weight]))
+
+([EngineTransmission_3_Instance_30000] of  RequirementTestRelation
+
+	(requirement [EngineTransmission_3_Instance_4])
+	(testCase [EngineTransmission_3_Instance_5])
+	(tester "Johann Mustermann")
+	(verdict pass))
+
+([EngineTransmission_3_Instance_4] of  WeightRequirement
+
+	(fulfilled_by [EngineTransmission_Instance_1])
+	(name "WeightRequirment_1")
+	(optional FALSE)
+	(risk_kind High)
+	(verified_by [EngineTransmission_3_Instance_30000]))
+
+([EngineTransmission_3_Instance_5] of  TestCase
+
+	(name "Test_1")
+	(verifies [EngineTransmission_3_Instance_30000]))
+
+([EngineTransmission_Class_0] of  ConnectionMetaCls
+
+	(component_2_slot [engine])
+	(connector_1_slot [p1])
+	(connector_2_slot [in])
+	(defined_at_component_class Powertrain)
+	(direction bidirectional))
+
+([EngineTransmission_Class_1] of  ConnectionMetaCls
+
+	(component_1_slot [transmission])
+	(connector_1_slot [out])
+	(connector_2_slot [p2])
+	(defined_at_component_class Powertrain)
+	(direction bidirectional))
+
+([EngineTransmission_Class_6] of  ConnectionMetaCls
+
+	(component_1_slot [engine])
+	(component_2_slot [transmission])
+	(connector_1_slot [flange])
+	(connector_2_slot [flange])
+	(defined_at_component_class Powertrain)
+	(direction bidirectional))
+
+([EngineTransmission_Instance_0] of  Flange
+
+	(name "Flange_1")
+	(phi 10.0)
+	(tau 20.0))
+
+([EngineTransmission_Instance_1] of  Powertrain
+
+	(engine [EngineTransmission_Instance_2])
+	(hasConnection
+		[EngineTransmission_Instance_10006]
+		[EngineTransmission_Instance_10007]
+		[EngineTransmission_Instance_10008])
+	(hasPart
+		[EngineTransmission_Instance_3]
+		[EngineTransmission_Instance_2])
+	(name "Powertrain_1")
+	(p1 [EngineTransmission_Instance_0])
+	(p2 [EngineTransmission_Instance_10001])
+	(transmission [EngineTransmission_Instance_3]))
+
+([EngineTransmission_Instance_10001] of  Flange
+
+	(name "Flange_2"))
+
+([EngineTransmission_Instance_10002] of  Flange
+
+	(name "Flange_3"))
+
+([EngineTransmission_Instance_10003] of  Flange
+
+	(name "Flange_4"))
+
+([EngineTransmission_Instance_10004] of  Flange
+
+	(name "Flange_5"))
+
+([EngineTransmission_Instance_10005] of  Flange
+
+	(name "Flange_6"))
+
+([EngineTransmission_Instance_10006] of  EngineTransmission_Class_6
+
+	(component_1 [EngineTransmission_Instance_2])
+	(component_2 [EngineTransmission_Instance_3])
+	(connector_1 [EngineTransmission_Instance_10002])
+	(connector_2 [EngineTransmission_Instance_10005])
+	(defined_at_component [EngineTransmission_Instance_1])
+	(direction bidirectional))
+
+([EngineTransmission_Instance_10007] of  EngineTransmission_Class_1
+
+	(component_1 [EngineTransmission_Instance_3])
+	(component_2 [EngineTransmission_Instance_1])
+	(connector_1 [EngineTransmission_Instance_10004])
+	(connector_2 [EngineTransmission_Instance_10001])
+	(defined_at_component [EngineTransmission_Instance_1])
+	(direction bidirectional))
+
+([EngineTransmission_Instance_10008] of  EngineTransmission_Class_0
+
+	(component_1 [EngineTransmission_Instance_1])
+	(component_2 [EngineTransmission_Instance_2])
+	(connector_1 [EngineTransmission_Instance_0])
+	(connector_2 [EngineTransmission_Instance_10003])
+	(defined_at_component [EngineTransmission_Instance_1])
+	(direction bidirectional))
+
+([EngineTransmission_Instance_2] of  Engine
+
+	(flange [EngineTransmission_Instance_10002])
+	(in [EngineTransmission_Instance_10003])
+	(isPartOf [EngineTransmission_Instance_1])
+	(name "Engine_1"))
+
+([EngineTransmission_Instance_3] of  Transmission
+
+	(flange [EngineTransmission_Instance_10005])
+	(isPartOf [EngineTransmission_Instance_1])
+	(name "Transmission_1")
+	(out [EngineTransmission_Instance_10004]))
+
+([flange] of  ConnectorSlotType
+)
+
+([in] of  ConnectorSlotType
+)
+
+([out] of  ConnectorSlotType
+)
+
+([p1] of  ConnectorSlotType
+)
+
+([p2] of  ConnectorSlotType
+)
+
+([transmission] of  ComponentSlotType
+)

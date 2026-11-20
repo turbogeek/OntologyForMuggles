@@ -1,0 +1,13 @@
+Cm2English self-test  pass=11 fail=0
+
+PASS  forSwing: makes .ehead bold
+PASS  forSwing: drops the flex toolbar
+PASS  forSwing: drops <script>
+PASS  forSwing: keeps the entity heading text
+PASS  forSwing: keeps the bullet statements
+PASS  forSwing: keeps SBVR role classes
+PASS  forSwing: no flex/fixed left for the kit to choke on
+PASS  composeHtml: references the sibling svg via <img src=diagrams/...>
+PASS  composeHtml: does NOT inline the diagram <svg> (no id/style collisions)
+PASS  composeHtml: still embeds the OWL Turtle pane
+PASS  composeHtml: keeps the diagram styling hook

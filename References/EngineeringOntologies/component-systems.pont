@@ -1,0 +1,259 @@
+; Wed Jun 04 13:06:30 GMT-08:00 2008
+; 
+;+ (version "3.4")
+;+ (build "Build 500")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot component_2_slot
+		(type INSTANCE)
+;+		(allowed-classes ComponentSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_2_slot
+		(type INSTANCE)
+;+		(allowed-classes ConnectorSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_1
+		(type INSTANCE)
+;+		(allowed-classes TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot name_
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot defined_at_component
+		(type INSTANCE)
+;+		(allowed-classes TopologicalIndividual)
+;+		(cardinality 0 1)
+;+		(inverse-slot hasConnection)
+		(create-accessor read-write))
+	(single-slot direction
+		(type SYMBOL)
+		(allowed-values from_1_to_2 from_2_to_1 bidirectional)
+		(default bidirectional)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot isPartOf
+		(type INSTANCE)
+;+		(allowed-classes CompositeComponent)
+;+		(cardinality 0 1)
+;+		(inverse-slot hasPart)
+		(create-accessor read-write))
+	(single-slot component_1_slot
+		(type INSTANCE)
+;+		(allowed-classes ComponentSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot defined_at_component_class
+		(type SYMBOL)
+;+		(allowed-parents TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component-systems-diss_Slot_4
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasConnection
+		(type INSTANCE)
+;+		(allowed-classes Connection)
+;+		(inverse-slot defined_at_component)
+		(create-accessor read-write))
+	(single-slot connector_2
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_2
+		(type INSTANCE)
+;+		(allowed-classes TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_1_slot
+		(type INSTANCE)
+;+		(allowed-classes ConnectorSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes Component)
+;+		(inverse-slot isPartOf)
+		(create-accessor read-write))
+	(multislot hasConnector
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+;+		(inverse-slot isConnectorOf)
+;+		(subslot-of hasPart)
+		(create-accessor read-write))
+	(single-slot isConnectorOf
+		(type INSTANCE)
+;+		(allowed-classes Component)
+;+		(cardinality 0 1)
+;+		(inverse-slot hasConnector)
+;+		(subslot-of isPartOf)
+		(create-accessor read-write))
+	(single-slot connector_1
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ConnectionMetaCls
+	(is-a %3ASTANDARD-CLASS)
+	(role concrete)
+	(single-slot defined_at_component_class
+		(type SYMBOL)
+;+		(allowed-parents TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_2_slot
+		(type INSTANCE)
+;+		(allowed-classes ConnectorSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_1_slot
+		(type INSTANCE)
+;+		(allowed-classes ComponentSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_1_slot
+		(type INSTANCE)
+;+		(allowed-classes ConnectorSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_2_slot
+		(type INSTANCE)
+;+		(allowed-classes ComponentSlotType)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot direction
+		(type SYMBOL)
+		(allowed-values from_1_to_2 from_2_to_1 bidirectional)
+		(default bidirectional)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ComponentSlotType
+	(is-a %3ASTANDARD-SLOT)
+	(role concrete))
+
+(defclass ConnectorSlotType
+	(is-a %3ASTANDARD-SLOT)
+	(role concrete))
+
+(defclass StructuralThing
+	(is-a USER)
+	(role abstract)
+	(single-slot name_
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Component "A component is an structure that can have parts and connections. It is an abstraction of a modular component in a system: for example, physical system, funcational system, software, etc. A component is a system or an atomic component. A system may contain other components. Atomic components cannot contain other components. A component has connectors(pors) through which it communicates and it is coupled with the environment"
+	(is-a StructuralThing)
+	(role abstract)
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes Component)
+		(create-accessor read-write))
+	(single-slot isPartOf
+		(type INSTANCE)
+;+		(allowed-classes CompositeComponent)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass AtomicComponent "An atomic component may not contain other components"
+	(is-a Component)
+	(role abstract)
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+		(create-accessor read-write)))
+
+(defclass CompositeComponent
+	(is-a Component)
+	(role abstract))
+
+(defclass TopologicalThing
+	(is-a USER)
+	(role abstract))
+
+(defclass TopologicalIndividual
+	(is-a TopologicalThing)
+	(role abstract)
+	(multislot hasConnector
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+		(create-accessor read-write))
+	(multislot hasConnection
+		(type INSTANCE)
+;+		(allowed-classes Connection)
+		(create-accessor read-write)))
+
+(defclass EngineeringComponent
+	(is-a Component TopologicalIndividual)
+	(role concrete))
+
+(defclass System "A system may contain other components."
+	(is-a CompositeComponent EngineeringComponent)
+	(role concrete))
+
+(defclass AtomicPart
+	(is-a AtomicComponent EngineeringComponent)
+	(role concrete))
+
+(defclass Connection "A connection is a reification of a connect statement between two components"
+	(is-a %3ARELATION TopologicalThing)
+	(role concrete)
+	(single-slot component_2
+		(type INSTANCE)
+;+		(allowed-classes TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_2
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot component_1
+		(type INSTANCE)
+;+		(allowed-classes TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connector_1
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot defined_at_component
+		(type INSTANCE)
+;+		(allowed-classes TopologicalIndividual)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot direction
+		(type SYMBOL)
+		(allowed-values from_1_to_2 from_2_to_1 bidirectional)
+		(default bidirectional)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Connector "Connectors(ports) are parts of the components through which they communicate wit the outer world. They are used for coupling components with each other. Connectors don't have behaviours. (for example, no equations for descirbing behavior)"
+	(is-a TopologicalThing CompositeComponent)
+	(role concrete)
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes Connector)
+		(create-accessor read-write))
+	(single-slot isConnectorOf
+		(type INSTANCE)
+;+		(allowed-classes Component)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))

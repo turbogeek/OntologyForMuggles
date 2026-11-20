@@ -1,0 +1,123 @@
+; Fri Aug 25 11:52:43 PDT 2006
+; 
+;+ (version "3.2")
+;+ (build "Build 331")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot concept
+		(type INSTANCE)
+;+		(allowed-classes Role)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot classRef
+		(type INSTANCE)
+;+		(allowed-classes ClassRef)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot constraint_statement
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pathRef
+		(type INSTANCE)
+;+		(allowed-classes PathRef)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot name_
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot pathRestriction
+		(type INSTANCE)
+;+		(allowed-classes ClassRef)
+		(create-accessor read-write))
+	(single-slot slot
+		(type INSTANCE)
+;+		(allowed-classes %3ASLOT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot constraints
+		(type INSTANCE)
+;+		(allowed-classes %3ACONSTRAINT)
+		(create-accessor read-write))
+	(single-slot class
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot variables
+		(type INSTANCE)
+;+		(allowed-classes Variable)
+		(create-accessor read-write)))
+
+(defclass Constraint
+	(is-a %3ACONSTRAINT)
+	(role concrete)
+	(multislot %3ADOCUMENTATION
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot constraint_statement
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot variables
+		(type INSTANCE)
+;+		(allowed-classes Variable)
+		(create-accessor read-write)))
+
+(defclass Variable
+	(is-a %3ASYSTEM-CLASS)
+	(role concrete)
+	(single-slot name_
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot concept
+		(type INSTANCE)
+;+		(allowed-classes Role)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Role
+	(is-a USER)
+	(role concrete)
+	(single-slot classRef
+		(type INSTANCE)
+;+		(allowed-classes ClassRef)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pathRef
+		(type INSTANCE)
+;+		(allowed-classes PathRef)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass PathRef
+	(is-a USER)
+	(role concrete)
+	(single-slot slot
+		(type INSTANCE)
+;+		(allowed-classes %3ASLOT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot pathRestriction
+		(type INSTANCE)
+;+		(allowed-classes ClassRef)
+		(create-accessor read-write))
+	(single-slot pathRef
+		(type INSTANCE)
+;+		(allowed-classes PathRef)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ClassRef
+	(is-a USER)
+	(role concrete)
+	(single-slot class
+		(type SYMBOL)
+;+		(allowed-parents %3ATHING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))

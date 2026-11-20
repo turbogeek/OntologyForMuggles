@@ -1,0 +1,175 @@
+; Fri Aug 25 20:48:49 PDT 2006
+; 
+;+ (version "3.2")
+;+ (build "Build 331")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(multislot is_derived_into
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(inverse-slot is_derived_from)
+		(create-accessor read-write))
+	(multislot fulfilled_by
+		(type INSTANCE)
+;+		(allowed-classes EngineeringComponent)
+;+		(inverse-slot fulfills)
+		(create-accessor read-write))
+	(multislot is_derived_from
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(inverse-slot is_derived_into)
+		(create-accessor read-write))
+	(multislot verified_by
+		(type INSTANCE)
+;+		(allowed-classes RequirementTestRelation)
+;+		(inverse-slot requirement)
+		(create-accessor read-write))
+	(single-slot tester
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot verdict
+		(type SYMBOL)
+		(allowed-values pass fail inconclusive error)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot risk_kind
+		(type SYMBOL)
+		(allowed-values High Medium Low)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot optional
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot fulfills
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(inverse-slot fulfilled_by)
+		(create-accessor read-write))
+	(single-slot requirement
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(cardinality 0 1)
+;+		(inverse-slot verified_by)
+		(create-accessor read-write))
+	(multislot used_in_requirement
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(inverse-slot hasConstraint)
+		(create-accessor read-write))
+	(single-slot testCase
+		(type INSTANCE)
+;+		(allowed-classes TestCase)
+;+		(cardinality 0 1)
+;+		(inverse-slot verifies)
+		(create-accessor read-write))
+	(multislot verifies
+		(type INSTANCE)
+;+		(allowed-classes RequirementTestRelation)
+;+		(inverse-slot testCase)
+		(create-accessor read-write))
+	(multislot hasConstraint
+		(type INSTANCE)
+;+		(allowed-classes Constraint)
+;+		(inverse-slot used_in_requirement)
+		(create-accessor read-write)))
+
+(defclass RequirementTestRelation
+	(is-a %3ARELATION)
+	(role concrete)
+	(single-slot tester
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot requirement
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot verdict
+		(type SYMBOL)
+		(allowed-values pass fail inconclusive error)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot testCase
+		(type INSTANCE)
+;+		(allowed-classes TestCase)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Requirement
+	(is-a USER CompositeComponent)
+	(role concrete)
+	(multislot is_derived_into
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+		(create-accessor read-write))
+	(multislot hasConstraint
+		(type INSTANCE)
+;+		(allowed-classes Constraint)
+		(create-accessor read-write))
+	(single-slot optional
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot isPartOf
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+		(create-accessor read-write))
+	(multislot is_derived_from
+		(type INSTANCE)
+;+		(allowed-classes Requirement)
+		(create-accessor read-write))
+	(single-slot risk_kind
+		(type SYMBOL)
+		(allowed-values High Medium Low)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot verified_by
+		(type INSTANCE)
+;+		(allowed-classes RequirementTestRelation)
+		(create-accessor read-write))
+	(multislot fulfilled_by
+		(type INSTANCE)
+;+		(allowed-classes EngineeringComponent)
+		(create-accessor read-write)))
+
+(defclass InitialRequirement
+	(is-a Requirement)
+	(role concrete))
+
+(defclass DetailedRequirement
+	(is-a Requirement)
+	(role concrete))
+
+(defclass TestCase
+	(is-a CompositeComponent USER)
+	(role concrete)
+	(single-slot isPartOf
+		(type INSTANCE)
+;+		(allowed-classes TestCase)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot verifies
+		(type INSTANCE)
+;+		(allowed-classes RequirementTestRelation)
+		(create-accessor read-write))
+	(multislot hasPart
+;+		(comment "hasPart is transitive")
+		(type INSTANCE)
+;+		(allowed-classes TestCase)
+		(create-accessor read-write)))

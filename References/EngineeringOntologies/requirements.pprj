@@ -1,0 +1,2144 @@
+; Fri Aug 25 20:48:49 PDT 2006
+; 
+;+ (version "3.2")
+;+ (build "Build 331")
+
+([BROWSER_SLOT_NAMES] of  Property_List
+)
+
+([CLSES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesTab"))
+
+([FORMS_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.FormsTab"))
+
+([INSTANCE_ANNOTATION_FORM_WIDGET] of  Widget
+
+	(height 476)
+	(is_hidden FALSE)
+	(name ":INSTANCE-ANNOTATION")
+	(property_list [KB_893626_Instance_33])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(width 603)
+	(x 0)
+	(y 0))
+
+([INSTANCES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
+
+([KB_706925_Instance_0] of  String
+
+	(name "factory_class_name")
+	(string_value "edu.stanford.smi.protege.storage.clips.ClipsKnowledgeBaseFactory"))
+
+([KB_706925_Instance_1] of  Options
+
+	(confirm_on_remove FALSE)
+	(display_abstract_class_icon TRUE)
+	(display_hidden_classes TRUE)
+	(display_multi_parent_class_icon TRUE)
+	(is_readonly FALSE)
+	(tabbed_instance_form_layout FALSE)
+	(update_modification_slots TRUE))
+
+([KB_706925_Instance_103] of  Property_List
+
+	(properties [requirements_ProjectKB_Instance_106]))
+
+([KB_706925_Instance_104] of  String
+
+	(name "classes_file_name")
+	(string_value "requirements.pont"))
+
+([KB_706925_Instance_105] of  String
+
+	(name "instances_file_name")
+	(string_value "requirements.pins"))
+
+([KB_893626_Instance_0] of  Property_List
+
+	(name "class widget properties")
+	(properties
+		[KB_893626_Instance_1]
+		[KB_893626_Instance_2]
+		[KB_893626_Instance_3]
+		[KB_893626_Instance_4]
+		[KB_893626_Instance_5]
+		[KB_893626_Instance_6]
+		[KB_893626_Instance_7]
+		[KB_893626_Instance_8]
+		[KB_893626_Instance_9]
+		[KB_893626_Instance_10]))
+
+([KB_893626_Instance_1] of  Widget
+
+	(height 120)
+	(label "Constraints")
+	(name ":SLOT-CONSTRAINTS")
+	(property_list [requirements_ProjectKB_Instance_244])
+	(widget_class_name "edu.stanford.smi.protege.widget.ConstraintsWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([KB_893626_Instance_10] of  Property_List
+
+	(name "layout properties")
+	(properties [KB_893626_Instance_11]))
+
+([KB_893626_Instance_11] of  String
+
+	(name "vertical_stretcher")
+	(string_value ":DIRECT-TEMPLATE-SLOTS"))
+
+([KB_893626_Instance_12] of  Property_List
+
+	(name "slot widget properties")
+	(properties
+		[KB_893626_Instance_13]
+		[KB_893626_Instance_14]
+		[KB_893626_Instance_15]
+		[KB_893626_Instance_16]
+		[KB_893626_Instance_17]
+		[KB_893626_Instance_18]
+		[KB_893626_Instance_19]
+		[KB_893626_Instance_20]
+		[KB_893626_Instance_21]
+		[KB_893626_Instance_22]
+		[KB_893626_Instance_23]
+		[KB_893626_Instance_24]
+		[KB_893626_Instance_25]
+		[KB_893626_Instance_26]
+		[KB_893626_Instance_27]
+		[KB_893626_Instance_28]
+		[requirements_ProjectKB_Instance_253]))
+
+([KB_893626_Instance_13] of  Widget
+
+	(height 60)
+	(label "Cardinality")
+	(name ":SLOT-MINIMUM-CARDINALITY")
+	(property_list [requirements_ProjectKB_Instance_257])
+	(widget_class_name "edu.stanford.smi.protege.widget.MinimumCardinalityWidget")
+	(width 200)
+	(x 200)
+	(y 120))
+
+([KB_893626_Instance_14] of  Widget
+
+	(height 35)
+	(name ":SLOT-MAXIMUM-CARDINALITY")
+	(property_list [requirements_ProjectKB_Instance_258])
+	(widget_class_name "edu.stanford.smi.protege.widget.MaximumCardinalityWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([KB_893626_Instance_15] of  Widget
+
+	(name ":SLOT-CONSTRAINTS"))
+
+([KB_893626_Instance_16] of  Widget
+
+	(name ":DIRECT-TYPE"))
+
+([KB_893626_Instance_17] of  Widget
+
+	(height 95)
+	(label "Domain")
+	(name ":DIRECT-DOMAIN")
+	(property_list [requirements_ProjectKB_Instance_254])
+	(widget_class_name "edu.stanford.smi.protege.widget.DirectDomainWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([KB_893626_Instance_18] of  Widget
+
+	(height 90)
+	(label "Template Values")
+	(name ":SLOT-VALUES")
+	(property_list [requirements_ProjectKB_Instance_255])
+	(widget_class_name "edu.stanford.smi.protege.widget.SlotValuesWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([KB_893626_Instance_19] of  Widget
+
+	(name ":DIRECT-SUPERSLOTS"))
+
+([KB_893626_Instance_2] of  Widget
+
+	(name ":DIRECT-INSTANCES"))
+
+([KB_893626_Instance_20] of  Widget
+
+	(name ":DIRECT-SUBSLOTS"))
+
+([KB_893626_Instance_21] of  Widget
+
+	(height 90)
+	(label "Default")
+	(name ":SLOT-DEFAULTS")
+	(property_list [requirements_ProjectKB_Instance_256])
+	(widget_class_name "edu.stanford.smi.protege.widget.DefaultValuesWidget")
+	(width 200)
+	(x 400)
+	(y 90))
+
+([KB_893626_Instance_22] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [requirements_ProjectKB_Instance_259])
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([KB_893626_Instance_23] of  Widget
+
+	(height 60)
+	(label "Maximum")
+	(name ":SLOT-NUMERIC-MAXIMUM")
+	(property_list [requirements_ProjectKB_Instance_260])
+	(widget_class_name "edu.stanford.smi.protege.widget.NumericMaximumWidget")
+	(width 100)
+	(x 100)
+	(y 215))
+
+([KB_893626_Instance_24] of  Widget
+
+	(height 60)
+	(label "Minimum")
+	(name ":SLOT-NUMERIC-MINIMUM")
+	(property_list [requirements_ProjectKB_Instance_261])
+	(widget_class_name "edu.stanford.smi.protege.widget.NumericMinimumWidget")
+	(width 100)
+	(x 0)
+	(y 215))
+
+([KB_893626_Instance_25] of  Widget
+
+	(name ":ASSOCIATED-FACET"))
+
+([KB_893626_Instance_26] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(property_list [requirements_ProjectKB_Instance_262])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_893626_Instance_27] of  Widget
+
+	(height 60)
+	(label "Inverse Slot")
+	(name ":SLOT-INVERSE")
+	(property_list [requirements_ProjectKB_Instance_263])
+	(widget_class_name "edu.stanford.smi.protege.widget.InverseSlotWidget")
+	(width 200)
+	(x 200)
+	(y 215))
+
+([KB_893626_Instance_28] of  Widget
+
+	(height 155)
+	(label "Value Type")
+	(name ":SLOT-VALUE-TYPE")
+	(property_list [requirements_ProjectKB_Instance_264])
+	(widget_class_name "edu.stanford.smi.protege.widget.ValueTypeWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([KB_893626_Instance_29] of  Property_List
+
+	(name "facet widget properties")
+	(properties
+		[KB_893626_Instance_30]
+		[KB_893626_Instance_31]
+		[KB_893626_Instance_32]))
+
+([KB_893626_Instance_3] of  Widget
+
+	(name ":DIRECT-SUBCLASSES"))
+
+([KB_893626_Instance_30] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_893626_Instance_31] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([KB_893626_Instance_32] of  Widget
+
+	(height 60)
+	(label "Associated Slot")
+	(name ":ASSOCIATED-SLOT")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([KB_893626_Instance_33] of  Property_List
+
+	(properties
+		[KB_893626_Instance_34]
+		[KB_893626_Instance_35]
+		[KB_893626_Instance_36]
+		[KB_893626_Instance_37]))
+
+([KB_893626_Instance_34] of  Widget
+
+	(name ":ANNOTATED-INSTANCE"))
+
+([KB_893626_Instance_35] of  Widget
+
+	(name ":CREATOR"))
+
+([KB_893626_Instance_36] of  Widget
+
+	(name ":CREATION-TIMESTAMP"))
+
+([KB_893626_Instance_37] of  Widget
+
+	(height 100)
+	(is_hidden FALSE)
+	(name ":ANNOTATION-TEXT")
+	(widget_class_name "edu.stanford.smi.protege.widget.YellowStickyWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_893626_Instance_38] of  Property_List
+
+	(properties
+		[KB_893626_Instance_39]
+		[KB_893626_Instance_40]
+		[KB_893626_Instance_41]
+		[KB_893626_Instance_42]))
+
+([KB_893626_Instance_39] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":PAL-NAME")
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 275)
+	(x 0)
+	(y 0))
+
+([KB_893626_Instance_4] of  Widget
+
+	(name ":DIRECT-SUPERCLASSES"))
+
+([KB_893626_Instance_40] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "Range")
+	(name ":PAL-RANGE")
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalRangeWidget")
+	(width 250)
+	(x 275)
+	(y 180))
+
+([KB_893626_Instance_41] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "Description")
+	(name ":PAL-DESCRIPTION")
+	(widget_class_name "edu.stanford.smi.protege.widget.TextAreaWidget")
+	(width 250)
+	(x 275)
+	(y 0))
+
+([KB_893626_Instance_42] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(label "Statement")
+	(name ":PAL-STATEMENT")
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalConstraintWidget")
+	(width 275)
+	(x 0)
+	(y 60))
+
+([KB_893626_Instance_5] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [requirements_ProjectKB_Instance_250])
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([KB_893626_Instance_6] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(property_list [requirements_ProjectKB_Instance_251])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_893626_Instance_7] of  Widget
+
+	(height 60)
+	(label "Role")
+	(name ":ROLE")
+	(property_list [requirements_ProjectKB_Instance_252])
+	(widget_class_name "edu.stanford.smi.protege.widget.RoleWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([KB_893626_Instance_8] of  Widget
+
+	(name ":DIRECT-TYPE"))
+
+([KB_893626_Instance_9] of  Widget
+
+	(height 150)
+	(label "Template Slots")
+	(name ":DIRECT-TEMPLATE-SLOTS")
+	(property_list [requirements_ProjectKB_Instance_247])
+	(widget_class_name "edu.stanford.smi.protege.widget.TemplateSlotsWidget")
+	(width 600)
+	(x 0)
+	(y 120))
+
+([PAL_FORM_WIDGET] of  Widget
+
+	(height 476)
+	(is_hidden FALSE)
+	(name ":PAL-CONSTRAINT")
+	(property_list [KB_893626_Instance_38])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(width 603)
+	(x 0)
+	(y 0))
+
+([PROJECT] of  Project
+
+	(browser_slot_names [BROWSER_SLOT_NAMES])
+	(customized_instance_widgets
+		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_CLASS_FORM_WIDGET]
+		[requirements_ProjectKB_Instance_10201]
+		[STANDARD_FACET_FORM_WIDGET]
+		[requirements_ProjectKB_Instance_10302]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[PAL_FORM_WIDGET])
+	(default_cls_metaclass ":STANDARD-CLASS")
+	(default_facet_metaclass ":STANDARD-FACET")
+	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(default_slot_metaclass ":STANDARD-SLOT")
+	(included_projects
+		"component-systems.pprj"
+		"constraints.pprj")
+	(journaling_enabled FALSE)
+	(next_frame_number 0)
+	(options [KB_706925_Instance_1])
+	(sources [SOURCES])
+	(tabs
+		[CLSES_TAB]
+		[SLOTS_TAB]
+		[FORMS_TAB]
+		[INSTANCES_TAB]
+		[QUERIES_TAB]
+		[requirements_ProjectKB_Instance_177]
+		[requirements_ProjectKB_Instance_119]
+		[requirements_ProjectKB_Instance_187]
+		[requirements_ProjectKB_Instance_159]
+		[requirements_ProjectKB_Instance_181]
+		[requirements_ProjectKB_Instance_137]
+		[requirements_ProjectKB_Instance_145]
+		[requirements_ProjectKB_Instance_135]
+		[requirements_ProjectKB_Instance_163]
+		[requirements_ProjectKB_Instance_167]
+		[requirements_ProjectKB_Instance_115]
+		[requirements_ProjectKB_Instance_151]
+		[requirements_ProjectKB_Instance_161]
+		[requirements_ProjectKB_Instance_129]
+		[requirements_ProjectKB_Instance_125]
+		[requirements_ProjectKB_Instance_141]
+		[requirements_ProjectKB_Instance_171]
+		[requirements_ProjectKB_Instance_165]
+		[requirements_ProjectKB_Instance_113]
+		[requirements_ProjectKB_Instance_169]
+		[requirements_ProjectKB_Instance_157]
+		[requirements_ProjectKB_Instance_149]
+		[requirements_ProjectKB_Instance_117]
+		[requirements_ProjectKB_Instance_133]
+		[requirements_ProjectKB_Instance_185]
+		[requirements_ProjectKB_Instance_123]
+		[requirements_ProjectKB_Instance_155]
+		[requirements_ProjectKB_Instance_111]
+		[requirements_ProjectKB_Instance_183]
+		[requirements_ProjectKB_Instance_147]
+		[requirements_ProjectKB_Instance_139]
+		[requirements_ProjectKB_Instance_121]
+		[requirements_ProjectKB_Instance_175]
+		[requirements_ProjectKB_Instance_173]
+		[requirements_ProjectKB_Instance_131]
+		[requirements_ProjectKB_Instance_153]
+		[requirements_ProjectKB_Instance_189]
+		[requirements_ProjectKB_Instance_179]
+		[requirements_ProjectKB_Instance_143]
+		[requirements_ProjectKB_Instance_127]))
+
+([QUERIES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [KB_706925_Instance_103])
+	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
+
+([requirements_ProjectKB_Instance_10189] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_10190])
+	(widget_class_name "ca.uvic.cs.protege.phonetics.PhoneticsTab"))
+
+([requirements_ProjectKB_Instance_10190] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10191] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_10192])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+
+([requirements_ProjectKB_Instance_10192] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10193] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_10194])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+
+([requirements_ProjectKB_Instance_10194] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10195] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_10196])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([requirements_ProjectKB_Instance_10196] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10197] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_10198])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([requirements_ProjectKB_Instance_10198] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10199] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_10200])
+	(widget_class_name "InternalKBTab"))
+
+([requirements_ProjectKB_Instance_10200] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10201] of  Widget
+
+	(is_hidden FALSE)
+	(name "Requirement")
+	(property_list [requirements_ProjectKB_Instance_10202])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([requirements_ProjectKB_Instance_10202] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10203]
+		[requirements_ProjectKB_Instance_10204]
+		[requirements_ProjectKB_Instance_10208]
+		[requirements_ProjectKB_Instance_10212]
+		[requirements_ProjectKB_Instance_10214]
+		[requirements_ProjectKB_Instance_10218]
+		[requirements_ProjectKB_Instance_10222]
+		[requirements_ProjectKB_Instance_10226]
+		[requirements_ProjectKB_Instance_10228]
+		[requirements_ProjectKB_Instance_10232]
+		[requirements_ProjectKB_Instance_10234]))
+
+([requirements_ProjectKB_Instance_10203] of  Property_List
+
+	(name "layout properties"))
+
+([requirements_ProjectKB_Instance_10204] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "is_derived_into")
+	(property_list [requirements_ProjectKB_Instance_10205])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([requirements_ProjectKB_Instance_10205] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10206]
+		[requirements_ProjectKB_Instance_10207]))
+
+([requirements_ProjectKB_Instance_10206] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10207] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10208] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasConstraint")
+	(property_list [requirements_ProjectKB_Instance_10209])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([requirements_ProjectKB_Instance_10209] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10210]
+		[requirements_ProjectKB_Instance_10211]))
+
+([requirements_ProjectKB_Instance_10210] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10211] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10212] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "optional")
+	(property_list [requirements_ProjectKB_Instance_10213])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([requirements_ProjectKB_Instance_10213] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10214] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "isPartOf")
+	(property_list [requirements_ProjectKB_Instance_10215])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([requirements_ProjectKB_Instance_10215] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10216]
+		[requirements_ProjectKB_Instance_10217]))
+
+([requirements_ProjectKB_Instance_10216] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10217] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10218] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "is_derived_from")
+	(property_list [requirements_ProjectKB_Instance_10219])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 240))
+
+([requirements_ProjectKB_Instance_10219] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10220]
+		[requirements_ProjectKB_Instance_10221]))
+
+([requirements_ProjectKB_Instance_10220] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10221] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10222] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasPart")
+	(property_list [requirements_ProjectKB_Instance_10223])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 120))
+
+([requirements_ProjectKB_Instance_10223] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10224]
+		[requirements_ProjectKB_Instance_10225]))
+
+([requirements_ProjectKB_Instance_10224] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10225] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10226] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "risk_kind")
+	(property_list [requirements_ProjectKB_Instance_10227])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 0)
+	(y 120))
+
+([requirements_ProjectKB_Instance_10227] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10228] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(label "Verified By")
+	(name "verified_by")
+	(property_list [requirements_ProjectKB_Instance_10229])
+	(widget_class_name "edu.stanford.smi.protegex.widget.instancetable.InstanceTableWidget")
+	(width 200)
+	(x 400)
+	(y 120))
+
+([requirements_ProjectKB_Instance_10229] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10238]
+		[requirements_ProjectKB_Instance_10240]
+		[requirements_ProjectKB_Instance_10241]
+		[requirements_ProjectKB_Instance_10242]
+		[requirements_ProjectKB_Instance_10244]
+		[requirements_ProjectKB_Instance_10245]
+		[requirements_ProjectKB_Instance_10246]
+		[requirements_ProjectKB_Instance_10248]
+		[requirements_ProjectKB_Instance_10249]
+		[requirements_ProjectKB_Instance_10250]
+		[requirements_ProjectKB_Instance_10252]
+		[requirements_ProjectKB_Instance_10256]
+		[requirements_ProjectKB_Instance_10257]
+		[requirements_ProjectKB_Instance_10258]
+		[requirements_ProjectKB_Instance_10259]
+		[requirements_ProjectKB_Instance_10260]
+		[requirements_ProjectKB_Instance_10261]
+		[requirements_ProjectKB_Instance_10262]
+		[requirements_ProjectKB_Instance_10263]
+		[requirements_ProjectKB_Instance_10264]
+		[requirements_ProjectKB_Instance_10265]
+		[requirements_ProjectKB_Instance_10266]
+		[requirements_ProjectKB_Instance_10267]
+		[requirements_ProjectKB_Instance_10268]
+		[requirements_ProjectKB_Instance_10269]
+		[requirements_ProjectKB_Instance_10270]
+		[requirements_ProjectKB_Instance_10271]
+		[requirements_ProjectKB_Instance_10272]
+		[requirements_ProjectKB_Instance_10273]
+		[requirements_ProjectKB_Instance_10274]
+		[requirements_ProjectKB_Instance_10275]
+		[requirements_ProjectKB_Instance_10276]
+		[requirements_ProjectKB_Instance_10277]
+		[requirements_ProjectKB_Instance_10278]
+		[requirements_ProjectKB_Instance_10279]
+		[requirements_ProjectKB_Instance_10280]
+		[requirements_ProjectKB_Instance_10295]
+		[requirements_ProjectKB_Instance_10299]
+		[requirements_ProjectKB_Instance_10300]
+		[requirements_ProjectKB_Instance_10301]))
+
+([requirements_ProjectKB_Instance_10232] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "name")
+	(property_list [requirements_ProjectKB_Instance_10233])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([requirements_ProjectKB_Instance_10233] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10234] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "fulfilled_by")
+	(property_list [requirements_ProjectKB_Instance_10235])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([requirements_ProjectKB_Instance_10235] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10236]
+		[requirements_ProjectKB_Instance_10237]))
+
+([requirements_ProjectKB_Instance_10236] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10237] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10238] of  String
+
+	(name "tooltip_text"))
+
+([requirements_ProjectKB_Instance_10239] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10243]
+		[requirements_ProjectKB_Instance_10247]
+		[requirements_ProjectKB_Instance_10251]))
+
+([requirements_ProjectKB_Instance_10240] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORtester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10241] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORtester"))
+
+([requirements_ProjectKB_Instance_10242] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORtester"))
+
+([requirements_ProjectKB_Instance_10243] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10244] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORverdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10245] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORverdict"))
+
+([requirements_ProjectKB_Instance_10246] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORverdict"))
+
+([requirements_ProjectKB_Instance_10247] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10248] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORtestCase")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10249] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORtestCase"))
+
+([requirements_ProjectKB_Instance_10250] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORtestCase"))
+
+([requirements_ProjectKB_Instance_10251] of  String
+
+	(name "testCase")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10252] of  Integer
+
+	(integer_value 3)
+	(name ":Number:Of:Visible:Slots"))
+
+([requirements_ProjectKB_Instance_10253] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10254] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10255] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10256] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Automatically:Select:Insertions"))
+
+([requirements_ProjectKB_Instance_10257] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Create:Form:For:New:Instances"))
+
+([requirements_ProjectKB_Instance_10258] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":HighLight:Selected:Row"))
+
+([requirements_ProjectKB_Instance_10259] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Edit:In:Place"))
+
+([requirements_ProjectKB_Instance_10260] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Use:Dialog:To:Select:Instances"))
+
+([requirements_ProjectKB_Instance_10261] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Use:Dialog:To:Select:Classes"))
+
+([requirements_ProjectKB_Instance_10262] of  String
+
+	(name ":Dialog:Title:For:Selecting:Instances")
+	(string_value "Select an instance"))
+
+([requirements_ProjectKB_Instance_10263] of  String
+
+	(name ":Dialog:Title:For:Selecting:Classes")
+	(string_value "Select a class"))
+
+([requirements_ProjectKB_Instance_10264] of  Integer
+
+	(integer_value 1)
+	(name ":Prototype:Depth"))
+
+([requirements_ProjectKB_Instance_10265] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Create:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10266] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Add:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10267] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:View:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10268] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Remove:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10269] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Delete:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10270] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Prototype:Button"))
+
+([requirements_ProjectKB_Instance_10271] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Move:Instance:Buttons"))
+
+([requirements_ProjectKB_Instance_10272] of  String
+
+	(name ":Create:Instance:Button:Tooltip")
+	(string_value "Create a new instance"))
+
+([requirements_ProjectKB_Instance_10273] of  String
+
+	(name ":Add:Instance:Button:Tooltip")
+	(string_value "Select an already existing instance"))
+
+([requirements_ProjectKB_Instance_10274] of  String
+
+	(name ":View:Instance:Button:Tooltip")
+	(string_value "View the selected instance"))
+
+([requirements_ProjectKB_Instance_10275] of  String
+
+	(name ":Remove:Instance:Button:Tooltip")
+	(string_value "Remove the selected instance(s)"))
+
+([requirements_ProjectKB_Instance_10276] of  String
+
+	(name ":Delete:Instance:Button:Tooltip")
+	(string_value "Delete the selected instance(s) from the knowledge base"))
+
+([requirements_ProjectKB_Instance_10277] of  String
+
+	(name ":Prototype:Button:Tooltip")
+	(string_value "Create a new instance which is a duplicate of the selected instance"))
+
+([requirements_ProjectKB_Instance_10278] of  String
+
+	(name ":Move:Instance:Buttons:Tooltip")
+	(string_value "Move the selected instance"))
+
+([requirements_ProjectKB_Instance_10279] of  String
+
+	(name ":Create:Instance:Dialog:Title")
+	(string_value "Create a new instance"))
+
+([requirements_ProjectKB_Instance_10280] of  String
+
+	(name ":Add:Instance:Dialog:Title")
+	(string_value "Select an already existing instance"))
+
+([requirements_ProjectKB_Instance_10281] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10282]
+		[requirements_ProjectKB_Instance_10283]
+		[requirements_ProjectKB_Instance_10284]))
+
+([requirements_ProjectKB_Instance_10282] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10283] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10284] of  String
+
+	(name "testCase")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10285] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10286] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10287] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10288] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10289]
+		[requirements_ProjectKB_Instance_10290]
+		[requirements_ProjectKB_Instance_10291]))
+
+([requirements_ProjectKB_Instance_10289] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10290] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10291] of  String
+
+	(name "testCase")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10292] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10293] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10294] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10295] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10296]
+		[requirements_ProjectKB_Instance_10297]
+		[requirements_ProjectKB_Instance_10298]))
+
+([requirements_ProjectKB_Instance_10296] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10297] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10298] of  String
+
+	(name "testCase")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10299] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "testCase"))
+
+([requirements_ProjectKB_Instance_10300] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10301] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10302] of  Widget
+
+	(is_hidden FALSE)
+	(name "TestCase")
+	(property_list [requirements_ProjectKB_Instance_10303])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([requirements_ProjectKB_Instance_10303] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10304]
+		[requirements_ProjectKB_Instance_10305]
+		[requirements_ProjectKB_Instance_10309]
+		[requirements_ProjectKB_Instance_10313]
+		[requirements_ProjectKB_Instance_10317]))
+
+([requirements_ProjectKB_Instance_10304] of  Property_List
+
+	(name "layout properties"))
+
+([requirements_ProjectKB_Instance_10305] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(label "Verifies")
+	(name "verifies")
+	(property_list [requirements_ProjectKB_Instance_10306])
+	(widget_class_name "edu.stanford.smi.protegex.widget.instancetable.InstanceTableWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([requirements_ProjectKB_Instance_10306] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10319]
+		[requirements_ProjectKB_Instance_10321]
+		[requirements_ProjectKB_Instance_10322]
+		[requirements_ProjectKB_Instance_10323]
+		[requirements_ProjectKB_Instance_10325]
+		[requirements_ProjectKB_Instance_10326]
+		[requirements_ProjectKB_Instance_10327]
+		[requirements_ProjectKB_Instance_10329]
+		[requirements_ProjectKB_Instance_10330]
+		[requirements_ProjectKB_Instance_10331]
+		[requirements_ProjectKB_Instance_10333]
+		[requirements_ProjectKB_Instance_10337]
+		[requirements_ProjectKB_Instance_10338]
+		[requirements_ProjectKB_Instance_10339]
+		[requirements_ProjectKB_Instance_10340]
+		[requirements_ProjectKB_Instance_10341]
+		[requirements_ProjectKB_Instance_10342]
+		[requirements_ProjectKB_Instance_10343]
+		[requirements_ProjectKB_Instance_10344]
+		[requirements_ProjectKB_Instance_10345]
+		[requirements_ProjectKB_Instance_10346]
+		[requirements_ProjectKB_Instance_10347]
+		[requirements_ProjectKB_Instance_10348]
+		[requirements_ProjectKB_Instance_10349]
+		[requirements_ProjectKB_Instance_10350]
+		[requirements_ProjectKB_Instance_10351]
+		[requirements_ProjectKB_Instance_10352]
+		[requirements_ProjectKB_Instance_10353]
+		[requirements_ProjectKB_Instance_10354]
+		[requirements_ProjectKB_Instance_10355]
+		[requirements_ProjectKB_Instance_10356]
+		[requirements_ProjectKB_Instance_10357]
+		[requirements_ProjectKB_Instance_10358]
+		[requirements_ProjectKB_Instance_10359]
+		[requirements_ProjectKB_Instance_10360]
+		[requirements_ProjectKB_Instance_10361]
+		[requirements_ProjectKB_Instance_10376]
+		[requirements_ProjectKB_Instance_10380]
+		[requirements_ProjectKB_Instance_10381]
+		[requirements_ProjectKB_Instance_10382]))
+
+([requirements_ProjectKB_Instance_10309] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "isPartOf")
+	(property_list [requirements_ProjectKB_Instance_10310])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([requirements_ProjectKB_Instance_10310] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10311]
+		[requirements_ProjectKB_Instance_10312]))
+
+([requirements_ProjectKB_Instance_10311] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10312] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10313] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasPart")
+	(property_list [requirements_ProjectKB_Instance_10314])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([requirements_ProjectKB_Instance_10314] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_10315]
+		[requirements_ProjectKB_Instance_10316]))
+
+([requirements_ProjectKB_Instance_10315] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_10316] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_10317] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "name")
+	(property_list [requirements_ProjectKB_Instance_10318])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([requirements_ProjectKB_Instance_10318] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_10319] of  String
+
+	(name "tooltip_text"))
+
+([requirements_ProjectKB_Instance_10320] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10324]
+		[requirements_ProjectKB_Instance_10328]
+		[requirements_ProjectKB_Instance_10332]))
+
+([requirements_ProjectKB_Instance_10321] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORtester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10322] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORtester"))
+
+([requirements_ProjectKB_Instance_10323] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORtester"))
+
+([requirements_ProjectKB_Instance_10324] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10325] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORrequirement")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10326] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORrequirement"))
+
+([requirements_ProjectKB_Instance_10327] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORrequirement"))
+
+([requirements_ProjectKB_Instance_10328] of  String
+
+	(name "requirement")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10329] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORverdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10330] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORverdict"))
+
+([requirements_ProjectKB_Instance_10331] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORverdict"))
+
+([requirements_ProjectKB_Instance_10332] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10333] of  Integer
+
+	(integer_value 3)
+	(name ":Number:Of:Visible:Slots"))
+
+([requirements_ProjectKB_Instance_10334] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10335] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10336] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10337] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Automatically:Select:Insertions"))
+
+([requirements_ProjectKB_Instance_10338] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Create:Form:For:New:Instances"))
+
+([requirements_ProjectKB_Instance_10339] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":HighLight:Selected:Row"))
+
+([requirements_ProjectKB_Instance_10340] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Edit:In:Place"))
+
+([requirements_ProjectKB_Instance_10341] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Use:Dialog:To:Select:Instances"))
+
+([requirements_ProjectKB_Instance_10342] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Use:Dialog:To:Select:Classes"))
+
+([requirements_ProjectKB_Instance_10343] of  String
+
+	(name ":Dialog:Title:For:Selecting:Instances")
+	(string_value "Select an instance"))
+
+([requirements_ProjectKB_Instance_10344] of  String
+
+	(name ":Dialog:Title:For:Selecting:Classes")
+	(string_value "Select a class"))
+
+([requirements_ProjectKB_Instance_10345] of  Integer
+
+	(integer_value 1)
+	(name ":Prototype:Depth"))
+
+([requirements_ProjectKB_Instance_10346] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Create:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10347] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Add:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10348] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:View:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10349] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Remove:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10350] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Delete:Instance:Button"))
+
+([requirements_ProjectKB_Instance_10351] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Prototype:Button"))
+
+([requirements_ProjectKB_Instance_10352] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Move:Instance:Buttons"))
+
+([requirements_ProjectKB_Instance_10353] of  String
+
+	(name ":Create:Instance:Button:Tooltip")
+	(string_value "Create a new instance"))
+
+([requirements_ProjectKB_Instance_10354] of  String
+
+	(name ":Add:Instance:Button:Tooltip")
+	(string_value "Select an already existing instance"))
+
+([requirements_ProjectKB_Instance_10355] of  String
+
+	(name ":View:Instance:Button:Tooltip")
+	(string_value "View the selected instance"))
+
+([requirements_ProjectKB_Instance_10356] of  String
+
+	(name ":Remove:Instance:Button:Tooltip")
+	(string_value "Remove the selected instance(s)"))
+
+([requirements_ProjectKB_Instance_10357] of  String
+
+	(name ":Delete:Instance:Button:Tooltip")
+	(string_value "Delete the selected instance(s) from the knowledge base"))
+
+([requirements_ProjectKB_Instance_10358] of  String
+
+	(name ":Prototype:Button:Tooltip")
+	(string_value "Create a new instance which is a duplicate of the selected instance"))
+
+([requirements_ProjectKB_Instance_10359] of  String
+
+	(name ":Move:Instance:Buttons:Tooltip")
+	(string_value "Move the selected instance"))
+
+([requirements_ProjectKB_Instance_10360] of  String
+
+	(name ":Create:Instance:Dialog:Title")
+	(string_value "Create a new instance"))
+
+([requirements_ProjectKB_Instance_10361] of  String
+
+	(name ":Add:Instance:Dialog:Title")
+	(string_value "Select an already existing instance"))
+
+([requirements_ProjectKB_Instance_10362] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10363]
+		[requirements_ProjectKB_Instance_10364]
+		[requirements_ProjectKB_Instance_10365]))
+
+([requirements_ProjectKB_Instance_10363] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10364] of  String
+
+	(name "requirement")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10365] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10366] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10367] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10368] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10369] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10370]
+		[requirements_ProjectKB_Instance_10371]
+		[requirements_ProjectKB_Instance_10372]))
+
+([requirements_ProjectKB_Instance_10370] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10371] of  String
+
+	(name "requirement")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10372] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10373] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10374] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10375] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10376] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[requirements_ProjectKB_Instance_10377]
+		[requirements_ProjectKB_Instance_10378]
+		[requirements_ProjectKB_Instance_10379]))
+
+([requirements_ProjectKB_Instance_10377] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_10378] of  String
+
+	(name "requirement")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10379] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10380] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "requirement"))
+
+([requirements_ProjectKB_Instance_10381] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([requirements_ProjectKB_Instance_10382] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([requirements_ProjectKB_Instance_106] of  String
+
+	(name "SearchTab_Query"))
+
+([requirements_ProjectKB_Instance_111] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_112])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([requirements_ProjectKB_Instance_112] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_113] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [requirements_ProjectKB_Instance_114])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([requirements_ProjectKB_Instance_114] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_115] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_116])
+	(widget_class_name "JessTab.JessTab"))
+
+([requirements_ProjectKB_Instance_116] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_117] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_118])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([requirements_ProjectKB_Instance_118] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_119] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_120])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([requirements_ProjectKB_Instance_120] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_121] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_122])
+	(widget_class_name "nl.uva.psy.swi.beangenerator.OntologyBeanGeneratorTab"))
+
+([requirements_ProjectKB_Instance_122] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_123] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_124])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([requirements_ProjectKB_Instance_124] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_125] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_126])
+	(widget_class_name "com.dcx.ricek.protege.modelica.export.ModelicaExportTab"))
+
+([requirements_ProjectKB_Instance_126] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_127] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_128])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
+
+([requirements_ProjectKB_Instance_128] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_129] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_130])
+	(widget_class_name "com.dcx.mixer.ui.MappedMixerTab"))
+
+([requirements_ProjectKB_Instance_130] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_131] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_132])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
+
+([requirements_ProjectKB_Instance_132] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_133] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_134])
+	(widget_class_name "edu.stanford.smi.protegex.psm.PSMTab"))
+
+([requirements_ProjectKB_Instance_134] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_135] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_136])
+	(widget_class_name "instancesTab2.InstancesTab2"))
+
+([requirements_ProjectKB_Instance_136] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_137] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_138])
+	(widget_class_name "ezOWLTab"))
+
+([requirements_ProjectKB_Instance_138] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_139] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_140])
+	(widget_class_name "ezpal.EZPalTab"))
+
+([requirements_ProjectKB_Instance_140] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_141] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_142])
+	(widget_class_name "com.dcx.ricek.protege.modelica.xmlimport.ModelicaImportTab"))
+
+([requirements_ProjectKB_Instance_142] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_143] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_144])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([requirements_ProjectKB_Instance_144] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_145] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_146])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([requirements_ProjectKB_Instance_146] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_147] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_148])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([requirements_ProjectKB_Instance_148] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_149] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_150])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([requirements_ProjectKB_Instance_150] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_151] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_152])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([requirements_ProjectKB_Instance_152] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_153] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_154])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
+
+([requirements_ProjectKB_Instance_154] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_155] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_156])
+	(widget_class_name "tabview.TabView"))
+
+([requirements_ProjectKB_Instance_156] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_157] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_158])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([requirements_ProjectKB_Instance_158] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_159] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_160])
+	(widget_class_name "DataGenieTab.DataGenieTab"))
+
+([requirements_ProjectKB_Instance_160] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_161] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_162])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([requirements_ProjectKB_Instance_162] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_163] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_164])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([requirements_ProjectKB_Instance_164] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_165] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_166])
+	(widget_class_name "com.dcx.ricek.protege.ontoquery.OntoQueryTab"))
+
+([requirements_ProjectKB_Instance_166] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_167] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_168])
+	(widget_class_name "ca.uvic.csr.shrimp.protegeTab.JambalayaTab"))
+
+([requirements_ProjectKB_Instance_168] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_169] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_170])
+	(widget_class_name "com.sri.owlseditor.Owlstab"))
+
+([requirements_ProjectKB_Instance_170] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_171] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_172])
+	(widget_class_name "com.dcx.ricek.protege.modelica.instantiation.ModelicaInstanceTab"))
+
+([requirements_ProjectKB_Instance_172] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_173] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_174])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
+
+([requirements_ProjectKB_Instance_174] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_175] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_176])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
+
+([requirements_ProjectKB_Instance_176] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_177] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_178])
+	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
+
+([requirements_ProjectKB_Instance_178] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_179] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_180])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([requirements_ProjectKB_Instance_180] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_181] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_182])
+	(widget_class_name "com.dcx.reiik.engviz.EngVizTab"))
+
+([requirements_ProjectKB_Instance_182] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_183] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_184])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
+
+([requirements_ProjectKB_Instance_184] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_185] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_186])
+	(widget_class_name "edu.stanford.smi.protegex.queries_export_tab.QueriesExportTab"))
+
+([requirements_ProjectKB_Instance_186] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_187] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_188])
+	(widget_class_name "edu.stanford.smi.protegex.concordance_tab.ConcordanceTab"))
+
+([requirements_ProjectKB_Instance_188] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_189] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [requirements_ProjectKB_Instance_190])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([requirements_ProjectKB_Instance_190] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_244] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_245]
+		[requirements_ProjectKB_Instance_246]))
+
+([requirements_ProjectKB_Instance_245] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([requirements_ProjectKB_Instance_246] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([requirements_ProjectKB_Instance_247] of  Property_List
+
+	(properties
+		[requirements_ProjectKB_Instance_248]
+		[requirements_ProjectKB_Instance_249]))
+
+([requirements_ProjectKB_Instance_248] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Move up"))
+
+([requirements_ProjectKB_Instance_249] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Move down"))
+
+([requirements_ProjectKB_Instance_250] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_251] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_252] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_253] of  Property_List
+
+	(name "layout properties"))
+
+([requirements_ProjectKB_Instance_254] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_255] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_256] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_257] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_258] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_259] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_260] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_261] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_262] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_263] of  Property_List
+)
+
+([requirements_ProjectKB_Instance_264] of  Property_List
+)
+
+([SLOTS_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.SlotsTab"))
+
+([SOURCES] of  Property_List
+
+	(properties
+		[KB_706925_Instance_0]
+		[KB_706925_Instance_104]
+		[KB_706925_Instance_105]))
+
+([STANDARD_CLASS_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-CLASS")
+	(property_list [KB_893626_Instance_0])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_FACET_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-FACET")
+	(property_list [KB_893626_Instance_29])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_SLOT_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-SLOT")
+	(property_list [KB_893626_Instance_12])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))

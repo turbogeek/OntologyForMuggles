@@ -1,0 +1,2564 @@
+; Wed Jun 04 13:06:06 GMT-08:00 2008
+; 
+;+ (version "3.4")
+;+ (build "Build 500")
+
+([BROWSER_SLOT_NAMES] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class845]
+		[EngineTransmission_3_ProjectKB_Class846]
+		[EngineTransmission_3_ProjectKB_Class847]))
+
+([CLSES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesTab"))
+
+([EngineTransmission_3_ProjectKB_Class417] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class418])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+
+([EngineTransmission_3_ProjectKB_Class418] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class419] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class420])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+
+([EngineTransmission_3_ProjectKB_Class420] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class421] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class422])
+	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([EngineTransmission_3_ProjectKB_Class422] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class423] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class424])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([EngineTransmission_3_ProjectKB_Class424] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class425] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class426])
+	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
+([EngineTransmission_3_ProjectKB_Class426] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class427] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class428])
+	(widget_class_name "se.liu.ida.JessTab.JessTab"))
+
+([EngineTransmission_3_ProjectKB_Class428] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class429] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class430])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([EngineTransmission_3_ProjectKB_Class430] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class431] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class432])
+	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
+
+([EngineTransmission_3_ProjectKB_Class432] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class433] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class434])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([EngineTransmission_3_ProjectKB_Class434] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class435] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class436])
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+
+([EngineTransmission_3_ProjectKB_Class436] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class437] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class438])
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+
+([EngineTransmission_3_ProjectKB_Class438] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class439] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_3_ProjectKB_Class440])
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+
+([EngineTransmission_3_ProjectKB_Class440] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class441] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class442] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class443] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class444] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class445] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class446] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class447] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class620] of  Widget
+
+	(is_hidden FALSE)
+	(name "WeightRequirement")
+	(property_list [EngineTransmission_3_ProjectKB_Class710])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([EngineTransmission_3_ProjectKB_Class701] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "fulfilled_by")
+	(property_list [EngineTransmission_3_ProjectKB_Class702])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([EngineTransmission_3_ProjectKB_Class702] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class703]
+		[EngineTransmission_3_ProjectKB_Class704]
+		[EngineTransmission_3_ProjectKB_Class705]))
+
+([EngineTransmission_3_ProjectKB_Class703] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class704] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class705] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class710] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class711]
+		[EngineTransmission_3_ProjectKB_Class712]
+		[EngineTransmission_3_ProjectKB_Class717]
+		[EngineTransmission_3_ProjectKB_Class722]
+		[EngineTransmission_3_ProjectKB_Class724]
+		[EngineTransmission_3_ProjectKB_Class729]
+		[EngineTransmission_3_ProjectKB_Class734]
+		[EngineTransmission_3_ProjectKB_Class739]
+		[EngineTransmission_3_ProjectKB_Class741]
+		[EngineTransmission_3_ProjectKB_Class786]
+		[EngineTransmission_3_ProjectKB_Class793]))
+
+([EngineTransmission_3_ProjectKB_Class711] of  Property_List
+
+	(name "layout properties"))
+
+([EngineTransmission_3_ProjectKB_Class712] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "is_derived_into")
+	(property_list [EngineTransmission_3_ProjectKB_Class713])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 210)
+	(y 190))
+
+([EngineTransmission_3_ProjectKB_Class713] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class714]
+		[EngineTransmission_3_ProjectKB_Class715]
+		[EngineTransmission_3_ProjectKB_Class716]))
+
+([EngineTransmission_3_ProjectKB_Class714] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class715] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class716] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class717] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasConstraint")
+	(property_list [EngineTransmission_3_ProjectKB_Class718])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 220)
+	(y 420))
+
+([EngineTransmission_3_ProjectKB_Class718] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class719]
+		[EngineTransmission_3_ProjectKB_Class720]
+		[EngineTransmission_3_ProjectKB_Class721]))
+
+([EngineTransmission_3_ProjectKB_Class719] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class720] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class721] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class722] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "optional")
+	(property_list [EngineTransmission_3_ProjectKB_Class723])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 90)
+	(x 0)
+	(y 70))
+
+([EngineTransmission_3_ProjectKB_Class723] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class724] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "is part of requirement")
+	(name "isPartOf")
+	(property_list [EngineTransmission_3_ProjectKB_Class725])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 210)
+	(y 320))
+
+([EngineTransmission_3_ProjectKB_Class725] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class726]
+		[EngineTransmission_3_ProjectKB_Class727]
+		[EngineTransmission_3_ProjectKB_Class728]
+		[EngineTransmission_3_ProjectKB_Class833]
+		[EngineTransmission_3_ProjectKB_Class834]
+		[EngineTransmission_3_ProjectKB_Class835]
+		[EngineTransmission_3_ProjectKB_Class836]
+		[EngineTransmission_3_ProjectKB_Class837]
+		[EngineTransmission_3_ProjectKB_Class838]
+		[EngineTransmission_3_ProjectKB_Class839]
+		[EngineTransmission_3_ProjectKB_Class840]
+		[EngineTransmission_3_ProjectKB_Class841]
+		[EngineTransmission_3_ProjectKB_Class842]
+		[EngineTransmission_3_ProjectKB_Class843]
+		[EngineTransmission_3_ProjectKB_Class844]))
+
+([EngineTransmission_3_ProjectKB_Class726] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class727] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class728] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class729] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "is_derived_from")
+	(property_list [EngineTransmission_3_ProjectKB_Class730])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 190))
+
+([EngineTransmission_3_ProjectKB_Class730] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class731]
+		[EngineTransmission_3_ProjectKB_Class732]
+		[EngineTransmission_3_ProjectKB_Class733]))
+
+([EngineTransmission_3_ProjectKB_Class731] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class732] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class733] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class734] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "has sub requirements")
+	(name "hasPart")
+	(property_list [EngineTransmission_3_ProjectKB_Class735])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 310))
+
+([EngineTransmission_3_ProjectKB_Class735] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class736]
+		[EngineTransmission_3_ProjectKB_Class737]
+		[EngineTransmission_3_ProjectKB_Class738]
+		[EngineTransmission_3_ProjectKB_Class821]
+		[EngineTransmission_3_ProjectKB_Class822]
+		[EngineTransmission_3_ProjectKB_Class823]
+		[EngineTransmission_3_ProjectKB_Class824]
+		[EngineTransmission_3_ProjectKB_Class825]
+		[EngineTransmission_3_ProjectKB_Class826]
+		[EngineTransmission_3_ProjectKB_Class827]
+		[EngineTransmission_3_ProjectKB_Class828]
+		[EngineTransmission_3_ProjectKB_Class829]
+		[EngineTransmission_3_ProjectKB_Class830]
+		[EngineTransmission_3_ProjectKB_Class831]
+		[EngineTransmission_3_ProjectKB_Class832]))
+
+([EngineTransmission_3_ProjectKB_Class736] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class737] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class738] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class739] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "risk_kind")
+	(property_list [EngineTransmission_3_ProjectKB_Class740])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 100)
+	(y 60))
+
+([EngineTransmission_3_ProjectKB_Class740] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class741] of  Widget
+
+	(height 100)
+	(is_hidden FALSE)
+	(label "Verified By")
+	(name "verified_by")
+	(property_list [EngineTransmission_3_ProjectKB_Class742])
+	(widget_class_name "edu.stanford.smi.protegex.widget.instancetable.InstanceTableWidget")
+	(width 200)
+	(x 0)
+	(y 430))
+
+([EngineTransmission_3_ProjectKB_Class742] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class743]
+		[EngineTransmission_3_ProjectKB_Class744]
+		[EngineTransmission_3_ProjectKB_Class745]
+		[EngineTransmission_3_ProjectKB_Class746]
+		[EngineTransmission_3_ProjectKB_Class747]
+		[EngineTransmission_3_ProjectKB_Class748]
+		[EngineTransmission_3_ProjectKB_Class749]
+		[EngineTransmission_3_ProjectKB_Class750]
+		[EngineTransmission_3_ProjectKB_Class751]
+		[EngineTransmission_3_ProjectKB_Class752]
+		[EngineTransmission_3_ProjectKB_Class753]
+		[EngineTransmission_3_ProjectKB_Class754]
+		[EngineTransmission_3_ProjectKB_Class755]
+		[EngineTransmission_3_ProjectKB_Class756]
+		[EngineTransmission_3_ProjectKB_Class757]
+		[EngineTransmission_3_ProjectKB_Class758]
+		[EngineTransmission_3_ProjectKB_Class759]
+		[EngineTransmission_3_ProjectKB_Class760]
+		[EngineTransmission_3_ProjectKB_Class761]
+		[EngineTransmission_3_ProjectKB_Class762]
+		[EngineTransmission_3_ProjectKB_Class763]
+		[EngineTransmission_3_ProjectKB_Class764]
+		[EngineTransmission_3_ProjectKB_Class765]
+		[EngineTransmission_3_ProjectKB_Class766]
+		[EngineTransmission_3_ProjectKB_Class767]
+		[EngineTransmission_3_ProjectKB_Class768]
+		[EngineTransmission_3_ProjectKB_Class769]
+		[EngineTransmission_3_ProjectKB_Class770]
+		[EngineTransmission_3_ProjectKB_Class771]
+		[EngineTransmission_3_ProjectKB_Class772]
+		[EngineTransmission_3_ProjectKB_Class773]
+		[EngineTransmission_3_ProjectKB_Class774]
+		[EngineTransmission_3_ProjectKB_Class775]
+		[EngineTransmission_3_ProjectKB_Class776]
+		[EngineTransmission_3_ProjectKB_Class777]
+		[EngineTransmission_3_ProjectKB_Class778]
+		[EngineTransmission_3_ProjectKB_Class779]
+		[EngineTransmission_3_ProjectKB_Class783]
+		[EngineTransmission_3_ProjectKB_Class784]
+		[EngineTransmission_3_ProjectKB_Class785]))
+
+([EngineTransmission_3_ProjectKB_Class743] of  String
+
+	(name "tooltip_text"))
+
+([EngineTransmission_3_ProjectKB_Class744] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORtester")
+	(string_value "tester"))
+
+([EngineTransmission_3_ProjectKB_Class745] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORtester"))
+
+([EngineTransmission_3_ProjectKB_Class746] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORtester"))
+
+([EngineTransmission_3_ProjectKB_Class747] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORverdict")
+	(string_value "verdict"))
+
+([EngineTransmission_3_ProjectKB_Class748] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORverdict"))
+
+([EngineTransmission_3_ProjectKB_Class749] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORverdict"))
+
+([EngineTransmission_3_ProjectKB_Class750] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORtestCase")
+	(string_value "testCase"))
+
+([EngineTransmission_3_ProjectKB_Class751] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORtestCase"))
+
+([EngineTransmission_3_ProjectKB_Class752] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORtestCase"))
+
+([EngineTransmission_3_ProjectKB_Class753] of  Integer
+
+	(integer_value 3)
+	(name ":Number:Of:Visible:Slots"))
+
+([EngineTransmission_3_ProjectKB_Class754] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Automatically:Select:Insertions"))
+
+([EngineTransmission_3_ProjectKB_Class755] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Create:Form:For:New:Instances"))
+
+([EngineTransmission_3_ProjectKB_Class756] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":HighLight:Selected:Row"))
+
+([EngineTransmission_3_ProjectKB_Class757] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Edit:In:Place"))
+
+([EngineTransmission_3_ProjectKB_Class758] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Use:Dialog:To:Select:Instances"))
+
+([EngineTransmission_3_ProjectKB_Class759] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Use:Dialog:To:Select:Classes"))
+
+([EngineTransmission_3_ProjectKB_Class760] of  String
+
+	(name ":Dialog:Title:For:Selecting:Instances")
+	(string_value "Select an instance"))
+
+([EngineTransmission_3_ProjectKB_Class761] of  String
+
+	(name ":Dialog:Title:For:Selecting:Classes")
+	(string_value "Select a class"))
+
+([EngineTransmission_3_ProjectKB_Class762] of  Integer
+
+	(integer_value 1)
+	(name ":Prototype:Depth"))
+
+([EngineTransmission_3_ProjectKB_Class763] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Create:Instance:Button"))
+
+([EngineTransmission_3_ProjectKB_Class764] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Add:Instance:Button"))
+
+([EngineTransmission_3_ProjectKB_Class765] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:View:Instance:Button"))
+
+([EngineTransmission_3_ProjectKB_Class766] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Remove:Instance:Button"))
+
+([EngineTransmission_3_ProjectKB_Class767] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Delete:Instance:Button"))
+
+([EngineTransmission_3_ProjectKB_Class768] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Prototype:Button"))
+
+([EngineTransmission_3_ProjectKB_Class769] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Move:Instance:Buttons"))
+
+([EngineTransmission_3_ProjectKB_Class770] of  String
+
+	(name ":Create:Instance:Button:Tooltip")
+	(string_value "Create a new instance"))
+
+([EngineTransmission_3_ProjectKB_Class771] of  String
+
+	(name ":Add:Instance:Button:Tooltip")
+	(string_value "Select an already existing instance"))
+
+([EngineTransmission_3_ProjectKB_Class772] of  String
+
+	(name ":View:Instance:Button:Tooltip")
+	(string_value "View the selected instance"))
+
+([EngineTransmission_3_ProjectKB_Class773] of  String
+
+	(name ":Remove:Instance:Button:Tooltip")
+	(string_value "Remove the selected instance(s)"))
+
+([EngineTransmission_3_ProjectKB_Class774] of  String
+
+	(name ":Delete:Instance:Button:Tooltip")
+	(string_value "Delete the selected instance(s) from the knowledge base"))
+
+([EngineTransmission_3_ProjectKB_Class775] of  String
+
+	(name ":Prototype:Button:Tooltip")
+	(string_value "Create a new instance which is a duplicate of the selected instance"))
+
+([EngineTransmission_3_ProjectKB_Class776] of  String
+
+	(name ":Move:Instance:Buttons:Tooltip")
+	(string_value "Move the selected instance"))
+
+([EngineTransmission_3_ProjectKB_Class777] of  String
+
+	(name ":Create:Instance:Dialog:Title")
+	(string_value "Create a new instance"))
+
+([EngineTransmission_3_ProjectKB_Class778] of  String
+
+	(name ":Add:Instance:Dialog:Title")
+	(string_value "Select an already existing instance"))
+
+([EngineTransmission_3_ProjectKB_Class779] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[EngineTransmission_3_ProjectKB_Class780]
+		[EngineTransmission_3_ProjectKB_Class781]
+		[EngineTransmission_3_ProjectKB_Class782]))
+
+([EngineTransmission_3_ProjectKB_Class780] of  String
+
+	(name "tester")
+	(string_value "tester"))
+
+([EngineTransmission_3_ProjectKB_Class781] of  String
+
+	(name "verdict")
+	(string_value "verdict"))
+
+([EngineTransmission_3_ProjectKB_Class782] of  String
+
+	(name "testCase")
+	(string_value "testCase"))
+
+([EngineTransmission_3_ProjectKB_Class783] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "testCase"))
+
+([EngineTransmission_3_ProjectKB_Class784] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "verdict"))
+
+([EngineTransmission_3_ProjectKB_Class785] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "tester"))
+
+([EngineTransmission_3_ProjectKB_Class786] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "name")
+	(property_list [EngineTransmission_3_ProjectKB_Class787])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([EngineTransmission_3_ProjectKB_Class787] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Class788] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "fulfilled_by")
+	(property_list [EngineTransmission_3_ProjectKB_Class789])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([EngineTransmission_3_ProjectKB_Class789] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class790]
+		[EngineTransmission_3_ProjectKB_Class791]
+		[EngineTransmission_3_ProjectKB_Class792]))
+
+([EngineTransmission_3_ProjectKB_Class790] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Class791] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class792] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class793] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "fulfilled_by")
+	(property_list [EngineTransmission_3_ProjectKB_Class794])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 130))
+
+([EngineTransmission_3_ProjectKB_Class794] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Class795]
+		[EngineTransmission_3_ProjectKB_Class796]))
+
+([EngineTransmission_3_ProjectKB_Class795] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class796] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class812] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class813] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class814] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class815] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class816] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class817] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class818] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class819] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class820] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class821] of  String
+
+	(name "tooltip_text"))
+
+([EngineTransmission_3_ProjectKB_Class822] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([EngineTransmission_3_ProjectKB_Class823] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([EngineTransmission_3_ProjectKB_Class824] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([EngineTransmission_3_ProjectKB_Class825] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([EngineTransmission_3_ProjectKB_Class826] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class827] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([EngineTransmission_3_ProjectKB_Class828] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([EngineTransmission_3_ProjectKB_Class829] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([EngineTransmission_3_ProjectKB_Class830] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([EngineTransmission_3_ProjectKB_Class831] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class832] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([EngineTransmission_3_ProjectKB_Class833] of  String
+
+	(name "tooltip_text"))
+
+([EngineTransmission_3_ProjectKB_Class834] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([EngineTransmission_3_ProjectKB_Class835] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([EngineTransmission_3_ProjectKB_Class836] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([EngineTransmission_3_ProjectKB_Class837] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([EngineTransmission_3_ProjectKB_Class838] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([EngineTransmission_3_ProjectKB_Class839] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([EngineTransmission_3_ProjectKB_Class840] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([EngineTransmission_3_ProjectKB_Class841] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([EngineTransmission_3_ProjectKB_Class842] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([EngineTransmission_3_ProjectKB_Class843] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Class844] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([EngineTransmission_3_ProjectKB_Class845] of  String
+
+	(name "StructuralThing")
+	(string_value "name"))
+
+([EngineTransmission_3_ProjectKB_Class846] of  String
+
+	(name "Powertrain")
+	(string_value "name"))
+
+([EngineTransmission_3_ProjectKB_Class847] of  String
+
+	(name "Flange")
+	(string_value "name"))
+
+([EngineTransmission_3_ProjectKB_Instance_10319] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "fulfills")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_10320])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 550))
+
+([EngineTransmission_3_ProjectKB_Instance_10320] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Instance_10321]
+		[EngineTransmission_3_ProjectKB_Instance_10322]))
+
+([EngineTransmission_3_ProjectKB_Instance_10321] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Instance_10322] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Instance_313] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Instance_314]
+		[EngineTransmission_3_ProjectKB_Instance_315]
+		[EngineTransmission_3_ProjectKB_Class441]))
+
+([EngineTransmission_3_ProjectKB_Instance_314] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_3_ProjectKB_Instance_315] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_3_ProjectKB_Instance_316] of  Property_List
+
+	(properties
+		[EngineTransmission_3_ProjectKB_Instance_317]
+		[EngineTransmission_3_ProjectKB_Instance_318]))
+
+([EngineTransmission_3_ProjectKB_Instance_317] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Move up"))
+
+([EngineTransmission_3_ProjectKB_Instance_318] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Move down"))
+
+([EngineTransmission_3_ProjectKB_Instance_319] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_320] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_321] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_322] of  Property_List
+
+	(name "layout properties"))
+
+([EngineTransmission_3_ProjectKB_Instance_323] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_324] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_325] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_326] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_327] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_328] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_329] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_330] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_331] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_332] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_333] of  Property_List
+)
+
+([EngineTransmission_3_ProjectKB_Instance_417] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "weight")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_418])
+	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
+	(width 100)
+	(x 0)
+	(y 490))
+
+([EngineTransmission_3_ProjectKB_Instance_418] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_100] of  String
+
+	(name "SearchTab_Query"))
+
+([EngineTransmission_ProjectKB_Instance_10210] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "isPartOf")
+	(property_list [EngineTransmission_ProjectKB_Instance_10211])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 430))
+
+([EngineTransmission_ProjectKB_Instance_10211] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_10212]
+		[EngineTransmission_ProjectKB_Instance_10213]
+		[EngineTransmission_3_ProjectKB_Class820]))
+
+([EngineTransmission_ProjectKB_Instance_10212] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_10213] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_111] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [EngineTransmission_ProjectKB_Instance_112])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([EngineTransmission_ProjectKB_Instance_112] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_113] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [EngineTransmission_ProjectKB_Instance_114])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([EngineTransmission_ProjectKB_Instance_114] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_115] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_116])
+	(widget_class_name "JessTab.JessTab"))
+
+([EngineTransmission_ProjectKB_Instance_116] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_117] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_118])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([EngineTransmission_ProjectKB_Instance_118] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_119] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_120])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([EngineTransmission_ProjectKB_Instance_120] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_121] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_122])
+	(widget_class_name "nl.uva.psy.swi.beangenerator.OntologyBeanGeneratorTab"))
+
+([EngineTransmission_ProjectKB_Instance_122] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_123] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_124])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([EngineTransmission_ProjectKB_Instance_124] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_125] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_126])
+	(widget_class_name "com.dcx.ricek.protege.modelica.export.ModelicaExportTab"))
+
+([EngineTransmission_ProjectKB_Instance_126] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_127] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_128])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
+
+([EngineTransmission_ProjectKB_Instance_128] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_129] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_130])
+	(widget_class_name "com.dcx.mixer.ui.MappedMixerTab"))
+
+([EngineTransmission_ProjectKB_Instance_130] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_131] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_132])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
+
+([EngineTransmission_ProjectKB_Instance_132] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_133] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_134])
+	(widget_class_name "edu.stanford.smi.protegex.psm.PSMTab"))
+
+([EngineTransmission_ProjectKB_Instance_134] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_135] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_136])
+	(widget_class_name "instancesTab2.InstancesTab2"))
+
+([EngineTransmission_ProjectKB_Instance_136] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_137] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_138])
+	(widget_class_name "ezOWLTab"))
+
+([EngineTransmission_ProjectKB_Instance_138] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_139] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_140])
+	(widget_class_name "ezpal.EZPalTab"))
+
+([EngineTransmission_ProjectKB_Instance_140] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_141] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_142])
+	(widget_class_name "com.dcx.ricek.protege.modelica.xmlimport.ModelicaImportTab"))
+
+([EngineTransmission_ProjectKB_Instance_142] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_143] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_144])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([EngineTransmission_ProjectKB_Instance_144] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_145] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_146])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([EngineTransmission_ProjectKB_Instance_146] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_147] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_148])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([EngineTransmission_ProjectKB_Instance_148] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_149] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_150])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([EngineTransmission_ProjectKB_Instance_150] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_151] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_152])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([EngineTransmission_ProjectKB_Instance_152] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_153] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_154])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
+
+([EngineTransmission_ProjectKB_Instance_154] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_155] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_156])
+	(widget_class_name "tabview.TabView"))
+
+([EngineTransmission_ProjectKB_Instance_156] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_157] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_158])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([EngineTransmission_ProjectKB_Instance_158] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_159] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_160])
+	(widget_class_name "DataGenieTab.DataGenieTab"))
+
+([EngineTransmission_ProjectKB_Instance_160] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_161] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_162])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([EngineTransmission_ProjectKB_Instance_162] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_163] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_164])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([EngineTransmission_ProjectKB_Instance_164] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_165] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_166])
+	(widget_class_name "com.dcx.ricek.protege.ontoquery.OntoQueryTab"))
+
+([EngineTransmission_ProjectKB_Instance_166] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_167] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_168])
+	(widget_class_name "ca.uvic.csr.shrimp.protegeTab.JambalayaTab"))
+
+([EngineTransmission_ProjectKB_Instance_168] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_169] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_170])
+	(widget_class_name "com.sri.owlseditor.Owlstab"))
+
+([EngineTransmission_ProjectKB_Instance_170] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_171] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_172])
+	(widget_class_name "com.dcx.ricek.protege.modelica.instantiation.ModelicaInstanceTab"))
+
+([EngineTransmission_ProjectKB_Instance_172] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_173] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_174])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
+
+([EngineTransmission_ProjectKB_Instance_174] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_175] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_176])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
+
+([EngineTransmission_ProjectKB_Instance_176] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_177] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_178])
+	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
+
+([EngineTransmission_ProjectKB_Instance_178] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_179] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_180])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([EngineTransmission_ProjectKB_Instance_180] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_181] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_182])
+	(widget_class_name "com.dcx.reiik.engviz.EngVizTab"))
+
+([EngineTransmission_ProjectKB_Instance_182] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_183] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_184])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
+
+([EngineTransmission_ProjectKB_Instance_184] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_185] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [EngineTransmission_ProjectKB_Instance_186])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([EngineTransmission_ProjectKB_Instance_186] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_189] of  Widget
+
+	(is_hidden FALSE)
+	(name "Powertrain")
+	(property_list [EngineTransmission_ProjectKB_Instance_190])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([EngineTransmission_ProjectKB_Instance_190] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20303]
+		[EngineTransmission_ProjectKB_Instance_20304]
+		[EngineTransmission_ProjectKB_Instance_20308]
+		[EngineTransmission_ProjectKB_Instance_20312]
+		[EngineTransmission_ProjectKB_Instance_20314]
+		[EngineTransmission_ProjectKB_Instance_20318]
+		[EngineTransmission_ProjectKB_Instance_20322]
+		[EngineTransmission_ProjectKB_Instance_20326]
+		[EngineTransmission_ProjectKB_Instance_20330]
+		[EngineTransmission_ProjectKB_Instance_10210]
+		[EngineTransmission_3_ProjectKB_Instance_417]))
+
+([EngineTransmission_ProjectKB_Instance_20303] of  Property_List
+
+	(name "layout properties"))
+
+([EngineTransmission_ProjectKB_Instance_20304] of  Widget
+
+	(height 240)
+	(is_hidden FALSE)
+	(name "hasPart")
+	(property_list [EngineTransmission_ProjectKB_Instance_20305])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([EngineTransmission_ProjectKB_Instance_20305] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20306]
+		[EngineTransmission_ProjectKB_Instance_20307]
+		[EngineTransmission_3_ProjectKB_Class814]))
+
+([EngineTransmission_ProjectKB_Instance_20306] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_20307] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_20308] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "HasConnection")
+	(name "hasConnection")
+	(property_list [EngineTransmission_ProjectKB_Instance_20309])
+	(widget_class_name "edu.stanford.smi.protegex.widget.instancetable.InstanceTableWidget")
+	(width 600)
+	(x 0)
+	(y 250))
+
+([EngineTransmission_ProjectKB_Instance_20309] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20334]
+		[EngineTransmission_ProjectKB_Instance_20336]
+		[EngineTransmission_ProjectKB_Instance_20337]
+		[EngineTransmission_ProjectKB_Instance_20338]
+		[EngineTransmission_ProjectKB_Instance_20340]
+		[EngineTransmission_ProjectKB_Instance_20341]
+		[EngineTransmission_ProjectKB_Instance_20342]
+		[EngineTransmission_ProjectKB_Instance_20344]
+		[EngineTransmission_ProjectKB_Instance_20345]
+		[EngineTransmission_ProjectKB_Instance_20346]
+		[EngineTransmission_ProjectKB_Instance_20348]
+		[EngineTransmission_ProjectKB_Instance_20349]
+		[EngineTransmission_ProjectKB_Instance_20350]
+		[EngineTransmission_ProjectKB_Instance_20352]
+		[EngineTransmission_ProjectKB_Instance_20353]
+		[EngineTransmission_ProjectKB_Instance_20354]
+		[EngineTransmission_ProjectKB_Instance_20356]
+		[EngineTransmission_ProjectKB_Instance_20357]
+		[EngineTransmission_ProjectKB_Instance_20358]
+		[EngineTransmission_ProjectKB_Instance_20360]
+		[EngineTransmission_ProjectKB_Instance_20367]
+		[EngineTransmission_ProjectKB_Instance_20368]
+		[EngineTransmission_ProjectKB_Instance_20369]
+		[EngineTransmission_ProjectKB_Instance_20370]
+		[EngineTransmission_ProjectKB_Instance_20371]
+		[EngineTransmission_ProjectKB_Instance_20372]
+		[EngineTransmission_ProjectKB_Instance_20373]
+		[EngineTransmission_ProjectKB_Instance_20374]
+		[EngineTransmission_ProjectKB_Instance_20375]
+		[EngineTransmission_ProjectKB_Instance_20376]
+		[EngineTransmission_ProjectKB_Instance_20377]
+		[EngineTransmission_ProjectKB_Instance_20378]
+		[EngineTransmission_ProjectKB_Instance_20379]
+		[EngineTransmission_ProjectKB_Instance_20380]
+		[EngineTransmission_ProjectKB_Instance_20381]
+		[EngineTransmission_ProjectKB_Instance_20382]
+		[EngineTransmission_ProjectKB_Instance_20383]
+		[EngineTransmission_ProjectKB_Instance_20384]
+		[EngineTransmission_ProjectKB_Instance_20385]
+		[EngineTransmission_ProjectKB_Instance_20386]
+		[EngineTransmission_ProjectKB_Instance_20387]
+		[EngineTransmission_ProjectKB_Instance_20388]
+		[EngineTransmission_ProjectKB_Instance_20389]
+		[EngineTransmission_ProjectKB_Instance_20390]
+		[EngineTransmission_ProjectKB_Instance_20391]
+		[EngineTransmission_ProjectKB_Instance_20418]
+		[EngineTransmission_ProjectKB_Instance_20425]
+		[EngineTransmission_ProjectKB_Instance_20426]
+		[EngineTransmission_ProjectKB_Instance_20427]
+		[EngineTransmission_ProjectKB_Instance_20428]
+		[EngineTransmission_ProjectKB_Instance_20429]
+		[EngineTransmission_ProjectKB_Instance_20430]))
+
+([EngineTransmission_ProjectKB_Instance_20312] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "name")
+	(property_list [EngineTransmission_ProjectKB_Instance_20313])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([EngineTransmission_ProjectKB_Instance_20313] of  Property_List
+)
+
+([EngineTransmission_ProjectKB_Instance_20314] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "engine")
+	(property_list [EngineTransmission_ProjectKB_Instance_20315])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([EngineTransmission_ProjectKB_Instance_20315] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20316]
+		[EngineTransmission_ProjectKB_Instance_20317]
+		[EngineTransmission_3_ProjectKB_Class815]))
+
+([EngineTransmission_ProjectKB_Instance_20316] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_20317] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_20318] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "p2")
+	(property_list [EngineTransmission_ProjectKB_Instance_20319])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([EngineTransmission_ProjectKB_Instance_20319] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20320]
+		[EngineTransmission_ProjectKB_Instance_20321]
+		[EngineTransmission_3_ProjectKB_Class816]))
+
+([EngineTransmission_ProjectKB_Instance_20320] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_20321] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_20322] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "p1")
+	(property_list [EngineTransmission_ProjectKB_Instance_20323])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([EngineTransmission_ProjectKB_Instance_20323] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20324]
+		[EngineTransmission_ProjectKB_Instance_20325]
+		[EngineTransmission_3_ProjectKB_Class817]))
+
+([EngineTransmission_ProjectKB_Instance_20324] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_20325] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_20326] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "transmission")
+	(property_list [EngineTransmission_ProjectKB_Instance_20327])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([EngineTransmission_ProjectKB_Instance_20327] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20328]
+		[EngineTransmission_ProjectKB_Instance_20329]
+		[EngineTransmission_3_ProjectKB_Class818]))
+
+([EngineTransmission_ProjectKB_Instance_20328] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_20329] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_20330] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "hasConnector")
+	(property_list [EngineTransmission_ProjectKB_Instance_20331])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 60))
+
+([EngineTransmission_ProjectKB_Instance_20331] of  Property_List
+
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20332]
+		[EngineTransmission_ProjectKB_Instance_20333]
+		[EngineTransmission_3_ProjectKB_Class819]))
+
+([EngineTransmission_ProjectKB_Instance_20332] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value  "))
+
+([EngineTransmission_ProjectKB_Instance_20333] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([EngineTransmission_ProjectKB_Instance_20334] of  String
+
+	(name "tooltip_text"))
+
+([EngineTransmission_ProjectKB_Instance_20336] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORdirection")
+	(string_value "direction"))
+
+([EngineTransmission_ProjectKB_Instance_20337] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORdirection"))
+
+([EngineTransmission_ProjectKB_Instance_20338] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORdirection"))
+
+([EngineTransmission_ProjectKB_Instance_20340] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORcomponent_2")
+	(string_value "component_2"))
+
+([EngineTransmission_ProjectKB_Instance_20341] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORcomponent_2"))
+
+([EngineTransmission_ProjectKB_Instance_20342] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORcomponent_2"))
+
+([EngineTransmission_ProjectKB_Instance_20344] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORconnector_1")
+	(string_value "connector_1"))
+
+([EngineTransmission_ProjectKB_Instance_20345] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORconnector_1"))
+
+([EngineTransmission_ProjectKB_Instance_20346] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORconnector_1"))
+
+([EngineTransmission_ProjectKB_Instance_20348] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORdefined_at_component")
+	(string_value "defined_at_component"))
+
+([EngineTransmission_ProjectKB_Instance_20349] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORdefined_at_component"))
+
+([EngineTransmission_ProjectKB_Instance_20350] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORdefined_at_component"))
+
+([EngineTransmission_ProjectKB_Instance_20352] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORconnector_2")
+	(string_value "connector_2"))
+
+([EngineTransmission_ProjectKB_Instance_20353] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORconnector_2"))
+
+([EngineTransmission_ProjectKB_Instance_20354] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORconnector_2"))
+
+([EngineTransmission_ProjectKB_Instance_20356] of  String
+
+	(name ":COLUMN:NAME:DESCRIPTORcomponent_1")
+	(string_value "component_1"))
+
+([EngineTransmission_ProjectKB_Instance_20357] of  Integer
+
+	(integer_value -16777216)
+	(name ":COLOR:RGB:DESCRIPTORcomponent_1"))
+
+([EngineTransmission_ProjectKB_Instance_20358] of  Integer
+
+	(integer_value 20)
+	(name ":PREFERRED:SIZE:DESCRIPTORcomponent_1"))
+
+([EngineTransmission_ProjectKB_Instance_20360] of  Integer
+
+	(integer_value 6)
+	(name ":Number:Of:Visible:Slots"))
+
+([EngineTransmission_ProjectKB_Instance_20367] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Automatically:Select:Insertions"))
+
+([EngineTransmission_ProjectKB_Instance_20368] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Create:Form:For:New:Instances"))
+
+([EngineTransmission_ProjectKB_Instance_20369] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":HighLight:Selected:Row"))
+
+([EngineTransmission_ProjectKB_Instance_20370] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Edit:In:Place"))
+
+([EngineTransmission_ProjectKB_Instance_20371] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Use:Dialog:To:Select:Instances"))
+
+([EngineTransmission_ProjectKB_Instance_20372] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Use:Dialog:To:Select:Classes"))
+
+([EngineTransmission_ProjectKB_Instance_20373] of  String
+
+	(name ":Dialog:Title:For:Selecting:Instances")
+	(string_value "Select an instance"))
+
+([EngineTransmission_ProjectKB_Instance_20374] of  String
+
+	(name ":Dialog:Title:For:Selecting:Classes")
+	(string_value "Select a class"))
+
+([EngineTransmission_ProjectKB_Instance_20375] of  Integer
+
+	(integer_value 1)
+	(name ":Prototype:Depth"))
+
+([EngineTransmission_ProjectKB_Instance_20376] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Create:Instance:Button"))
+
+([EngineTransmission_ProjectKB_Instance_20377] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Add:Instance:Button"))
+
+([EngineTransmission_ProjectKB_Instance_20378] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:View:Instance:Button"))
+
+([EngineTransmission_ProjectKB_Instance_20379] of  Boolean
+
+	(boolean_value TRUE)
+	(name ":Display:Remove:Instance:Button"))
+
+([EngineTransmission_ProjectKB_Instance_20380] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Delete:Instance:Button"))
+
+([EngineTransmission_ProjectKB_Instance_20381] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Prototype:Button"))
+
+([EngineTransmission_ProjectKB_Instance_20382] of  Boolean
+
+	(boolean_value FALSE)
+	(name ":Display:Move:Instance:Buttons"))
+
+([EngineTransmission_ProjectKB_Instance_20383] of  String
+
+	(name ":Create:Instance:Button:Tooltip")
+	(string_value "Create a new instance"))
+
+([EngineTransmission_ProjectKB_Instance_20384] of  String
+
+	(name ":Add:Instance:Button:Tooltip")
+	(string_value "Select an already existing instance"))
+
+([EngineTransmission_ProjectKB_Instance_20385] of  String
+
+	(name ":View:Instance:Button:Tooltip")
+	(string_value "View the selected instance"))
+
+([EngineTransmission_ProjectKB_Instance_20386] of  String
+
+	(name ":Remove:Instance:Button:Tooltip")
+	(string_value "Remove the selected instance(s)"))
+
+([EngineTransmission_ProjectKB_Instance_20387] of  String
+
+	(name ":Delete:Instance:Button:Tooltip")
+	(string_value "Delete the selected instance(s) from the knowledge base"))
+
+([EngineTransmission_ProjectKB_Instance_20388] of  String
+
+	(name ":Prototype:Button:Tooltip")
+	(string_value "Create a new instance which is a duplicate of the selected instance"))
+
+([EngineTransmission_ProjectKB_Instance_20389] of  String
+
+	(name ":Move:Instance:Buttons:Tooltip")
+	(string_value "Move the selected instance"))
+
+([EngineTransmission_ProjectKB_Instance_20390] of  String
+
+	(name ":Create:Instance:Dialog:Title")
+	(string_value "Create a new instance"))
+
+([EngineTransmission_ProjectKB_Instance_20391] of  String
+
+	(name ":Add:Instance:Dialog:Title")
+	(string_value "Select an already existing instance"))
+
+([EngineTransmission_ProjectKB_Instance_20418] of  Property_List
+
+	(name ":Visible:Slot:List")
+	(properties
+		[EngineTransmission_ProjectKB_Instance_20419]
+		[EngineTransmission_ProjectKB_Instance_20420]
+		[EngineTransmission_ProjectKB_Instance_20421]
+		[EngineTransmission_ProjectKB_Instance_20422]
+		[EngineTransmission_ProjectKB_Instance_20423]
+		[EngineTransmission_ProjectKB_Instance_20424]))
+
+([EngineTransmission_ProjectKB_Instance_20419] of  String
+
+	(name "direction")
+	(string_value "direction"))
+
+([EngineTransmission_ProjectKB_Instance_20420] of  String
+
+	(name "component_2")
+	(string_value "component_2"))
+
+([EngineTransmission_ProjectKB_Instance_20421] of  String
+
+	(name "connector_1")
+	(string_value "connector_1"))
+
+([EngineTransmission_ProjectKB_Instance_20422] of  String
+
+	(name "defined_at_component")
+	(string_value "defined_at_component"))
+
+([EngineTransmission_ProjectKB_Instance_20423] of  String
+
+	(name "connector_2")
+	(string_value "connector_2"))
+
+([EngineTransmission_ProjectKB_Instance_20424] of  String
+
+	(name "component_1")
+	(string_value "component_1"))
+
+([EngineTransmission_ProjectKB_Instance_20425] of  String
+
+	(name ":Visible:Slot:Index0")
+	(string_value "component_1"))
+
+([EngineTransmission_ProjectKB_Instance_20426] of  String
+
+	(name ":Visible:Slot:Index1")
+	(string_value "connector_1"))
+
+([EngineTransmission_ProjectKB_Instance_20427] of  String
+
+	(name ":Visible:Slot:Index2")
+	(string_value "component_2"))
+
+([EngineTransmission_ProjectKB_Instance_20428] of  String
+
+	(name ":Visible:Slot:Index3")
+	(string_value "connector_2"))
+
+([EngineTransmission_ProjectKB_Instance_20429] of  String
+
+	(name ":Visible:Slot:Index4")
+	(string_value "direction"))
+
+([EngineTransmission_ProjectKB_Instance_20430] of  String
+
+	(name ":Visible:Slot:Index5")
+	(string_value "defined_at_component"))
+
+([FORMS_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.FormsTab"))
+
+([INSTANCE_ANNOTATION_FORM_WIDGET] of  Widget
+
+	(height 476)
+	(is_hidden FALSE)
+	(name ":INSTANCE-ANNOTATION")
+	(property_list [KB_797510_Instance_33])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(width 603)
+	(x 0)
+	(y 0))
+
+([INSTANCES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
+
+([KB_376716_Instance_0] of  String
+
+	(name "factory_class_name")
+	(string_value "edu.stanford.smi.protege.storage.clips.ClipsKnowledgeBaseFactory"))
+
+([KB_376716_Instance_1] of  Options
+
+	(confirm_on_remove FALSE)
+	(display_abstract_class_icon TRUE)
+	(display_hidden_classes TRUE)
+	(display_multi_parent_class_icon TRUE)
+	(is_readonly FALSE)
+	(tabbed_instance_form_layout FALSE)
+	(update_modification_slots FALSE))
+
+([KB_376716_Instance_97] of  Property_List
+
+	(properties [EngineTransmission_ProjectKB_Instance_100]))
+
+([KB_376716_Instance_98] of  String
+
+	(name "classes_file_name")
+	(string_value "EngineTransmission_3.pont"))
+
+([KB_376716_Instance_99] of  String
+
+	(name "instances_file_name")
+	(string_value "EngineTransmission_3.pins"))
+
+([KB_450575_Class415] of  Map
+)
+
+([KB_450575_Class416] of  Map
+)
+
+([KB_797510_Instance_0] of  Property_List
+
+	(name "class widget properties")
+	(properties
+		[KB_797510_Instance_1]
+		[KB_797510_Instance_2]
+		[KB_797510_Instance_3]
+		[KB_797510_Instance_4]
+		[KB_797510_Instance_5]
+		[KB_797510_Instance_6]
+		[KB_797510_Instance_7]
+		[KB_797510_Instance_8]
+		[KB_797510_Instance_9]
+		[KB_797510_Instance_10]))
+
+([KB_797510_Instance_1] of  Widget
+
+	(height 120)
+	(label "Constraints")
+	(name ":SLOT-CONSTRAINTS")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_313])
+	(widget_class_name "edu.stanford.smi.protege.widget.ConstraintsWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([KB_797510_Instance_10] of  Property_List
+
+	(name "layout properties")
+	(properties [KB_797510_Instance_11]))
+
+([KB_797510_Instance_11] of  String
+
+	(name "vertical_stretcher")
+	(string_value ":DIRECT-TEMPLATE-SLOTS"))
+
+([KB_797510_Instance_12] of  Property_List
+
+	(name "slot widget properties")
+	(properties
+		[KB_797510_Instance_13]
+		[KB_797510_Instance_14]
+		[KB_797510_Instance_15]
+		[KB_797510_Instance_16]
+		[KB_797510_Instance_17]
+		[KB_797510_Instance_18]
+		[KB_797510_Instance_19]
+		[KB_797510_Instance_20]
+		[KB_797510_Instance_21]
+		[KB_797510_Instance_22]
+		[KB_797510_Instance_23]
+		[KB_797510_Instance_24]
+		[KB_797510_Instance_25]
+		[KB_797510_Instance_26]
+		[KB_797510_Instance_27]
+		[KB_797510_Instance_28]
+		[EngineTransmission_3_ProjectKB_Instance_322]))
+
+([KB_797510_Instance_13] of  Widget
+
+	(height 60)
+	(label "Cardinality")
+	(name ":SLOT-MINIMUM-CARDINALITY")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_326])
+	(widget_class_name "edu.stanford.smi.protege.widget.MinimumCardinalityWidget")
+	(width 200)
+	(x 200)
+	(y 120))
+
+([KB_797510_Instance_14] of  Widget
+
+	(height 35)
+	(name ":SLOT-MAXIMUM-CARDINALITY")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_327])
+	(widget_class_name "edu.stanford.smi.protege.widget.MaximumCardinalityWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([KB_797510_Instance_15] of  Widget
+
+	(name ":SLOT-CONSTRAINTS"))
+
+([KB_797510_Instance_16] of  Widget
+
+	(name ":DIRECT-TYPE"))
+
+([KB_797510_Instance_17] of  Widget
+
+	(height 95)
+	(label "Domain")
+	(name ":DIRECT-DOMAIN")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_323])
+	(widget_class_name "edu.stanford.smi.protege.widget.DirectDomainWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([KB_797510_Instance_18] of  Widget
+
+	(height 90)
+	(label "Template Values")
+	(name ":SLOT-VALUES")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_324])
+	(widget_class_name "edu.stanford.smi.protege.widget.SlotValuesWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([KB_797510_Instance_19] of  Widget
+
+	(name ":DIRECT-SUPERSLOTS"))
+
+([KB_797510_Instance_2] of  Widget
+
+	(name ":DIRECT-INSTANCES"))
+
+([KB_797510_Instance_20] of  Widget
+
+	(name ":DIRECT-SUBSLOTS"))
+
+([KB_797510_Instance_21] of  Widget
+
+	(height 90)
+	(label "Default")
+	(name ":SLOT-DEFAULTS")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_325])
+	(widget_class_name "edu.stanford.smi.protege.widget.DefaultValuesWidget")
+	(width 200)
+	(x 400)
+	(y 90))
+
+([KB_797510_Instance_22] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_328])
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([KB_797510_Instance_23] of  Widget
+
+	(height 60)
+	(label "Maximum")
+	(name ":SLOT-NUMERIC-MAXIMUM")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_329])
+	(widget_class_name "edu.stanford.smi.protege.widget.NumericMaximumWidget")
+	(width 100)
+	(x 100)
+	(y 215))
+
+([KB_797510_Instance_24] of  Widget
+
+	(height 60)
+	(label "Minimum")
+	(name ":SLOT-NUMERIC-MINIMUM")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_330])
+	(widget_class_name "edu.stanford.smi.protege.widget.NumericMinimumWidget")
+	(width 100)
+	(x 0)
+	(y 215))
+
+([KB_797510_Instance_25] of  Widget
+
+	(name ":ASSOCIATED-FACET"))
+
+([KB_797510_Instance_26] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_331])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_797510_Instance_27] of  Widget
+
+	(height 60)
+	(label "Inverse Slot")
+	(name ":SLOT-INVERSE")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_332])
+	(widget_class_name "edu.stanford.smi.protege.widget.InverseSlotWidget")
+	(width 200)
+	(x 200)
+	(y 215))
+
+([KB_797510_Instance_28] of  Widget
+
+	(height 155)
+	(label "Value Type")
+	(name ":SLOT-VALUE-TYPE")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_333])
+	(widget_class_name "edu.stanford.smi.protege.widget.ValueTypeWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([KB_797510_Instance_29] of  Property_List
+
+	(name "facet widget properties")
+	(properties
+		[KB_797510_Instance_30]
+		[KB_797510_Instance_31]
+		[KB_797510_Instance_32]))
+
+([KB_797510_Instance_3] of  Widget
+
+	(name ":DIRECT-SUBCLASSES"))
+
+([KB_797510_Instance_30] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_797510_Instance_31] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([KB_797510_Instance_32] of  Widget
+
+	(height 60)
+	(label "Associated Slot")
+	(name ":ASSOCIATED-SLOT")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([KB_797510_Instance_33] of  Property_List
+
+	(properties
+		[KB_797510_Instance_34]
+		[KB_797510_Instance_35]
+		[KB_797510_Instance_36]
+		[KB_797510_Instance_37]))
+
+([KB_797510_Instance_34] of  Widget
+
+	(name ":ANNOTATED-INSTANCE"))
+
+([KB_797510_Instance_35] of  Widget
+
+	(name ":CREATOR"))
+
+([KB_797510_Instance_36] of  Widget
+
+	(name ":CREATION-TIMESTAMP"))
+
+([KB_797510_Instance_37] of  Widget
+
+	(height 100)
+	(is_hidden FALSE)
+	(name ":ANNOTATION-TEXT")
+	(widget_class_name "edu.stanford.smi.protege.widget.YellowStickyWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_797510_Instance_38] of  Property_List
+
+	(properties
+		[KB_797510_Instance_39]
+		[KB_797510_Instance_40]
+		[KB_797510_Instance_41]
+		[KB_797510_Instance_42]))
+
+([KB_797510_Instance_39] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":PAL-NAME")
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 275)
+	(x 0)
+	(y 0))
+
+([KB_797510_Instance_4] of  Widget
+
+	(name ":DIRECT-SUPERCLASSES"))
+
+([KB_797510_Instance_40] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "Range")
+	(name ":PAL-RANGE")
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalRangeWidget")
+	(width 250)
+	(x 275)
+	(y 180))
+
+([KB_797510_Instance_41] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "Description")
+	(name ":PAL-DESCRIPTION")
+	(widget_class_name "edu.stanford.smi.protege.widget.TextAreaWidget")
+	(width 250)
+	(x 275)
+	(y 0))
+
+([KB_797510_Instance_42] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(label "Statement")
+	(name ":PAL-STATEMENT")
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalConstraintWidget")
+	(width 275)
+	(x 0)
+	(y 60))
+
+([KB_797510_Instance_5] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_319])
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([KB_797510_Instance_6] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_320])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([KB_797510_Instance_7] of  Widget
+
+	(height 60)
+	(label "Role")
+	(name ":ROLE")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_321])
+	(widget_class_name "edu.stanford.smi.protege.widget.RoleWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([KB_797510_Instance_8] of  Widget
+
+	(name ":DIRECT-TYPE"))
+
+([KB_797510_Instance_9] of  Widget
+
+	(height 150)
+	(label "Template Slots")
+	(name ":DIRECT-TEMPLATE-SLOTS")
+	(property_list [EngineTransmission_3_ProjectKB_Instance_316])
+	(widget_class_name "edu.stanford.smi.protege.widget.TemplateSlotsWidget")
+	(width 600)
+	(x 0)
+	(y 120))
+
+([PAL_FORM_WIDGET] of  Widget
+
+	(height 476)
+	(is_hidden FALSE)
+	(name ":PAL-CONSTRAINT")
+	(property_list [KB_797510_Instance_38])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(width 603)
+	(x 0)
+	(y 0))
+
+([PROJECT] of  Project
+
+	(browser_slot_names [BROWSER_SLOT_NAMES])
+	(customized_instance_widgets
+		[STANDARD_FACET_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_CLASS_FORM_WIDGET]
+		[EngineTransmission_3_ProjectKB_Class620]
+		[PAL_FORM_WIDGET]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[EngineTransmission_ProjectKB_Instance_189])
+	(default_cls_metaclass ":STANDARD-CLASS")
+	(default_facet_metaclass ":STANDARD-FACET")
+	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(default_slot_metaclass ":STANDARD-SLOT")
+	(included_projects
+		"component-systems.pprj"
+		"requirements.pprj")
+	(journaling_enabled FALSE)
+	(next_frame_number 0)
+	(options [KB_376716_Instance_1])
+	(property_map [KB_450575_Class415])
+	(sources [SOURCES])
+	(tabs
+		[CLSES_TAB]
+		[SLOTS_TAB]
+		[FORMS_TAB]
+		[INSTANCES_TAB]
+		[QUERIES_TAB]
+		[EngineTransmission_ProjectKB_Instance_177]
+		[EngineTransmission_ProjectKB_Instance_119]
+		[EngineTransmission_ProjectKB_Instance_159]
+		[EngineTransmission_ProjectKB_Instance_181]
+		[EngineTransmission_ProjectKB_Instance_137]
+		[EngineTransmission_ProjectKB_Instance_145]
+		[EngineTransmission_ProjectKB_Instance_135]
+		[EngineTransmission_ProjectKB_Instance_163]
+		[EngineTransmission_ProjectKB_Instance_167]
+		[EngineTransmission_ProjectKB_Instance_115]
+		[EngineTransmission_ProjectKB_Instance_151]
+		[EngineTransmission_ProjectKB_Instance_161]
+		[EngineTransmission_ProjectKB_Instance_129]
+		[EngineTransmission_ProjectKB_Instance_125]
+		[EngineTransmission_ProjectKB_Instance_141]
+		[EngineTransmission_ProjectKB_Instance_171]
+		[EngineTransmission_ProjectKB_Instance_165]
+		[EngineTransmission_ProjectKB_Instance_113]
+		[EngineTransmission_ProjectKB_Instance_169]
+		[EngineTransmission_ProjectKB_Instance_157]
+		[EngineTransmission_ProjectKB_Instance_149]
+		[EngineTransmission_ProjectKB_Instance_117]
+		[EngineTransmission_ProjectKB_Instance_133]
+		[EngineTransmission_ProjectKB_Instance_123]
+		[EngineTransmission_ProjectKB_Instance_155]
+		[EngineTransmission_ProjectKB_Instance_111]
+		[EngineTransmission_ProjectKB_Instance_183]
+		[EngineTransmission_ProjectKB_Instance_147]
+		[EngineTransmission_ProjectKB_Instance_139]
+		[EngineTransmission_ProjectKB_Instance_121]
+		[EngineTransmission_ProjectKB_Instance_175]
+		[EngineTransmission_ProjectKB_Instance_173]
+		[EngineTransmission_ProjectKB_Instance_131]
+		[EngineTransmission_ProjectKB_Instance_153]
+		[EngineTransmission_ProjectKB_Instance_185]
+		[EngineTransmission_ProjectKB_Instance_179]
+		[EngineTransmission_ProjectKB_Instance_143]
+		[EngineTransmission_ProjectKB_Instance_127]))
+
+([QUERIES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [KB_376716_Instance_97])
+	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
+
+([SLOTS_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.SlotsTab"))
+
+([SOURCES] of  Property_List
+
+	(properties
+		[KB_376716_Instance_0]
+		[KB_376716_Instance_98]
+		[KB_376716_Instance_99]))
+
+([STANDARD_CLASS_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-CLASS")
+	(property_list [KB_797510_Instance_0])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_FACET_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-FACET")
+	(property_list [KB_797510_Instance_29])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_SLOT_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-SLOT")
+	(property_list [KB_797510_Instance_12])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))

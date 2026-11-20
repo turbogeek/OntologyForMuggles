@@ -82,6 +82,9 @@ final class ConceptModelLocator {
             }
         }
         List<Package> pick = !authored.isEmpty() ? authored : anyNonLibrary;
+        if (pick.isEmpty() && !all.isEmpty()) {
+            pick = all;
+        }
         if (pick.size() == 1) {
             return new Target(pick.get(0), false);
         }
@@ -194,16 +197,19 @@ final class ConceptModelLocator {
         if (project == null) {
             return out;
         }
-        Element root;
         try {
-            root = project.getPrimaryModel();
+            for (Package model : project.getModels()) {
+                if (isOntologyPackage(model)) {
+                    out.add(model);
+                }
+                collect(model, out);
+            }
         } catch (Throwable t) {
-            return out;
+            Element root = project.getPrimaryModel();
+            if (root != null) {
+                collect(root, out);
+            }
         }
-        if (root == null) {
-            return out;
-        }
-        collect(root, out);
         return out;
     }
 

@@ -1,0 +1,9 @@
+; Fri Aug 25 11:52:43 PDT 2006
+; 
+;+ (version "3.2")
+;+ (build "Build 331")
+
+([mapping_onology_Instance_10000] of  Constraint
+
+	(constraint_statement "ratio = zr / zs")
+	(%3ADOCUMENTATION "The ideal planetary gearbox is uniquely defined by the ratio of the number of ring teeth zr with respect to the number of sun teeth zs. For example, if there are 100 ring teeth and 50 sun teeth then ratio = zr/zs = 2. The number of planet teeth zp has to fulfill the following relationship:\n   zp := (zr - zs) / 2"))
